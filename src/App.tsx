@@ -23,6 +23,8 @@ import {
   Award,
   Briefcase,
   Terminal,
+  Scroll,
+  Feather,
 } from 'lucide-react';
 import InteractiveBackground from './components/InteractiveBackground';
 import PortfolioEyes from './components/PortfolioEyes';
@@ -351,18 +353,74 @@ function DraggableBox({
   );
 }
 
-// 24K Gold Ability Pokémon Card — Pure Custom Component for Kaushal Maran
-function HolographicAbilityCard({ onClose }: { onClose: () => void }) {
+// ==========================================================================
+// ANCIENT TAMIL OLAICHUVADI 3D (பண்டைய தமிழ் ஓலைச்சுவடி)
+// Authentic Palmyra Palm-Leaf Manuscript with Thirukkural, Stylus Engraving,
+// Sacred Red Cord (செங்கயிறு), Carved Rosewood Beams, and Kaushal Maran's Software Edict.
+// ==========================================================================
+
+interface KuralItem {
+  number: number;
+  chapter: string;
+  theme: string;
+  line1: string;
+  line2: string;
+  transliteration: string;
+  meaning: string;
+  english: string;
+  shortTag: string;
+}
+
+const TAMIL_KURALS: KuralItem[] = [
+  {
+    number: 619,
+    chapter: "அதிகாரம் 62: ஆள்வினையுடைமை (Relentless Effort & Mastery)",
+    theme: "Engineering Tenacity & Relentless Effort",
+    line1: "தெய்வத்தான் ஆகா தெனினும் முயற்சிதன்",
+    line2: "மெய்வருத்தக் கூலி தரும்.",
+    transliteration: "Deivathaan aagaa theninum muyarchithan meyvaruththa kooli tharum.",
+    meaning: "விதியால் அல்லது தெய்வத்தால் கூட முடியாது என்று கைவிடப்பட்ட காரியமாயினும், உடலை வருத்திச் செய்யும் இடைவிடாத தொழில்நுட்ப முயற்சி அதற்குரிய முழுப் பயனையும் தரும்.",
+    english: "Even if destiny or the heavens deem a task impossible, persistent, body-straining human effort and craftsmanship will always yield its full reward.",
+    shortTag: "குறள் 619: முயற்சி தன் கூலி தரும்",
+  },
+  {
+    number: 467,
+    chapter: "அதிகாரம் 47: தெரிந்து செயல்வகை (Deliberate Systems Architecture)",
+    theme: "Deliberate System Architecture & Planning",
+    line1: "எண்ணித் துணிக கருமம் துணிந்தபின்",
+    line2: "எண்ணுவம் என்பது இழுக்கு.",
+    transliteration: "Ennith thuniga karumam thuninthapin ennuvam enpathu izhukku.",
+    meaning: "நன்கு ஆராய்ந்து கட்டமைத்துத் திட்டமிட்ட பிறகே செயலில் இறங்க வேண்டும்; தொடங்கிய பின் யோசிப்பது பெரும் இழுக்காகும்.",
+    english: "Deliberate and architect thoroughly before executing; to waver or hesitate after committing is a flaw.",
+    shortTag: "குறள் 467: எண்ணித் துணிக கருமம்",
+  },
+  {
+    number: 391,
+    chapter: "அதிகாரம் 40: கல்வி (Deep Knowledge & Flawless Mastery)",
+    theme: "Flawless Mastery & Living by Truth",
+    line1: "கற்க கசடறக் கற்பவை கற்றபின்",
+    line2: "நிற்க அதற்குத் தக.",
+    transliteration: "Karka kasadarak karpavai katrapin nirka atharkuth thaka.",
+    meaning: "கற்க வேண்டிய தொழில்நுட்பங்களை பிழையின்றி ஆழமாகக் கற்க வேண்டும்; கற்ற பிறகு அந்த அறிவுக்குத் தக நேர்மையாகச் செயல்பட வேண்டும்.",
+    english: "Learn with utmost depth and flawlessness that which is worth learning; once mastered, live strictly according to that truth.",
+    shortTag: "குறள் 391: கற்க கசடறக் கற்பவை",
+  },
+];
+
+function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
+  const [activeKuralIdx, setActiveKuralIdx] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [rotX, setRotX] = useState(0);
   const [rotY, setRotY] = useState(0);
+
+  const activeKural = TAMIL_KURALS[activeKuralIdx];
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    setRotX((-y / rect.height) * 20);
-    setRotY((x / rect.width) * 20);
+    setRotX((-y / rect.height) * 16);
+    setRotY((x / rect.width) * 16);
   };
 
   const handleMouseLeave = () => {
@@ -371,17 +429,43 @@ function HolographicAbilityCard({ onClose }: { onClose: () => void }) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-1 sm:p-3 select-none">
-      <div className="flex items-center gap-2 mb-3">
-        <Sparkles className="w-4 h-4 text-kin-400" />
-        <p className="text-xs font-mono tracking-widest text-kin-400 uppercase text-center">
-          PSA 10 · 24K GOLD KAUSHAL MARAN VMAX · தட்டினால் திரும்பும்
+    <div className="flex flex-col items-center justify-center p-1 sm:p-2 select-none w-full max-w-2xl mx-auto">
+      
+      {/* Top Auspicious Banner */}
+      <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
+        <Scroll className="w-4 h-4 text-amber-400" />
+        <p className="text-xs font-mono tracking-widest text-amber-300 uppercase text-center font-tamil">
+          பண்டைய தமிழ் ஓலைச்சுவடி · ANCIENT TAMIL OLAICHUVADI 3D · தட்டினால் திரும்பும்
         </p>
       </div>
 
+      {/* Kural Selector Pill Tabs */}
+      <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-4 w-full">
+        {TAMIL_KURALS.map((k, idx) => {
+          const isActive = idx === activeKuralIdx;
+          return (
+            <button
+              key={k.number}
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveKuralIdx(idx);
+              }}
+              className={`px-3 py-1.5 rounded-full text-xs font-tamil transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
+                isActive
+                  ? 'bg-amber-500/25 border border-amber-400 text-amber-200 shadow-[0_0_12px_rgba(245,158,11,0.3)] font-bold'
+                  : 'bg-washi/5 border border-washi/10 text-washi/70 hover:bg-washi/10 hover:text-washi'
+              }`}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+              {k.shortTag}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* 3D Interactive Olaichuvadi Perspective Container */}
       <div
-        className="relative w-full max-w-[340px] sm:max-w-[400px] aspect-[1040/1540] cursor-pointer"
-        style={{ perspective: '1100px', containerType: 'inline-size' } as any}
+        className="olai-wrap w-full cursor-pointer relative py-2"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onClick={() => setFlipped(!flipped)}
@@ -391,207 +475,283 @@ function HolographicAbilityCard({ onClose }: { onClose: () => void }) {
             rotateX: rotX,
             rotateY: (flipped ? 180 : 0) + rotY,
           }}
-          transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-          className="w-full h-full relative"
-          style={{ transformStyle: 'preserve-3d' }}
+          transition={{ type: 'spring', stiffness: 280, damping: 26 }}
+          className="olai-card"
+          style={{
+            transformStyle: 'preserve-3d',
+            ['--px' as any]: rotY / 16,
+            ['--py' as any]: -rotX / 16,
+          }}
         >
-          {/* FRONT FACE: Kaushal Maran 24K Gold Pokemon Card */}
+          {/* ========================================================= */}
+          {/* FRONT FACE: முதல் ஏடு — திருக்குறள் அருளுரை (Sacred Kural Leaf) */}
+          {/* ========================================================= */}
           <div
-            className="pk-card"
-            style={{
-              backfaceVisibility: 'hidden',
-              ['--px' as any]: rotY / 20,
-              ['--py' as any]: -rotX / 20,
-            }}
+            className="w-full relative"
+            style={{ backfaceVisibility: 'hidden' }}
           >
-            <div className="pk-card__glare" />
-            <div className="pk-card__holo" />
-            <div className="pk-card__gold-texture" aria-hidden="true" />
-            <div className="pk-card__sparkles" aria-hidden="true" />
+            {/* Top Carved Rosewood Support Beam */}
+            <div className="olai-wood-beam olai-wood-beam--top">
+              <div className="olai-brass-accent" />
+              <div className="olai-wood-title">
+                <span>☀️</span>
+                <span>திருவள்ளுவ நாயனார் அருளிய தமிழ் மறை</span>
+                <span>☽</span>
+              </div>
+              <div className="olai-brass-accent" />
+            </div>
 
-            <div className="pk-card__border">
-              <div className="pk-card__inner">
-                
-                {/* 1. Header: Stage, Name, HP, Type */}
-                <div className="pk-card__header">
-                  <div className="pk-card__meta-left">
-                    <div className="pk-card__stage-row">
-                      <span className="pk-card__stage">STAGE 2</span>
-                      <span className="pk-card__substage">Evolves from Code Specialist</span>
-                      <span className="pk-card__psa">PSA 10 24K GOLD</span>
-                    </div>
-                    <h2 className="pk-card__name">
-                      KAUSHAL MARAN <span className="pk-card__vmax">24K GOLD VMAX</span>
-                    </h2>
+            {/* The Palmyra Palm Leaf Body */}
+            <div className="olai-leaf relative">
+              {/* Specular sheen gliding across leaf on 3D tilt */}
+              <div className="olai-sheen" />
+
+              {/* Two Drilled Holes with Brass Grommets */}
+              <div className="olai-hole olai-hole--left" />
+              <div className="olai-hole olai-hole--right" />
+
+              {/* Sacred Red Cord (செங்கயிறு) and Tassels */}
+              <div className="olai-cord olai-cord--left" />
+              <div className="olai-cord olai-cord--right" />
+              <div className="olai-cord-tassel olai-cord-tassel--left" />
+              <div className="olai-cord-tassel olai-cord-tassel--right" />
+
+              {/* Traditional Dashed Inner Border & Corner Flourishes */}
+              <div className="olai-inner-border">
+                <div className="olai-corner-motif olai-corner-motif--tl" />
+                <div className="olai-corner-motif olai-corner-motif--tr" />
+                <div className="olai-corner-motif olai-corner-motif--bl" />
+                <div className="olai-corner-motif olai-corner-motif--br" />
+
+                {/* 1. Auspicious Invocation Header */}
+                <div className="flex items-center justify-between border-b border-[#783e11]/30 pb-2 mb-2 relative z-10">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl font-bold text-[#3d1a04] olai-engraved">உ</span>
+                    <span className="text-[11px] sm:text-xs font-tamil font-bold text-[#451f08] uppercase tracking-wider">
+                      பிள்ளையார் சுழி • வாழ்த்து
+                    </span>
                   </div>
-                  <div className="pk-card__hp-wrap">
-                    <span className="pk-card__hp-label">HP</span>
-                    <span className="pk-card__hp">9999</span>
-                    <span className="pk-card__energy pk-card__energy--gold" title="24K Gold Master Type">👑</span>
+                  <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#522507]/15 border border-[#6b330d]/30 text-[10px] sm:text-xs font-tamil font-bold text-[#3b1704]">
+                    <span>குறள் எண்: {activeKural.number}</span>
                   </div>
                 </div>
 
-                {/* 2. Illustration Window */}
-                <div className="pk-card__art-frame">
-                  <div className="pk-card__art-bg" />
-                  <img
-                    src={asset("assets/kaushal-opt.webp")}
-                    alt="Kaushal Maran 24K Gold Ability Pokémon Card Art"
-                    className="pk-card__art-img"
-                    loading="eager"
-                  />
-                  <div className="pk-card__art-fx" aria-hidden="true">
-                    <i className="pk-fx-sparkle s1">✦</i>
-                    <i className="pk-fx-sparkle s2">★</i>
-                    <i className="pk-fx-sparkle s3">✦</i>
-                  </div>
-                  <div className="pk-card__edition-badge">24K SOLID GOLD ★★★</div>
-                  <div className="pk-card__rarity-badge">MASTER ARCHITECT</div>
+                {/* 2. Chapter Title */}
+                <div className="text-center relative z-10 my-1">
+                  <span className="text-xs sm:text-sm font-tamil font-extrabold tracking-wide text-[#3f1c07] olai-engraved uppercase">
+                    {activeKural.chapter}
+                  </span>
                 </div>
 
-                {/* 3. Species Ribbon */}
-                <div className="pk-card__ribbon">
-                  <span>NO. 001 · 24K GOLD ARCHITECT · 10+ LIVE STORE APPS · VELLORE &amp; CHENNAI · தமிழ்</span>
-                </div>
-
-                {/* 4. Special Ability */}
-                <div className="pk-card__ability">
-                  <div className="pk-card__ability-title">
-                    <span className="pk-card__ability-badge">ABILITY</span>
-                    <b className="pk-card__ability-name">Omni-UI Synthesis Engine</b>
-                  </div>
-                  <p className="pk-card__ability-desc">
-                    Passive: Master orchestrator of SwiftUI, Jetpack Compose, Monaco Editor, and Interactive 3D WebGL. All deployed applications (ZenLife, Vellore Ads, CodeShift, India News Radar) run with zero frame drops at 120 FPS.
+                {/* 3. The Thirukkural Incised into the Palm Leaf */}
+                <div className="my-auto py-3 text-center relative z-10 px-2 sm:px-6">
+                  <p className="font-tamil font-extrabold text-lg sm:text-2xl md:text-3xl tracking-wide leading-relaxed text-[#200c02] olai-engraved">
+                    {activeKural.line1}
+                  </p>
+                  <p className="font-tamil font-extrabold text-lg sm:text-2xl md:text-3xl tracking-wide leading-relaxed text-[#200c02] olai-engraved mt-0.5">
+                    {activeKural.line2}
+                  </p>
+                  <p className="text-[11px] sm:text-xs font-serif italic text-[#4a240a] mt-2.5 tracking-wider opacity-90">
+                    "{activeKural.transliteration}"
                   </p>
                 </div>
 
-                {/* 4b. Verified Projects & Ability Metrics */}
-                <div className="pk-card__skills-grid">
-                  <div className="pk-skill-bar">
-                    <div className="pk-skill-bar__head">
-                      <span className="pk-skill-bar__label">🍏 ZenLife &amp; iOS Suite</span>
-                      <span className="pk-skill-bar__pct">99%</span>
-                    </div>
-                    <div className="pk-skill-bar__sub">SwiftUI · CoreData · App Store</div>
-                    <div className="pk-skill-bar__track"><div className="pk-skill-bar__fill" style={{ width: '99%' }} /></div>
-                  </div>
-                  <div className="pk-skill-bar">
-                    <div className="pk-skill-bar__head">
-                      <span className="pk-skill-bar__label">🤖 Vellore Ads &amp; Legal</span>
-                      <span className="pk-skill-bar__pct">98%</span>
-                    </div>
-                    <div className="pk-skill-bar__sub">Kotlin · Compose · Play Store</div>
-                    <div className="pk-skill-bar__track"><div className="pk-skill-bar__fill" style={{ width: '98%' }} /></div>
-                  </div>
-                  <div className="pk-skill-bar">
-                    <div className="pk-skill-bar__head">
-                      <span className="pk-skill-bar__label">🌐 CodeShift &amp; Web</span>
-                      <span className="pk-skill-bar__pct">99%</span>
-                    </div>
-                    <div className="pk-skill-bar__sub">Monaco Editor · Encrypted Sync</div>
-                    <div className="pk-skill-bar__track"><div className="pk-skill-bar__fill" style={{ width: '99%' }} /></div>
-                  </div>
-                  <div className="pk-skill-bar">
-                    <div className="pk-skill-bar__head">
-                      <span className="pk-skill-bar__label">🧠 DCGAN &amp; CV Labs</span>
-                      <span className="pk-skill-bar__pct">96%</span>
-                    </div>
-                    <div className="pk-skill-bar__sub">PyTorch · 40+ Vision Pipelines</div>
-                    <div className="pk-skill-bar__track"><div className="pk-skill-bar__fill" style={{ width: '96%' }} /></div>
-                  </div>
+                {/* 4. Classical Commentary (தெளிவுரை & ஆங்கில உரை) */}
+                <div className="bg-[#592706]/10 border border-[#78370b]/25 rounded-lg p-2.5 sm:p-3 my-2 relative z-10">
+                  <p className="text-xs sm:text-sm font-tamil text-[#291104] leading-relaxed">
+                    <b className="font-bold">பொருள்:</b> {activeKural.meaning}
+                  </p>
+                  <p className="text-[11px] sm:text-xs text-[#3d1904]/90 mt-1 italic leading-relaxed">
+                    <b>Translation:</b> "{activeKural.english}"
+                  </p>
                 </div>
 
-                {/* 5. Attacks */}
-                <div className="pk-card__attacks">
-                  <div className="pk-attack">
-                    <div className="pk-attack__cost">
-                      <span className="pk-card__energy pk-card__energy--gold" title="Gold">👑</span>
-                      <span className="pk-card__energy pk-card__energy--lightning" title="Lightning">⚡</span>
-                      <span className="pk-card__energy pk-card__energy--metal" title="Metal">⚙️</span>
-                    </div>
-                    <div className="pk-attack__info">
-                      <b className="pk-attack__name">Store Fleet Omni-Deploy</b>
-                      <p className="pk-attack__desc">Synchronously deploys production updates to App Store &amp; Play Store. Offline-first caching with sub-16ms latency.</p>
-                    </div>
-                    <span className="pk-attack__dmg">9999+</span>
-                  </div>
-
-                  <div className="pk-attack pk-attack--ult">
-                    <div className="pk-attack__cost">
-                      <span className="pk-card__energy pk-card__energy--gold" title="Gold">👑</span>
-                      <span className="pk-card__energy pk-card__energy--psychic" title="Psychic">🔮</span>
-                      <span className="pk-card__energy pk-card__energy--lightning" title="Lightning">⚡</span>
-                    </div>
-                    <div className="pk-attack__info">
-                      <b className="pk-attack__name">CodeShift &amp; Neural Overdrive</b>
-                      <p className="pk-attack__desc">Fuses encrypted Monaco collaboration with India News Radar &amp; PyTorch neural networks.</p>
-                    </div>
-                    <span className="pk-attack__dmg pk-attack__dmg--inf">∞</span>
-                  </div>
-                </div>
-
-                {/* 6. 24K Gold Rule Box */}
-                <div className="pk-card__rule-box">
-                  <b>24K GOLD ARCHITECT RULE:</b> Guarantees 100/100 Lighthouse performance, sub-50ms Time-to-Interactive, and 120 FPS UI ergonomics.
-                </div>
-
-                {/* 7. Bottom Stats */}
-                <div className="pk-card__bottom-stats">
-                  <div className="flex gap-1.5"><span className="text-kin-400">weakness</span><span>☕ ×0</span></div>
-                  <div className="flex gap-1.5"><span className="text-kin-400">resistance</span><span>🐛 -9999 · ⚡ 0ms</span></div>
-                  <div className="flex gap-1.5"><span className="text-kin-400">retreat</span><span>0 (Instant)</span></div>
-                </div>
-
-                {/* 8. Collector Footer */}
-                <div className="pk-card__footer">
-                  <span>Illus. Kaushal Maran</span>
-                  <span className="font-tamil text-kin-400">கைவினைத்திறன்</span>
-                  <span>001/001 24K GOLD PROOF</span>
+                {/* 5. Inscription Craftsman Seal */}
+                <div className="flex flex-wrap items-center justify-between pt-2 border-t border-[#783e11]/30 relative z-10 text-[10px] sm:text-xs font-tamil text-[#381603]">
+                  <span className="font-bold">
+                    பொறியாளர் மு. கௌஷல் மாறன் • கைவினைப் படைப்பு
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-[#451f08] font-mono">
+                    <Feather className="w-3 h-3 text-[#78350f]" /> எழுத்தாணி வெட்டு (Iron Stylus Etched)
+                  </span>
                 </div>
 
               </div>
             </div>
+
+            {/* Bottom Carved Rosewood Support Beam */}
+            <div className="olai-wood-beam olai-wood-beam--bottom">
+              <div className="olai-brass-accent" />
+              <div className="olai-wood-title">
+                <span>யாதும் ஊரே யாவரும் கேளிர் • TAMIL NADU, INDIA</span>
+              </div>
+              <div className="olai-brass-accent" />
+            </div>
           </div>
 
-          {/* BACK FACE: Embossed Monogram Reverse */}
+          {/* ========================================================= */}
+          {/* BACK FACE: இரண்டாம் ஏடு — கௌஷல் மாறனின் மென்பொருள் சாசனம் (Software Edict Leaf) */}
+          {/* ========================================================= */}
           <div
-            className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border border-kin-400/30"
+            className="w-full absolute inset-0"
             style={{
               backfaceVisibility: 'hidden',
               transform: 'rotateY(180deg)',
-              background: '#120f0f',
             }}
           >
-            <img src={asset("card/back.webp")} alt="Card Back Monogram" className="w-full h-full object-cover" />
-            <div
-              className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-40"
-              style={{
-                background: `radial-gradient(circle at ${50 - rotY * 2}% ${50 - rotX * 2}%, rgba(254,240,138,0.7) 0%, transparent 65%)`,
-              }}
-            />
-            <div className="absolute inset-x-0 bottom-4 text-center pointer-events-none">
-              <span className="font-tamil text-xs tracking-widest text-kin-400/80 uppercase">
-                கற்றது கைமண் அளவு · M KAUSHAL MARAN
-              </span>
+            {/* Top Carved Rosewood Support Beam */}
+            <div className="olai-wood-beam olai-wood-beam--top">
+              <div className="olai-brass-accent" />
+              <div className="olai-wood-title">
+                <span>தமிழ்நாடு • மென்பொருள் சாசனம் (SOFTWARE CRAFTSMAN EDICT)</span>
+              </div>
+              <div className="olai-brass-accent" />
+            </div>
+
+            {/* The Palmyra Palm Leaf Body (Reverse) */}
+            <div className="olai-leaf relative">
+              <div className="olai-sheen" />
+
+              <div className="olai-hole olai-hole--left" />
+              <div className="olai-hole olai-hole--right" />
+              <div className="olai-cord olai-cord--left" />
+              <div className="olai-cord olai-cord--right" />
+              <div className="olai-cord-tassel olai-cord-tassel--left" />
+              <div className="olai-cord-tassel olai-cord-tassel--right" />
+
+              <div className="olai-inner-border">
+                <div className="olai-corner-motif olai-corner-motif--tl" />
+                <div className="olai-corner-motif olai-corner-motif--tr" />
+                <div className="olai-corner-motif olai-corner-motif--bl" />
+                <div className="olai-corner-motif olai-corner-motif--br" />
+
+                {/* 1. Edict Header */}
+                <div className="flex items-center justify-between border-b border-[#783e11]/30 pb-2 mb-2 relative z-10">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl font-bold text-[#3d1a04] olai-engraved">உ</span>
+                    <span className="text-xs sm:text-sm font-tamil font-extrabold text-[#3b1704]">
+                      மு. கௌஷல் மாறன் • மென்பொருள் சாசனம்
+                    </span>
+                  </div>
+                  <span className="text-[10px] sm:text-xs font-mono font-bold text-[#451f08] px-2 py-0.5 rounded bg-[#522507]/15">
+                    SIMATS '26 · VELLORE &amp; CHENNAI
+                  </span>
+                </div>
+
+                {/* 2. Sangam Creed */}
+                <div className="text-center my-1 relative z-10">
+                  <p className="font-tamil font-bold text-sm sm:text-base text-[#240c02] olai-engraved">
+                    "யாதும் ஊரே யாவரும் கேளிர் • கற்றது கைமண் அளவு"
+                  </p>
+                  <p className="text-[10px] sm:text-xs font-mono text-[#522507] mt-0.5">
+                    BUILDING WHAT PEOPLE ACTUALLY USE · ZERO FRAME DROPS · 120 FPS
+                  </p>
+                </div>
+
+                {/* 3. Etched Software Apps Catalog */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 my-2 relative z-10">
+                  <div className="bg-[#592706]/12 border border-[#78370b]/25 rounded-lg p-2.5">
+                    <div className="flex items-center justify-between">
+                      <b className="font-tamil text-xs sm:text-sm font-bold text-[#200c02]">🍏 ZenLife</b>
+                      <span className="text-[9px] font-mono font-bold uppercase text-[#542104] bg-[#542104]/10 px-1.5 py-0.2 rounded">App Store</span>
+                    </div>
+                    <p className="text-[11px] font-tamil text-[#3b1905] mt-1 leading-tight">
+                      SwiftUI · 432 Hz Solfeggio Audio DSP · ஆப்பிள் ஆப் ஸ்டோர்
+                    </p>
+                  </div>
+
+                  <div className="bg-[#592706]/12 border border-[#78370b]/25 rounded-lg p-2.5">
+                    <div className="flex items-center justify-between">
+                      <b className="font-tamil text-xs sm:text-sm font-bold text-[#200c02]">🤖 Vellore Ads</b>
+                      <span className="text-[9px] font-mono font-bold uppercase text-[#542104] bg-[#542104]/10 px-1.5 py-0.2 rounded">Play Store</span>
+                    </div>
+                    <p className="text-[11px] font-tamil text-[#3b1905] mt-1 leading-tight">
+                      Kotlin · Jetpack Compose · உள்ளூர் வர்த்தக தளம்
+                    </p>
+                  </div>
+
+                  <div className="bg-[#592706]/12 border border-[#78370b]/25 rounded-lg p-2.5">
+                    <div className="flex items-center justify-between">
+                      <b className="font-tamil text-xs sm:text-sm font-bold text-[#200c02]">🛡️ Viana 360 &amp; Buy</b>
+                      <span className="text-[9px] font-mono font-bold uppercase text-[#542104] bg-[#542104]/10 px-1.5 py-0.2 rounded">IoT &amp; Retail</span>
+                    </div>
+                    <p className="text-[11px] font-tamil text-[#3b1905] mt-1 leading-tight">
+                      Smart AI Surveillance &amp; பல்பொருள் அங்காடி கட்டமைப்பு
+                    </p>
+                  </div>
+
+                  <div className="bg-[#592706]/12 border border-[#78370b]/25 rounded-lg p-2.5">
+                    <div className="flex items-center justify-between">
+                      <b className="font-tamil text-xs sm:text-sm font-bold text-[#200c02]">💻 CodeShift &amp; Mac</b>
+                      <span className="text-[9px] font-mono font-bold uppercase text-[#542104] bg-[#542104]/10 px-1.5 py-0.2 rounded">Web &amp; Mac</span>
+                    </div>
+                    <p className="text-[11px] font-tamil text-[#3b1905] mt-1 leading-tight">
+                      Monaco IDE · CleanYourMac Keyboard · 120 FPS
+                    </p>
+                  </div>
+                </div>
+
+                {/* 4. Direct Connect Inscriptions (LinkedIn, GitHub, Email) */}
+                <div className="pt-2 border-t border-[#783e11]/30 relative z-10 flex flex-wrap items-center justify-center gap-2">
+                  <a
+                    href="https://www.linkedin.com/in/kaushalboii"
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#0a66c2]/20 hover:bg-[#0a66c2]/35 border border-[#0a66c2]/50 rounded-lg text-xs font-bold text-[#1e293b] font-tamil transition-colors"
+                  >
+                    <Linkedin className="w-3.5 h-3.5 text-[#0a66c2]" /> LinkedIn இணைக
+                  </a>
+                  <a
+                    href="https://github.com/kaushalboii"
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#24292e]/15 hover:bg-[#24292e]/25 border border-[#24292e]/30 rounded-lg text-xs font-bold text-[#1f2937] font-mono transition-colors"
+                  >
+                    <Github className="w-3.5 h-3.5" /> GitHub
+                  </a>
+                  <a
+                    href="mailto:kaushalmaran24@gmail.com"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#c2410c]/20 hover:bg-[#c2410c]/30 border border-[#c2410c]/40 rounded-lg text-xs font-bold text-[#431407] font-mono transition-colors"
+                  >
+                    <Mail className="w-3.5 h-3.5 text-[#c2410c]" /> மின்னஞ்சல்
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+            {/* Bottom Carved Rosewood Support Beam */}
+            <div className="olai-wood-beam olai-wood-beam--bottom">
+              <div className="olai-brass-accent" />
+              <div className="olai-wood-title">
+                <span>மு. கௌஷல் மாறன் • கைவினை மென்பொருள் பொறியாளர்</span>
+              </div>
+              <div className="olai-brass-accent" />
             </div>
           </div>
         </motion.div>
       </div>
 
-      <div className="mt-5 flex gap-3">
+      {/* Interactive Controls below 3D Olaichuvadi */}
+      <div className="mt-5 flex flex-wrap items-center justify-center gap-3 w-full">
         <button
           onClick={() => setFlipped(!flipped)}
-          className="px-4 py-2 bg-kin-400/15 hover:bg-kin-400/25 border border-kin-400/30 rounded-xl text-xs font-bold text-kin-400 transition-colors cursor-pointer"
+          className="px-5 py-2.5 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded-xl text-xs sm:text-sm font-bold text-amber-200 transition-all font-tamil cursor-pointer flex items-center gap-2 shadow-[0_0_15px_rgba(245,158,11,0.2)]"
         >
-          {flipped ? "அட்டையின் முன்பக்கம் (Front)" : "அட்டையின் பின்பக்கம் (Back Face)"}
+          <RotateCcw className="w-4 h-4 text-amber-400" />
+          {flipped ? "முதல் ஏடு: திருக்குறள் காண்க (Front: Kural)" : "சுவடியைத் திருப்புக: மென்பொருள் சாசனம் (Flip: Software Edict)"}
         </button>
         <button
           onClick={onClose}
-          className="px-4 py-2 bg-washi/5 hover:bg-washi/15 border border-washi/10 rounded-xl text-xs font-bold text-washi transition-colors cursor-pointer"
+          className="px-5 py-2.5 bg-washi/5 hover:bg-washi/15 border border-washi/10 rounded-xl text-xs sm:text-sm font-bold text-washi transition-colors font-tamil cursor-pointer"
         >
-          மூடு (Close)
+          சுவடியை மூடுக (Close)
         </button>
       </div>
+
     </div>
   );
 }
@@ -784,10 +944,10 @@ export default function App() {
             </div>
             <button
               onClick={(e) => { e.stopPropagation(); setActiveModal('holo'); }}
-              title="Inspect 24K Gold Ability Pokémon Card"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 bg-kin-400/10 hover:bg-kin-400/20 border border-kin-400/30 rounded-full text-xs font-mono text-kin-400 transition-colors cursor-pointer"
+              title="Open Ancient Tamil Olaichuvadi 3D"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/35 rounded-full text-xs font-tamil text-amber-300 transition-colors cursor-pointer"
             >
-              <Sparkles className="w-3 h-3" /> 24K Gold Card
+              <Scroll className="w-3 h-3 text-amber-400" /> ஓலைச்சுவடி 3D
             </button>
           </div>
         </DraggableBox>
@@ -997,39 +1157,35 @@ export default function App() {
           </div>
         </DraggableBox>
 
-        {/* Story & Craft Box */}
+        {/* Ancient Tamil Olaichuvadi 3D Box */}
         <DraggableBox
           variants={itemVariants}
           dragRef={constraintsRef}
           resetSignal={resetSignal}
-          onClick={() => setActiveModal('story')}
-          className="md:col-span-1 md:row-span-1 bg-sumi-900/95 rounded-3xl p-5 border border-washi/10 flex flex-col justify-between relative overflow-hidden shadow-2xl group cursor-pointer hover:border-washi/25 transition-colors duration-300 z-10 hover:z-50"
+          onClick={() => setActiveModal('holo')}
+          className="md:col-span-1 md:row-span-1 bg-gradient-to-br from-[#2a1406]/95 via-sumi-900/95 to-sumi-950 rounded-3xl p-5 border border-amber-500/25 flex flex-col justify-between relative overflow-hidden shadow-2xl group cursor-pointer hover:border-amber-400/50 transition-colors duration-300 z-10 hover:z-50"
         >
-          {/* Subtle minimal collage */}
-          <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-[2px] opacity-25 filter grayscale group-hover:grayscale-0 group-hover:opacity-45 transition-all duration-500 pointer-events-none overflow-hidden rounded-3xl">
-            <div className="overflow-hidden bg-sumi-850">
-              <img src={asset("assets/apps/zenlife-icon.webp")} alt="ZenLife" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
-            </div>
-            <div className="overflow-hidden bg-sumi-850">
-              <img src={asset("card/back.webp")} alt="Ability Card" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
-            </div>
-            <div className="overflow-hidden bg-sumi-850">
-              <img src={asset("assets/apps/viana360-icon.webp")} alt="Viana 360" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
-            </div>
-            <div className="overflow-hidden bg-sumi-850">
-              <img src={asset("assets/apps/codeshift-preview.svg")} alt="CodeShift" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
-            </div>
+          {/* Subtle palm-leaf procedural preview watermark */}
+          <div className="absolute inset-0 opacity-20 group-hover:opacity-35 transition-opacity duration-500 pointer-events-none overflow-hidden rounded-3xl flex flex-col justify-center items-center p-3 text-center">
+            <div className="w-full h-0.5 bg-amber-600/50 rounded mb-2"></div>
+            <p className="font-tamil font-extrabold text-xs text-amber-200 leading-snug">
+              தெய்வத்தான் ஆகா தெனினும் முயற்சிதன் மெய்வருத்தக் கூலி தரும்
+            </p>
+            <div className="w-full h-0.5 bg-amber-600/50 rounded mt-2"></div>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-sumi-950/90 via-transparent to-sumi-950/60 pointer-events-none rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-sumi-950/90 via-transparent to-sumi-950/40 pointer-events-none rounded-3xl"></div>
 
           <div className="flex justify-between items-start relative z-10">
-            <h3 className="text-2xl font-black tracking-tight text-washi">STORY</h3>
-            <div className="w-8 h-8 rounded-full bg-sumi-950/60 border border-washi/10 flex items-center justify-center group-hover:bg-shu-500 transition-colors shadow-xl text-washi">
-              <ArrowUpRight className="w-4 h-4" />
+            <div>
+              <span className="text-[10px] font-mono tracking-widest text-amber-400/90 uppercase block">ANCIENT MANUSCRIPT</span>
+              <h3 className="text-xl font-black tracking-tight text-washi font-tamil">ஓலைச்சுவடி</h3>
+            </div>
+            <div className="w-8 h-8 rounded-full bg-amber-500/20 border border-amber-500/30 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-sumi-950 transition-colors shadow-xl text-amber-300">
+              <Scroll className="w-4 h-4" />
             </div>
           </div>
           <div className="relative z-10 mt-auto pb-1">
-            <p className="text-sm font-medium text-washi/85">SIMATS '26 · Sound DSP · 24K Card</p>
+            <p className="text-xs font-tamil text-amber-200/90 font-medium">குறள் 619 · 3D பனை ஓலைச்சுவடி ↗</p>
           </div>
         </DraggableBox>
 
@@ -1124,9 +1280,9 @@ export default function App() {
               </a>
               <button
                 onClick={() => { setActiveModal('holo'); }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-kin-400/15 hover:bg-kin-400/25 border border-kin-400/30 rounded-xl text-xs font-bold uppercase tracking-wider text-kin-300 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 rounded-xl text-xs font-bold uppercase tracking-wider text-amber-300 transition-colors cursor-pointer font-tamil"
               >
-                <Sparkles className="w-4 h-4 text-kin-400" /> 24K Gold Card
+                <Scroll className="w-4 h-4 text-amber-400" /> ஓலைச்சுவடி 3D (Ancient Palm Leaf)
               </button>
               <a
                 href={portfolioData.profile.links.portfolio}
@@ -1536,20 +1692,19 @@ export default function App() {
             </div>
           </div>
 
-          {/* Sound & Pokémon Card Highlight */}
+          {/* Ancient Tamil Olaichuvadi 3D Highlight */}
           <div className="md:col-span-5 space-y-6">
-            {/* 24K Gold Pokemon Card Card */}
-            <div className="bg-gradient-to-br from-kin-400/10 via-sumi-950/60 to-sumi-950 p-6 rounded-3xl border border-kin-400/30 text-center">
-              <Sparkles className="w-8 h-8 text-kin-400 mx-auto mb-2" />
-              <h5 className="text-lg font-black text-washi">24K Gold Pokémon Card</h5>
-              <p className="text-xs text-washi-dim mt-1 mb-4 leading-relaxed">
-                PSA 10 24K Gold Ability Card engineered for Kaushal Maran with interactive 3D physics, gold foil sheen, and flip mechanics.
+            <div className="bg-gradient-to-br from-amber-500/15 via-sumi-950/70 to-sumi-950 p-6 rounded-3xl border border-amber-500/30 text-center">
+              <Scroll className="w-8 h-8 text-amber-400 mx-auto mb-2" />
+              <h5 className="text-lg font-black text-washi font-tamil">பண்டைய தமிழ் ஓலைச்சுவடி</h5>
+              <p className="text-xs text-washi-dim mt-1 mb-4 leading-relaxed font-tamil">
+                திருக்குறள் ஆள்வினையுடைமை (குறள் 619: தெய்வத்தான் ஆகா தெனினும் முயற்சிதன் மெய்வருத்தக் கூலி தரும்) பொறிக்கப்பட்ட 3D பனை ஓலைச்சுவடி. எழுத்தாணி வெட்டு, செங்கயிறு, மரப்பட்டடை மற்றும் கௌஷல் மாறனின் மென்பொருள் சாசனம்.
               </p>
               <button
                 onClick={() => setActiveModal('holo')}
-                className="w-full py-2.5 bg-kin-400/20 hover:bg-kin-400/30 border border-kin-400/40 rounded-xl text-xs font-bold uppercase tracking-wider text-kin-300 transition-colors cursor-pointer"
+                className="w-full py-2.5 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded-xl text-xs font-bold uppercase tracking-wider text-amber-300 transition-colors cursor-pointer font-tamil flex items-center justify-center gap-2"
               >
-                Summon Holographic Card ⚡
+                <Scroll className="w-4 h-4" /> ஓலைச்சுவடியைத் திறக்கவும் 📜
               </button>
             </div>
 
@@ -1578,9 +1733,9 @@ export default function App() {
         </div>
       </Modal>
 
-      {/* 24K Gold Ability Pokemon Card Modal */}
-      <Modal isOpen={activeModal === 'holo'} onClose={() => setActiveModal(null)} title="24K Gold Ability Card" jp="தங்க அட்டை" maxWidth="max-w-xl">
-        <HolographicAbilityCard onClose={() => setActiveModal(null)} />
+      {/* Ancient Tamil Olaichuvadi 3D Modal */}
+      <Modal isOpen={activeModal === 'holo'} onClose={() => setActiveModal(null)} title="Ancient Tamil Olaichuvadi 3D" jp="ஓலைச்சுவடி" maxWidth="max-w-2xl">
+        <TamilOlaichuvadi3D onClose={() => setActiveModal(null)} />
       </Modal>
 
     </div>
