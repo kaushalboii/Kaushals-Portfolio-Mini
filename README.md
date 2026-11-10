@@ -46,7 +46,6 @@
 - [Project Directory Structure](#-project-directory-structure)
 - [Local Development & Setup](#-local-development--setup)
 - [GitHub Pages Deployment (CI/CD)](#-github-pages-deployment-cicd)
-- [Resume & Credentials](#-resume--credentials)
 - [Author & Connect](#-author--connect)
 
 ---
@@ -148,8 +147,7 @@ Kaushals-portfolio-mini/
 ├── public/
 │   ├── assets/
 │   │   ├── apps/                 # High-resolution screenshots and App Store icons
-│   │   ├── kaushal-opt.webp      # Optimized portrait photograph
-│   │   └── Kaushal_Maran_Resume.pdf # Downloadable CV / Resume
+│   │   └── kaushal-opt.webp      # Optimized portrait photograph
 │   ├── bg.png                    # Atmospheric Japanese-ink textured background
 │   ├── favicon.svg               # Vector Torii favicon
 │   └── .nojekyll                 # GitHub Pages bypass for Jekyll processing
@@ -223,20 +221,10 @@ This repository includes a fully automated GitHub Actions pipeline in [`.github/
 ### Pushing Your Changes:
 ```bash
 git add .
-git commit -m "feat: update Thirukkural palm leaf manuscript, header signature, and resume integration"
+git commit -m "feat: update Thirukkural palm leaf manuscript and header signature"
 git push origin main
 ```
 Once pushed, check your repository's **Actions** tab on GitHub to monitor the deployment progress!
-
----
-
-## 📄 Resume & Credentials
-
-* **Direct CV Link**: The portfolio includes a direct **`Resume / CV 📄`** action inside the **About Kaushal** modal.
-* **Adding or Updating your CV**:
-  1. Save your latest CV as `Kaushal_Maran_Resume.pdf`.
-  2. Place it in [`public/assets/Kaushal_Maran_Resume.pdf`](public/assets/Kaushal_Maran_Resume.pdf).
-  3. Commit and push — it will go live immediately on GitHub Pages!
 
 ---
 

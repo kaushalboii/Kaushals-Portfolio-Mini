@@ -28,7 +28,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Heart,
-  FileText,
 } from 'lucide-react';
 import InteractiveBackground from './components/InteractiveBackground';
 import PortfolioEyes from './components/PortfolioEyes';
@@ -61,8 +60,7 @@ const portfolioData = {
       email: "kaushalmaranm@gmail.com",
       portfolio: "https://kaushalboii.github.io/Kaushal-s-Portfolio/",
       appStore: "https://apps.apple.com/in/app/zenlife-stress-sound-relief/id6753105286",
-      playStore: "https://play.google.com/store/apps/details?id=com.velloreads.app&hl=en",
-      resume: "/assets/Kaushal_Maran_Resume.pdf"
+      playStore: "https://play.google.com/store/apps/details?id=com.velloreads.app&hl=en"
     }
   },
   flagship: {
@@ -1463,14 +1461,6 @@ export default function App() {
                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#0077b5]/20 hover:bg-[#0077b5]/30 border border-[#0077b5]/40 rounded-xl text-xs font-bold uppercase tracking-wider text-[#38bdf8] transition-colors"
               >
                 <Linkedin className="w-4 h-4" /> LinkedIn Profile
-              </a>
-              <a
-                href={asset(portfolioData.profile.links.resume)}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-shu-500/15 hover:bg-shu-500/25 border border-shu-500/35 rounded-xl text-xs font-bold uppercase tracking-wider text-shu-300 transition-colors"
-              >
-                <FileText className="w-4 h-4 text-shu-400" /> Resume / CV 📄
               </a>
               <button
                 onClick={() => { setActiveModal('holo'); }}
