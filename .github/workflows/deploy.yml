@@ -8,9 +8,10 @@ on:
 permissions:
   contents: write
 
+# Prevent concurrency lock with GitHub's internal pages group, and cancel outdated pending runs
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
@@ -31,9 +32,13 @@ jobs:
       - name: Build production bundle
         run: npm run build
 
+      - name: Ensure fresh build stamp
+        run: date -u +"%Y-%m-%dT%H:%M:%SZ" > dist/.build-stamp
+
       - name: Deploy to gh-pages branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
           branch: gh-pages
           clean: true
+          single-commit: true
