@@ -1,77 +1,184 @@
-# 🎌 M Kaushal Maran — Japanese Aesthetic Editorial Portfolio
+<div align="center">
 
-An editorial bento portfolio for **M Kaushal Maran**, Mobile App Developer and final-year B.Tech Information Technology student at SIMATS Engineering College (CGPA 8.1). Built with React 19, Vite 6, Tailwind CSS v4, Motion, and custom 3D physics interactions.
+# 🏮 M Kaushal Maran — Mini Portfolio
+### High-Performance Mobile & Systems Architecture Bento Portfolio
+
+<p align="center">
+  <b>120 FPS Native iOS & Android Engineering · Audio DSP Frequency Synthesis · Classical Palmyra Palm-Leaf Heritage</b>
+</p>
 
 [![Live Demo](https://img.shields.io/badge/Live_Site-GitHub_Pages-2ea44f?style=for-the-badge&logo=github)](https://kaushalboii.github.io/Kaushals-portfolio-mini/)
+[![App Store](https://img.shields.io/badge/Apple_App_Store-3_Live_Apps-000000?style=for-the-badge&logo=apple)](https://apps.apple.com/in/app/zenlife-stress-sound-relief/id6753105286)
+[![Google Play](https://img.shields.io/badge/Google_Play-Live_Apps-34A853?style=for-the-badge&logo=googleplay)](https://play.google.com/store/apps/details?id=com.velloreads.app&hl=en)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Kaushal_Maran_M-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/kaushal-maran-m-9572622b1/)
 [![GitHub](https://img.shields.io/badge/GitHub-kaushalboii-181717?style=for-the-badge&logo=github)](https://github.com/kaushalboii)
-[![Portfolio](https://img.shields.io/badge/Primary_Portfolio-3D_Interactive-d9b35c?style=for-the-badge)](https://kaushalboii.github.io/Kaushal-s-Portfolio/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+
+<br/>
+
+<a href="https://kaushalboii.github.io/Kaushals-portfolio-mini/">
+  <strong>Explore the Live Portfolio ↗</strong>
+</a>
+·
+<a href="https://apps.apple.com/in/app/zenlife-stress-sound-relief/id6753105286">
+  <strong>View ZenLife on App Store ↗</strong>
+</a>
+·
+<a href="https://www.linkedin.com/in/kaushal-maran-m-9572622b1/">
+  <strong>Connect on LinkedIn ↗</strong>
+</a>
+
+</div>
 
 ---
 
-## 🌐 Live Deployments & Links
+## 📖 Table of Contents
 
-- 🚀 **Live Site**: [https://kaushalboii.github.io/Kaushals-portfolio-mini/](https://kaushalboii.github.io/Kaushals-portfolio-mini/)
-- 🌐 **Primary 3D Portfolio**: [https://kaushalboii.github.io/Kaushal-s-Portfolio/](https://kaushalboii.github.io/Kaushal-s-Portfolio/)
-- 💼 **LinkedIn Profile**: [https://www.linkedin.com/in/kaushal-maran-m-9572622b1/](https://www.linkedin.com/in/kaushal-maran-m-9572622b1/)
-- 🐙 **GitHub Profile**: [@kaushalboii](https://github.com/kaushalboii)
-- ✉️ **Contact**: [kaushalmaranm@gmail.com](mailto:kaushalmaranm@gmail.com)
-
----
-
-## ✨ Features & Design System
-
-- **和紙 (Washi) & 墨 (Sumi) Palette**: Deep warm ink neutrals (`#131110`, `#1a1715`) paired with washi paper tones (`#f0eade`), cinnabar vermilion (`#e1532e` 朱), and antique gold accents (`#d9b35c` 金).
-- **Interactive Draggable Bento Grid**: Responsive grid powered by Motion v12 featuring spring physics, smart drag-vs-click thresholds, boundary collision detection, and an instant "Tidy Up" alignment reset.
-- **Eye-Tracking Mascot (`PortfolioEyes`)**: Real-time vector gaze tracking following the cursor/touch coordinates across the screen.
-- **Authentic Palmyra Palm-Leaf Manuscript Bundle (பனை ஓலைச்சுவடி)**:
-  - Slender, authentic bookmark-style palm leaf bundle modeled directly on historical manuscripts with natural wheat/bamboo dried leaf grain, pointed chevron tip, punched hole, and rustic jute twine knot (சணல் கயிறு).
-  - **Dynamic Swipe & Drag Motion**: Move or drag the active leaf to watch it rotate smoothly around the jute cord pivot with spring physics, swiveling away to reveal the next leaf in the bundle.
-  - **Fanned Arc Display (விரித்துப் பார்)**: Interactive toggle to fan out all 8 leaves in a radial arc just like a traditional manuscript hand-fan, with instant leaf selection.
-  - **Classical Thirukkural Inscriptions**: Laser-etched sepia-charcoal calligraphy featuring the archival Title Cover, Kural 1 (First Principles), Kural 619 (Relentless Effort), Kural 382 (Leadership), Kural 467 (Planning), Kural 391 (Mastery), Kural 71 (Empathy), and Kural 393 (Vision), paired with Software Architecture parallels.
-- **Production Mobile & Web Suite**:
-  - 🍏 **ZenLife: Stress & Sound Relief** (Apple App Store) — 432 Hz Solfeggio acoustic synthesizer with CoreData persistence.
-  - 📡 **Viana 360** (Apple App Store) — Real-time telemetry & IoT multi-sensor dashboard.
-  - 🛍️ **Viana Buy** (Apple App Store) — Lifestyle quick-commerce with local cart persistence.
-  - ⌨️ **CleanYourMac Keyboard** (macOS Universal) — Low-level CGEventTap keyboard lockout utility.
-  - 🤖 **Vellore Ads Platform** (Google Play Store) — Jetpack Compose commercial classifieds directory.
-  - 📜 **Constitution of India (REF)** (Google Play Store) — Offline SQLite FTS5 bilingual bare act reference.
-  - ⚖️ **BNS & BNSS 2023 Statutory Suite** (Google Play Store) — Criminal law reform cross-matrix.
-  - 💻 **CodeShift Collaborative Editor** (Web) — Monaco Engine with client-side AES-GCM encryption.
-  - 🛰️ **India News Radar** (Web) — Geotagged interactive SVG intelligence map.
-- **Live GitHub Repository Sync**: Serverless edge-cached star counter for Kaushal's open-source projects.
-- **Full Responsive Design**: Seamlessly adapted for mobile phones, tablets, laptops, and ultra-wide displays.
+- [Overview](#-overview)
+- [Key Features & Architecture](#-key-features--architecture)
+  - [1. 3D Palmyra Palm-Leaf Manuscript (பனை ஓலைச்சுவடி)](#1-3d-palmyra-palm-leaf-manuscript-பனை-ஓலைச்சுவடி)
+  - [2. Editorial Signature — அன்புடன் (With Love)](#2-editorial-signature--அன்புடன்-with-love)
+  - [3. Interactive Draggable Bento Grid](#3-interactive-draggable-bento-grid)
+  - [4. Vector Gaze Mascot (PortfolioEyes)](#4-vector-gaze-mascot-portfolioeyes)
+  - [5. Audio DSP & Solfeggio Synthesizer](#5-audio-dsp--solfeggio-synthesizer)
+- [Live Production Applications](#-live-production-applications)
+- [Tech Stack](#-tech-stack)
+- [Project Directory Structure](#-project-directory-structure)
+- [Local Development & Setup](#-local-development--setup)
+- [GitHub Pages Deployment (CI/CD)](#-github-pages-deployment-cicd)
+- [Resume & Credentials](#-resume--credentials)
+- [Author & Connect](#-author--connect)
 
 ---
 
-## 📁 Clean Directory Architecture
+## ⚡ Overview
+
+This repository hosts the official **Mini Portfolio** of **M Kaushal Maran**, a Mobile Application Architect and final-year B.Tech Information Technology student at **SIMATS Engineering College** (CGPA 8.1, Class of '26). 
+
+Engineered with **React 19**, **Vite 6**, **TypeScript**, **Tailwind CSS v4**, and **Motion (Framer Motion v12)**, this portfolio combines low-latency physics-driven interface mechanics with 2,000-year-old Tamil cultural philosophy.
+
+### Core Philosophy
+* **Relentless Tenacity (முயற்சி)**: 120 FPS buttery-smooth frame rates, cache locality, and zero frame drops across iOS and Android.
+* **Human-Centered Empathy (அன்பு)**: Clean UX designed around real human needs, elevated with audio psychoacoustics and accessibility.
+* **Open Dedication (அர்ப்பணிப்பு)**: Dedicated with gratitude to mentors, users, and the open-source community.
+
+---
+
+## ✨ Key Features & Architecture
+
+### 1. 3D Palmyra Palm-Leaf Manuscript (பனை ஓலைச்சுவடி)
+A physically modeled, interactive ancient Tamil manuscript bundle tied with traditional braided jute twine (சணல் கயிறு). Click the top header's **`அன்புடன் 📜`** or the button in the profile/story modals to open it.
+
+* **Rotational Drag & Swipe**: Drag or flick the active palm leaf to swivel around its cord pivot with spring physics and flip between leaves.
+* **Fanned Arc View (விரித்துப் பார்)**: Interactive toggle that spreads the bundle out radially in an arc like a traditional manuscript hand-fan.
+* **Laser-Etched Couplets (3 Focused Leaves)**:
+  1. **Leaf 1 — விடாமுயற்சி (Relentless Effort & Craft)**:  
+     *குறள் ௬௧௯ (அதிகாரம் 62: ஆள்வினையுடைமை)*  
+     > **தெய்வத்தான் ஆகா தெனினும் முயற்சிதன்**  
+     > **மெய்வருத்தக் கூலி தரும்.**  
+     *Even if fate declares a task impossible, persistent, body-straining effort and dedicated craft will yield its full reward.*  
+     *(Parallel: Engineering Tenacity in solving race conditions, memory leaks, and complex concurrency).*
+  2. **Leaf 2 — அன்புடைமை (Human Empathy & Love)**:  
+     *குறள் ௭௧ (அதிகாரம் 8: அன்புடைமை)*  
+     > **அன்பிற்கும் உண்டோ அடைக்குந்தாழ் ஆர்வலர்**  
+     > **புன்கணீர் பூசல் தரும்.**  
+     *Can any bolt confine genuine love? The tender tears of the devoted will immediately proclaim it.*  
+     *(Parallel: User-centered software where care transforms cold code into beloved digital experiences).*
+  3. **Leaf 3 — அர்ப்பணிப்பு (Dedication & Gratitude)**:  
+     > **உங்களுக்காக, உங்களால்,**  
+     > **என்றும் உங்களுக்காக... எல்லார் மீதும் பேரன்பு!**  
+     *For you, by you, and forever for you all. Love you all lots!*  
+     *(Includes an integrated **`[ சுவடியை மூடுக (Close) ✕ ]`** button and tap-to-close action right on the leaf).*
+
+### 2. Editorial Signature — அன்புடன் (With Love)
+* Positioned cleanly on the top editorial rule: `PORTFOLIO · M KAUSHAL MARAN` ➔ `அன்புடன் 📜`.
+* Follows the design tradition of world-class tech companies (*"Designed with love in California"* / Apple, Linear, Airbnb) providing authentic cultural warmth and human craftsmanship.
+* Interactive easter egg: Clicking `அன்புடன்` directly launches the 3D Palm-Leaf Manuscript modal.
+
+### 3. Interactive Draggable Bento Grid
+* Responsive, modular Bento layout with spring physics via Framer Motion.
+* Boundary-constrained dragging that allows visitors to play and reposition cards.
+* **"Made a mess? Tidy up"** reset button that instantly snaps every card back into place.
+
+### 4. Vector Gaze Mascot (`PortfolioEyes`)
+* Dynamic SVG eye-tracking component that calculates the angle of the user's cursor or touch point in real-time.
+* Features pupil dilation, smooth easing, and active status indicator (*"Crafting at 120 FPS"*).
+
+### 5. Audio DSP & Solfeggio Synthesizer
+* Integration showcase of the 432 Hz Solfeggio sound engine built for **ZenLife**, designed mathematically to stimulate focus and alleviate stress.
+
+---
+
+## 📱 Live Production Applications
+
+| Application | Platform | Status | Tech Primitives |
+| :--- | :--- | :--- | :--- |
+| **ZenLife: Stress & Sound Relief** | iOS 17+ | [Apple App Store ↗](https://apps.apple.com/in/app/zenlife-stress-sound-relief/id6753105286) | SwiftUI, AVAudioEngine, 432 Hz DSP, CoreData, Combine |
+| **Viana 360** | iOS 17+ | [Apple App Store ↗](https://apps.apple.com/in/app/viana-360/id6760163659) | Swift, WebSockets, Real-time IoT Telemetry, Sensor Dashboards |
+| **Viana Buy** | iOS 17+ | [Apple App Store ↗](https://apps.apple.com/in/app/viana-buy/id6772468488) | SwiftUI, Local Cart Persistence, REST APIs, E-Commerce |
+| **CleanYourMac Keyboard** | macOS | [GitHub Release ↗](https://kaushalboii.github.io/CleanYourMacKeyboard/) | Swift, AppKit, CGEventTap, Menu Bar Utility |
+| **Vellore Ads Platform** | Android | [Google Play Store ↗](https://play.google.com/store/apps/details?id=com.velloreads.app&hl=en) | Kotlin, Jetpack Compose, Retrofit, Commercial Directory |
+| **Constitution of India (REF)** | Android | [Google Play Store ↗](https://play.google.com/store/apps/details?id=com.constitution.bareact&hl=en) | Kotlin, Offline SQLite FTS5, Bilingual Bare Act |
+| **CodeShift Collaborative Editor** | Web | [Live Demo ↗](https://codeshift.vercel.app/) | React, Monaco Engine, Client-side AES-GCM, Firebase |
+
+---
+
+## 🛠️ Tech Stack
+
+```
+Frontend Architecture : React 19 · Vite 6 · TypeScript
+Styling & Design Tokens : Tailwind CSS v4 (@tailwindcss/vite)
+Physics & Motion       : Motion (Framer Motion v12)
+Iconography & Vector   : Lucide React
+Mobile Native Core     : Swift · SwiftUI · Kotlin · Jetpack Compose
+Low-Latency Audio      : AVAudioEngine · Solfeggio 432 Hz DSP · Web Audio
+Typography             : Space Grotesk · JetBrains Mono · Anek Tamil · Noto Sans Tamil
+Deployment & CI/CD     : GitHub Actions · GitHub Pages · Vercel
+```
+
+---
+
+## 📂 Project Directory Structure
 
 ```
 Kaushals-portfolio-mini/
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml          # Automated GitHub Pages CI/CD pipeline
+│       └── deploy.yml            # Automated GitHub Pages CI/CD pipeline
 ├── public/
 │   ├── assets/
-│   │   ├── apps/               # Verified app screenshots and icons
-│   │   ├── kaushal-profile.jpg # Profile photo
-│   │   └── resume.pdf          # Resume document
-│   ├── bg.png                  # Japanese aesthetic atmospheric backdrop
-│   ├── favicon.svg             # Torii gate vector favicon
-│   └── .nojekyll               # GitHub Pages static routing flag
+│   │   ├── apps/                 # High-resolution screenshots and App Store icons
+│   │   ├── kaushal-opt.webp      # Optimized portrait photograph
+│   │   └── Kaushal_Maran_Resume.pdf # Downloadable CV / Resume
+│   ├── bg.png                    # Atmospheric Japanese-ink textured background
+│   ├── favicon.svg               # Vector Torii favicon
+│   └── .nojekyll                 # GitHub Pages bypass for Jekyll processing
 ├── src/
-│   ├── App.tsx                 # Core Bento Grid, 3D Manuscript, and Modals
-│   ├── main.tsx                # React entry point
-│   └── index.css               # Tailwind CSS v4 design tokens and fonts
-├── index.html                  # HTML document root with typography
-├── package.json                # Project dependencies and scripts
-├── tsconfig.json               # TypeScript compiler configuration
-└── vite.config.ts              # Vite 6 build configuration
+│   ├── components/
+│   │   ├── ui/
+│   │   │   └── robot-avatar.tsx  # Animated procedural robot mascot avatar
+│   │   ├── InteractiveBackground.tsx # Ambient canvas glow particles
+│   │   └── PortfolioEyes.tsx     # Dynamic vector gaze tracking component
+│   ├── lib/
+│   │   └── utils.ts              # Class merging utilities (clsx & twMerge)
+│   ├── App.tsx                   # Core Bento Grid, 3D Palm-Leaf Manuscript, Modals
+│   ├── main.tsx                  # React DOM root mounting
+│   └── index.css                 # Global design tokens and typography rules
+├── index.html                    # HTML root with preloaded Google Fonts
+├── metadata.json                 # Project configuration metadata
+├── package.json                  # Dependencies and build scripts
+├── tsconfig.json                 # TypeScript compiler specifications
+├── vercel.json                   # Optional edge deployment configuration
+└── vite.config.ts                # Vite 6 bundler config with relative base path
 ```
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Local Development & Setup
+
+### Prerequisites
+* **Node.js**: Version `22.x` or higher
+* **npm**: Version `10.x` or higher
 
 ### 1. Clone the repository
 ```bash
@@ -84,42 +191,70 @@ cd Kaushals-portfolio-mini
 npm install
 ```
 
-### 3. Start local development server
+### 3. Launch local dev server
 ```bash
 npm run dev
 ```
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the site.
 
 ### 4. Build for production
 ```bash
 npm run build
 ```
+Generates production-optimized assets inside the `dist/` directory.
 
-### 5. Typecheck & lint
+### 5. Preview production build locally
 ```bash
-npm run lint
+npm run preview
 ```
 
 ---
 
-## 🛠️ Tech Stack
+## 🌐 GitHub Pages Deployment (CI/CD)
 
-- **Framework**: React 19 / Vite 6 / TypeScript
-- **Styling**: Tailwind CSS v4 (@tailwindcss/vite)
-- **Animation**: Motion (Framer Motion v12)
-- **Icons**: Lucide React
-- **Typography**: Space Grotesk, JetBrains Mono, Instrument Serif, Shippori Mincho
+This repository includes a fully automated GitHub Actions pipeline in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
+
+### How Deployment Works:
+1. Every `git push origin main` triggers the workflow.
+2. The runner checks out code, sets up Node.js 22, installs dependencies with `npm ci`, and executes `npm run build`.
+3. The generated `dist/` folder is deployed directly to the `gh-pages` branch via `JamesIves/github-pages-deploy-action@v4`.
+4. GitHub Pages serves the live site at: **`https://kaushalboii.github.io/Kaushals-portfolio-mini/`**.
+
+### Pushing Your Changes:
+```bash
+git add .
+git commit -m "feat: update Thirukkural palm leaf manuscript, header signature, and resume integration"
+git push origin main
+```
+Once pushed, check your repository's **Actions** tab on GitHub to monitor the deployment progress!
 
 ---
 
-## 👨‍💻 Author
+## 📄 Resume & Credentials
+
+* **Direct CV Link**: The portfolio includes a direct **`Resume / CV 📄`** action inside the **About Kaushal** modal.
+* **Adding or Updating your CV**:
+  1. Save your latest CV as `Kaushal_Maran_Resume.pdf`.
+  2. Place it in [`public/assets/Kaushal_Maran_Resume.pdf`](public/assets/Kaushal_Maran_Resume.pdf).
+  3. Commit and push — it will go live immediately on GitHub Pages!
+
+---
+
+## 👨‍💻 Author & Connect
 
 **M Kaushal Maran**  
-*Mobile App Developer & Systems Architect · SIMATS Engineering College '26*  
-- 🌐 Portfolio: [kaushalboii.github.io/Kaushals-portfolio-mini](https://kaushalboii.github.io/Kaushals-portfolio-mini/)  
-- 💼 LinkedIn: [kaushal-maran-m-9572622b1](https://www.linkedin.com/in/kaushal-maran-m-9572622b1/)  
-- 🐙 GitHub: [@kaushalboii](https://github.com/kaushalboii)  
-- ✉️ Email: [kaushalmaranm@gmail.com](mailto:kaushalmaranm@gmail.com)  
-- 📍 Location: Vellore & Chennai, Tamil Nadu, India (UTC+5:30)
+*Mobile App Developer & Systems Architect*  
+*B.Tech Information Technology (CGPA 8.1) · SIMATS Engineering College '26*
+
+* 🌐 **Primary 3D Portfolio**: [kaushalboii.github.io/Kaushal-s-Portfolio](https://kaushalboii.github.io/Kaushal-s-Portfolio/)
+* 🚀 **Mini Portfolio**: [kaushalboii.github.io/Kaushals-portfolio-mini](https://kaushalboii.github.io/Kaushals-portfolio-mini/)
+* 💼 **LinkedIn**: [kaushal-maran-m-9572622b1](https://www.linkedin.com/in/kaushal-maran-m-9572622b1/)
+* 🐙 **GitHub**: [@kaushalboii](https://github.com/kaushalboii)
+* ✉️ **Email**: [kaushalmaranm@gmail.com](mailto:kaushalmaranm@gmail.com)
+* 📍 **Location**: Vellore & Chennai, Tamil Nadu, India (UTC+5:30)
 
 ---
-*ものづくり — Designed with architectural craft, cultural heritage, and first-principles execution.*
+
+<div align="center">
+  <sub>அன்புடன் செதுக்கப்பட்டது · Crafted with First-Principles Engineering & Cultural Soul.</sub>
+</div>

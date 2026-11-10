@@ -27,6 +27,8 @@ import {
   Feather,
   ChevronLeft,
   ChevronRight,
+  Heart,
+  FileText,
 } from 'lucide-react';
 import InteractiveBackground from './components/InteractiveBackground';
 import PortfolioEyes from './components/PortfolioEyes';
@@ -59,7 +61,8 @@ const portfolioData = {
       email: "kaushalmaranm@gmail.com",
       portfolio: "https://kaushalboii.github.io/Kaushal-s-Portfolio/",
       appStore: "https://apps.apple.com/in/app/zenlife-stress-sound-relief/id6753105286",
-      playStore: "https://play.google.com/store/apps/details?id=com.velloreads.app&hl=en"
+      playStore: "https://play.google.com/store/apps/details?id=com.velloreads.app&hl=en",
+      resume: "/assets/Kaushal_Maran_Resume.pdf"
     }
   },
   flagship: {
@@ -364,6 +367,7 @@ function DraggableBox({
 interface PalmLeafItem {
   id: number;
   isCover?: boolean;
+  isDedication?: boolean;
   kuralNumber?: number;
   title: string;
   chapterTamil: string;
@@ -379,154 +383,60 @@ interface PalmLeafItem {
 
 const PALM_LEAVES: PalmLeafItem[] = [
   {
-    id: 0,
-    isCover: true,
-    title: "முகப்பு ஓலை • Title Leaf",
-    chapterTamil: "பொதுமறை • நீதி இலக்கியம்",
-    chapterEnglish: "Ancient Tamil Ethical & Architectural Treatise",
-    line1: "திருக்குறள் • THIRUKURAL",
-    line2: "M. KAUSHAL MARAN COLLECTION",
-    meaningTamil: "ஈராயிரம் ஆண்டுகளுக்கு முன்பு திருவள்ளுவரால் உலகப் பொதுமறையாக இயற்றப்பட்ட 1,330 அருள்நெறிச் செய்யுள்கள். பனை ஓலைகளில் எழுத்தாணியால் செதுக்கப்பட்ட சங்க காலத் தமிழ்ப் பொக்கிஷம்.",
-    meaningEnglish: "The immortal Tamil ethical treatise composed by sage-philosopher Thiruvalluvar over two millennia ago. Inscribed on dried palmyra leaves with an iron stylus, carrying 1,330 couplets of timeless human and architectural wisdom.",
-    engineeringParallel: "First-Principles Architecture: Bridging 2,000-year-old Tamil clarity with modern low-latency mobile and systems engineering.",
-    keyWords: [
-      { word: "ஓலைச்சுவடி", meaning: "Palmyra leaf manuscript" },
-      { word: "எழுத்தாணி", meaning: "Ancient iron stylus" },
-      { word: "பொதுமறை", meaning: "Universal human scripture" },
-      { word: "முதல் தத்துவம்", meaning: "First principles" },
-    ],
-  },
-  {
     id: 1,
-    kuralNumber: 1,
-    title: "குறள் ௧ • First Principles",
-    chapterTamil: "அதிகாரம் 1: கடவுள் வாழ்த்து",
-    chapterEnglish: "Foundations & First Principles",
-    line1: "அகர முதல எழுத்தெல்லாம் ஆதி",
-    line2: "பகவன் முதற்றே உலகு.",
-    transliteration: "Agara mudhala ezhuththellaam aadhi bagavan mudhatre ulagu.",
-    meaningTamil: "எழுத்துக்கள் எல்லாம் 'அ' என்ற எழுத்தை முதலாகக் கொண்டுள்ளன; அதுபோல இந்த உலகம் முதற்கடவுளை அடிப்படையாகக் கொண்டுள்ளது.",
-    meaningEnglish: "As the letter 'A' is the origin and foundation of all spoken and written language, so the Primordial Source is the foundation of the cosmos.",
-    engineeringParallel: "Atomic Foundations: Every massive distributed cluster, low-latency DSP engine, or compiler begins from elementary first-principles logic.",
-    keyWords: [
-      { word: "அகர முதல", meaning: "Beginning from letter 'A'" },
-      { word: "எழுத்தெல்லாம்", meaning: "All written speech" },
-      { word: "ஆதி பகவன்", meaning: "Primordial foundation" },
-      { word: "முதற்றே உலகு", meaning: "Base of all existence" },
-    ],
-  },
-  {
-    id: 2,
     kuralNumber: 619,
-    title: "குறள் ௬௧௯ • Relentless Effort",
+    title: "குறள் ௬௧௯ • விடாமுயற்சி (My Craft & Effort)",
     chapterTamil: "அதிகாரம் 62: ஆள்வினையுடைமை",
     chapterEnglish: "Relentless Effort & Tenacity in Craft",
     line1: "தெய்வத்தான் ஆகா தெனினும் முயற்சிதன்",
     line2: "மெய்வருத்தக் கூலி தரும்.",
     transliteration: "Deivathaan aagaa theninum muyarchithan meyvaruththa kooli tharum.",
     meaningTamil: "விதியால் கூட முடியாது என்று கைவிடப்பட்ட காரியமாயினும், உடலை வருத்திச் செய்யும் இடைவிடாத விடாமுயற்சி அதற்குரிய முழுப் பயனையும் தரும்.",
-    meaningEnglish: "Even if fate or deities declare a task impossible, persistent, body-straining human effort and craftsmanship will always yield its full reward.",
-    engineeringParallel: "Tenacity in Code: When complex algorithms, race conditions, or memory leaks seem unsolvable, relentless debugging and iteration will prevail.",
+    meaningEnglish: "Even if fate or circumstances declare a task impossible, persistent, body-straining human effort and dedicated craft will always yield its full reward.",
+    engineeringParallel: "Tenacity in Code & Systems: When complex algorithms, race conditions, or memory leaks seem unsolvable, relentless debugging, grit, and craftsmanship will always prevail.",
     keyWords: [
       { word: "தெய்வத்தான் ஆகாது", meaning: "Even if fate denies" },
       { word: "எனினும்", meaning: "Yet, nonetheless" },
       { word: "முயற்சிதன்", meaning: "One's relentless craft" },
-      { word: "மெய்வருத்தக் கூலி", meaning: "Full bodily reward" },
+      { word: "மெய்வருத்தக் கூலி", meaning: "Full reward of sincere labor" },
     ],
   },
   {
-    id: 3,
-    kuralNumber: 382,
-    title: "குறள் ௩௮௨ • Systems Leadership",
-    chapterTamil: "அதிகாரம் 39: இறைமாட்சி",
-    chapterEnglish: "Systems Leadership & Intellectual Drive",
-    line1: "அஞ்சாமை ஈகை அறிவுஊக்கம் இந்நான்கும்",
-    line2: "எஞ்சாமை வேந்தர்க் கியல்பு.",
-    transliteration: "Anjaamai eegai arivu-ookkam innaangum enjaamai vendharkku iyalbu.",
-    meaningTamil: "அச்சமின்மை, ஈகை குணம், நுண்ணிய அறிவு, தளராத ஊக்கம் ஆகிய இந்நான்கும் ஒரு தலைவனுக்கு ஒருபோதும் குறையாமல் இருக்க வேண்டிய பண்புகளாகும்.",
-    meaningEnglish: "Courage in adversity, open generosity, deep wisdom, and tireless drive — these four virtues never diminishing define a true leader.",
-    engineeringParallel: "Engineering Leadership: Fearless pursuit of difficult problems, open-source sharing, deep domain knowledge, and relentless momentum.",
-    keyWords: [
-      { word: "அஞ்சாமை", meaning: "Fearless courage" },
-      { word: "ஈகை", meaning: "Generosity & sharing" },
-      { word: "அறிவு", meaning: "Deep wisdom & discernment" },
-      { word: "ஊக்கம்", meaning: "Ceaseless inner drive" },
-    ],
-  },
-  {
-    id: 4,
-    kuralNumber: 467,
-    title: "குறள் ௪௬௭ • Architecture & Planning",
-    chapterTamil: "அதிகாரம் 47: தெரிந்து செயல்வகை",
-    chapterEnglish: "Architectural Planning & Specification",
-    line1: "எண்ணித் துணிக கருமம் துணிந்தபின்",
-    line2: "எண்ணுவம் என்பது இழுக்கு.",
-    transliteration: "Ennith thuniga karumam thuninthapin ennuvam enpathu izhukku.",
-    meaningTamil: "நன்கு ஆராய்ந்து திட்டமிட்ட பிறகே செயலில் இறங்க வேண்டும்; காரியத்தைத் தொடங்கிய பின் ஆராய்ந்து யோசிப்பது பெரும் இழுக்காகும்.",
-    meaningEnglish: "Deliberate and architect thoroughly before executing; to begin planning or waver after committing is a fundamental flaw.",
-    engineeringParallel: "Rigorous Specifications: Deep upfront system modeling and edge-case testing prevent costly architectural rewrites and regressions.",
-    keyWords: [
-      { word: "எண்ணித் துணிக", meaning: "Deliberate before embarking" },
-      { word: "கருமம்", meaning: "The architecture / deed" },
-      { word: "துணிந்தபின்", meaning: "Once committed to action" },
-      { word: "இழுக்கு", meaning: "A fatal flaw / debt" },
-    ],
-  },
-  {
-    id: 5,
-    kuralNumber: 391,
-    title: "குறள் ௩௯௧ • Flawless Mastery",
-    chapterTamil: "அதிகாரம் 40: கல்வி",
-    chapterEnglish: "Flawless Mastery in Continuous Learning",
-    line1: "கற்க கசடறக் கற்பவை கற்றபின்",
-    line2: "நிற்க அதற்குத் தக.",
-    transliteration: "Karka kasadarak karpavai katrapin nirka adharkuth thaga.",
-    meaningTamil: "கற்கத் தகுந்த நூல்களைக் குற்றமறக் கற்க வேண்டும்; கற்ற பிறகு அந்த அறிவு நெறியின் வழியில் வழுவாது நிற்க வேண்டும்.",
-    meaningEnglish: "Learn without flaw whatever is worth learning; once learned, stand steadfast and act in uncompromising accordance with that truth.",
-    engineeringParallel: "Engineering Discipline: Truly master foundational compute primitives (memory, concurrency, OS kernel), and write code that honors them.",
-    keyWords: [
-      { word: "கசடறக் கற்க", meaning: "Learn without flaws" },
-      { word: "கற்பவை", meaning: "Worthy disciplines" },
-      { word: "கற்றபின்", meaning: "Having mastered" },
-      { word: "நிற்க அதற்குத் தக", meaning: "Stand true to that craft" },
-    ],
-  },
-  {
-    id: 6,
+    id: 2,
     kuralNumber: 71,
-    title: "குறள் ௭௧ • Empathy & Love",
+    title: "குறள் ௭௧ • அன்புடைமை (Love & Empathy)",
     chapterTamil: "அதிகாரம் 8: அன்புடைமை",
     chapterEnglish: "Human-Centered Design & Empathy",
     line1: "அன்பிற்கும் உண்டோ அடைக்குந்தாழ் ஆர்வலர்",
     line2: "புன்கணீர் பூசல் தரும்.",
     transliteration: "Anbirkum undo adaikkundhaazh aarvalar punganeer poosal tharum.",
-    meaningTamil: "அன்பை அடைத்து வைக்கக்கூடிய தாழ்ப்பாள் ஏதேனும் உண்டோ? அன்புடையவரின் சிறு கண்ணீரே அதை வெளிப்படுத்திவிடும்.",
+    meaningTamil: "உள்ளத்தில் உள்ள உண்மையான அன்பை அடைத்து வைக்கக்கூடிய தாழ்ப்பாள் ஏதேனும் உண்டோ? அன்புடையவரின் சிறு கண்ணீரே அதை உலகறிய வெளிப்படுத்திவிடும்.",
     meaningEnglish: "Can any bolt or latch confine true love? The tender tears of the devoted will immediately break through and proclaim it.",
-    engineeringParallel: "User-Centered Empathy: Empathy for real people using software is the soul that elevates utilitarian code into beloved experiences.",
+    engineeringParallel: "User-Centered Empathy: Empathy and love for real people using software is the soul that elevates utilitarian code into beloved digital experiences.",
     keyWords: [
       { word: "அடைக்குந்தாழ்", meaning: "A locking bolt or latch" },
-      { word: "ஆர்வலர்", meaning: "Those filled with care" },
+      { word: "ஆர்வலர்", meaning: "Those filled with care & affection" },
       { word: "புன்கணீர்", meaning: "Tender, caring tears" },
-      { word: "பூசல் தரும்", meaning: "Openly proclaims" },
+      { word: "பூசல் தரும்", meaning: "Openly proclaims to the world" },
     ],
   },
   {
-    id: 7,
-    kuralNumber: 393,
-    title: "குறள் ௩௯௩ • Architectural Vision",
-    chapterTamil: "அதிகாரம் 40: கல்வி",
-    chapterEnglish: "Deep Insight & Architectural Vision",
-    line1: "கண்ணுடையர் என்பவர் கற்றோர் முகத்திரண்டு",
-    line2: "புண்ணுடையர் கல்லா தவர்.",
-    transliteration: "Kannudaiyar enbavar katror mugathirandu punnudaiyar kallaa thavar.",
-    meaningTamil: "மெய்யறிவு பெற்றவரே உண்மையான கண்களை உடையவர்; கல்லாதவரின் முகத்தில் உள்ளவை கண்களல்ல, வெறும் புண்கள் மட்டுமே.",
-    meaningEnglish: "Those who possess genuine wisdom are said to truly have eyes; the unlearned possess only two wounds upon their face.",
-    engineeringParallel: "Deep Systems Vision: Looking beneath surface-level UI into cache locality, thread concurrency, memory layout, and network bandwidth.",
+    id: 3,
+    isDedication: true,
+    title: "அர்ப்பணிப்பு • Dedication & Gratitude",
+    chapterTamil: "நன்றியுரை • பேரன்பு",
+    chapterEnglish: "For You, By You & Forever For You All",
+    line1: "உங்களுக்காக, உங்களால்,",
+    line2: "என்றும் உங்களுக்காக... எல்லார் மீதும் பேரன்பு!",
+    transliteration: "Ungalukkaaga, ungalaal, endrum ungalukkaaga... Ellaar meedhum peranbudan!",
+    meaningTamil: "உங்களுக்காக, உங்களால், என்றும் உங்களுக்காக... என் இதயத்தின் ஆழத்திலிருந்து உங்கள் அனைவருக்கும் என் பேரன்பு!",
+    meaningEnglish: "For you, by you, and forever for you all. Love you all lots! Dedicated with heartfelt gratitude to every user, mentor, and supporter who inspires my craft.",
+    engineeringParallel: "Built With Soul: Software is never built in isolation. It lives, breathes, and matters only because of the people who use it, shape it, and believe in it.",
     keyWords: [
-      { word: "கண்ணுடையர்", meaning: "Those with true perception" },
-      { word: "கற்றோர்", meaning: "Those of deep wisdom" },
-      { word: "முகத்திரண்டு", meaning: "Two upon their visage" },
-      { word: "புண்ணுடையர்", meaning: "Mere wounds without sight" },
+      { word: "உங்களுக்காக", meaning: "For you" },
+      { word: "உங்களால்", meaning: "By you / Inspired by you" },
+      { word: "என்றும்", meaning: "Forever and always" },
+      { word: "பேரன்பு", meaning: "Immense, boundless love" },
     ],
   },
 ];
@@ -599,7 +509,7 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
                 }`}
               >
                 <span className={`w-1.5 h-1.5 rounded-full ${isSelected ? 'bg-amber-400' : 'bg-washi/30'}`} />
-                {leaf.isCover ? 'Cover' : `Kural ${leaf.kuralNumber}`}
+                {leaf.isDedication ? '💌 அர்ப்பணிப்பு (Dedication)' : `குறள் ${leaf.kuralNumber}`}
               </button>
             );
           })}
@@ -654,7 +564,7 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
 
             // In fanned mode: fan all leaves in an arc
             if (isFanned) {
-              const fanAngle = -16 + idx * 5.2;
+              const fanAngle = (idx - (PALM_LEAVES.length - 1) / 2) * 14;
               const isSelected = idx === activeIdx;
 
               return (
@@ -701,16 +611,16 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
               );
             }
 
-            // In stacked mode: render 3-4 leaves peeking underneath with physical depth
+            // In stacked mode: render underlying leaves peeking underneath with physical depth
             const offset = (idx - activeIdx + PALM_LEAVES.length) % PALM_LEAVES.length;
-            if (offset < 1 || offset > 4) return null;
+            if (offset < 1 || offset > 2) return null;
 
             return (
               <div
                 key={`stacked-${leaf.id}`}
                 style={{
                   transformOrigin: '28px 50%',
-                  transform: `rotate(${offset * 2.2}deg) translate(${offset * 4}px, ${offset * 2.5}px)`,
+                  transform: `rotate(${offset * 3.5}deg) translate(${offset * 6}px, ${offset * 3}px)`,
                   zIndex: 20 - offset,
                   filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.45))',
                 }}
@@ -755,7 +665,11 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
                 }}
                 onClick={() => {
                   if (!isDragging) {
-                    handleNext();
+                    if (activeLeaf.isDedication) {
+                      onClose();
+                    } else {
+                      handleNext();
+                    }
                   }
                 }}
                 style={{
@@ -800,25 +714,27 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
                   {/* FRONT FACE (Default): Authentic Inscription */}
                   {!isFlipped && (
                     <>
-                      {activeLeaf.isCover ? (
-                        /* Cover Leaf layout matching Image 2 */
+                      {activeLeaf.isDedication ? (
+                        /* Dedication Leaf with Close button */
                         <div className="flex flex-col items-center justify-center text-center w-full px-2">
-                          <div className="flex items-center gap-3">
-                            <span className="natural-palm-ink font-bold text-lg sm:text-xl tracking-wider">
-                              திருக்குறள்
-                            </span>
-                            <span className="text-[10px] font-mono font-bold tracking-widest text-[#442312] uppercase opacity-80">
-                              THIRUKURAL
-                            </span>
+                          <p className="natural-palm-ink font-bold text-xs sm:text-sm tracking-wide leading-tight">
+                            {activeLeaf.line1}
+                          </p>
+                          <p className="natural-palm-ink font-bold text-xs sm:text-sm tracking-wide leading-tight mt-0.5">
+                            {activeLeaf.line2}
+                          </p>
+                          <div className="flex items-center justify-center gap-2 mt-1.5">
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onClose();
+                              }}
+                              className="px-3 py-1 rounded-full bg-[#3d1e0d]/90 hover:bg-[#251006] text-[#f7e8ce] transition-all text-[10px] font-mono font-bold tracking-wider uppercase border border-[#7a4823]/60 flex items-center gap-1.5 shadow-md cursor-pointer active:scale-95"
+                            >
+                              <span>சுவடியை மூடுக (Close)</span>
+                              <span className="text-amber-400 font-bold">✕</span>
+                            </button>
                           </div>
-                          <div className="flex items-center gap-2 my-0.5 opacity-65">
-                            <span className="h-[1px] w-8 bg-[#522b13]/50"></span>
-                            <span className="text-[10px] natural-palm-ink">௲</span>
-                            <span className="h-[1px] w-8 bg-[#522b13]/50"></span>
-                          </div>
-                          <span className="text-[9px] sm:text-[10px] font-mono tracking-wider text-[#432010] uppercase font-bold opacity-85">
-                            M. KAUSHAL MARAN COLLECTION
-                          </span>
                         </div>
                       ) : (
                         /* Verse Leaf with classical 2-line Tamil couplet */
@@ -834,7 +750,7 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
                               குறள் {activeLeaf.kuralNumber}
                             </span>
                             <span className="text-[9px] font-serif italic text-[#4a2410]/80">
-                              Leaf #{activeLeaf.id} of 7
+                              Leaf #{activeIdx + 1} of {PALM_LEAVES.length}
                             </span>
                           </div>
                         </div>
@@ -842,14 +758,14 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
                     </>
                   )}
 
-                  {/* BACK FACE (Software Edict) */}
+                  {/* BACK FACE (Software Edict / Dedication) */}
                   {isFlipped && (
                     <div className="flex flex-col items-center justify-center text-center w-full px-2">
                       <span className="text-[10px] font-mono font-bold tracking-wider text-[#4a2410] uppercase">
-                        M KAUSHAL MARAN • ARCHITECT EDICT
+                        {activeLeaf.isDedication ? "M KAUSHAL MARAN • DEDICATION" : "M KAUSHAL MARAN • ARCHITECT EDICT"}
                       </span>
                       <p className="natural-palm-ink font-bold text-xs sm:text-sm mt-0.5 text-[#301206]">
-                        "யாதும் ஊரே யாவரும் கேளிர் • கற்றது கைமண் அளவு"
+                        {activeLeaf.isDedication ? '"உங்களுக்காக, உங்களால், என்றும் உங்களுக்காக"' : '"யாதும் ஊரே யாவரும் கேளிர் • கற்றது கைமண் அளவு"'}
                       </p>
                       <span className="text-[9px] font-mono text-[#541c0e] opacity-80 mt-0.5">
                         10+ PRODUCTION APPS • SIMATS '26 • ZERO FRAME DROPS
@@ -909,9 +825,9 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
           </button>
           <button
             onClick={onClose}
-            className="px-4 py-1.5 bg-washi/5 hover:bg-washi/15 border border-washi/10 rounded-xl text-xs font-bold text-washi/70 hover:text-washi transition-colors cursor-pointer"
+            className="px-4 py-1.5 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 rounded-xl text-xs font-bold text-amber-200 hover:text-white transition-colors cursor-pointer"
           >
-            Close
+            ஓலையை மூடுக (Close)
           </button>
         </div>
       </div>
@@ -958,17 +874,32 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
           </p>
         </div>
 
-        {/* Software Architecture Connection */}
-        <div className="p-3 bg-amber-500/10 border border-amber-500/25 rounded-xl">
-          <div className="flex items-center gap-2 mb-1">
-            <Cpu className="w-4 h-4 text-amber-400" />
-            <b className="text-xs font-mono font-bold text-amber-300 uppercase">
-              Software Architecture Parallel
-            </b>
+        {/* Software Architecture Connection or Dedication */}
+        <div className="p-3 bg-amber-500/10 border border-amber-500/25 rounded-xl flex items-center justify-between">
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              {activeLeaf.isDedication ? (
+                <Heart className="w-4 h-4 text-amber-400 fill-amber-400" />
+              ) : (
+                <Cpu className="w-4 h-4 text-amber-400" />
+              )}
+              <b className="text-xs font-mono font-bold text-amber-300 uppercase">
+                {activeLeaf.isDedication ? "Dedication To All of You" : "Software Architecture Parallel"}
+              </b>
+            </div>
+            <p className="text-xs text-washi/90 leading-relaxed font-sans">
+              {activeLeaf.engineeringParallel}
+            </p>
           </div>
-          <p className="text-xs text-washi/90 leading-relaxed font-sans">
-            {activeLeaf.engineeringParallel}
-          </p>
+          {activeLeaf.isDedication && (
+            <button
+              onClick={onClose}
+              className="ml-3 shrink-0 px-3.5 py-1.5 bg-amber-500/25 hover:bg-amber-500/35 border border-amber-500/40 rounded-xl text-xs font-bold text-amber-200 transition-colors cursor-pointer flex items-center gap-1 shadow-[0_0_10px_rgba(245,158,11,0.2)]"
+            >
+              <span>சுவடியை மூடு (Close)</span>
+              <span>✕</span>
+            </button>
+          )}
         </div>
 
         {/* Word-by-Word Tamil Dictionary Chips */}
@@ -1132,7 +1063,7 @@ export default function App() {
 
       {/* Vertical gutter signature — Tamil classical craftsmanship */}
       <div className="fixed left-6 top-1/2 -translate-y-1/2 z-10 hidden xl:flex flex-col items-center gap-4 pointer-events-none select-none" aria-hidden="true">
-        <span className="font-tamil text-xs text-washi/40 tracking-[0.25em] [writing-mode:vertical-rl]">கைவினை</span>
+        <span className="font-tamil text-xs text-washi/40 tracking-[0.25em] [writing-mode:vertical-rl]">அன்புடன்</span>
         <span className="font-tamil text-[10px] text-washi/25 tracking-[0.2em] [writing-mode:vertical-rl]">யாதும் ஊரே</span>
         <span className="w-px h-16 bg-gradient-to-b from-washi/25 to-transparent"></span>
       </div>
@@ -1145,7 +1076,14 @@ export default function App() {
         className="relative z-10 mb-5 w-full max-w-5xl flex items-end justify-between border-b border-washi/10 pb-3"
       >
         <span className="font-mono text-[11px] tracking-[0.25em] text-washi-dim uppercase">PORTFOLIO · M KAUSHAL MARAN</span>
-        <span className="font-tamil text-xs text-washi-dim tracking-[0.3em] pl-4">கைவினைத்திறன்</span>
+        <button
+          onClick={() => setActiveModal('holo')}
+          title="Open Palm-Leaf Manuscript · பனை ஓலைச்சுவடி"
+          className="font-tamil text-xs text-washi-dim hover:text-amber-300 tracking-[0.3em] pl-4 transition-colors cursor-pointer group flex items-center gap-1.5"
+        >
+          <span>அன்புடன்</span>
+          <span className="font-mono text-[10px] text-washi/40 group-hover:text-amber-400 transition-colors tracking-normal">📜</span>
+        </button>
       </motion.div>
 
       <motion.div 
@@ -1525,6 +1463,14 @@ export default function App() {
                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#0077b5]/20 hover:bg-[#0077b5]/30 border border-[#0077b5]/40 rounded-xl text-xs font-bold uppercase tracking-wider text-[#38bdf8] transition-colors"
               >
                 <Linkedin className="w-4 h-4" /> LinkedIn Profile
+              </a>
+              <a
+                href={asset(portfolioData.profile.links.resume)}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-shu-500/15 hover:bg-shu-500/25 border border-shu-500/35 rounded-xl text-xs font-bold uppercase tracking-wider text-shu-300 transition-colors"
+              >
+                <FileText className="w-4 h-4 text-shu-400" /> Resume / CV 📄
               </a>
               <button
                 onClick={() => { setActiveModal('holo'); }}
