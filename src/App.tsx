@@ -1064,7 +1064,7 @@ export default function App() {
               <img src={asset("assets/apps/zenlife-icon.webp")} alt="ZenLife" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
             </div>
             <div className="overflow-hidden bg-sumi-850">
-              <img src={asset("card/back.webp")} alt="Monogram" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
+              <img src={asset("assets/apps/velloreads-icon.webp")} alt="Vellore Ads" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
             </div>
             <div className="overflow-hidden bg-sumi-850">
               <img src={asset("assets/apps/viana360-icon.webp")} alt="Viana 360" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
