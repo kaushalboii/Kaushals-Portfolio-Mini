@@ -53,7 +53,7 @@ const portfolioData = {
     ],
     links: {
       github: "https://github.com/kaushalboii",
-      linkedin: "https://www.linkedin.com/in/kaushalboii",
+      linkedin: "https://www.linkedin.com/in/kaushal-maran-m-9572622b1/",
       email: "kaushalmaranm@gmail.com",
       portfolio: "https://kaushalboii.github.io/Kaushal-s-Portfolio/",
       appStore: "https://apps.apple.com/in/app/zenlife-stress-sound-relief/id6753105286",
@@ -373,6 +373,17 @@ interface KuralItem {
 
 const TAMIL_KURALS: KuralItem[] = [
   {
+    number: 382,
+    chapter: "Chapter 39: The Greatness of Leadership (இறைமாட்சி)",
+    theme: "Leadership & Relentless Drive",
+    line1: "அஞ்சாமை ஈகை அறிவுஊக்கம் இந்நான்கும்",
+    line2: "எஞ்சாமை வேந்தர்க் கியல்பு.",
+    transliteration: "Anjaamai eegai arivu-ookkam innaangum enjaamai vendharkku iyalbu.",
+    meaning: "அச்சமின்மை, ஈகை குணம், நுண்ணிய அறிவு, தளராத ஊக்கம் ஆகிய இந்நான்கும் ஒரு தலைவனுக்கு ஒருபோதும் குறையாமல் இருக்க வேண்டிய பண்புகளாகும்.",
+    english: "Courage, generous giving, wisdom, and relentless inner drive — these four never lacking are the mark of true greatness.",
+    shortTag: "Kural 382 · Leadership (அஞ்சாமை)",
+  },
+  {
     number: 619,
     chapter: "Chapter 62: Relentless Effort (ஆள்வினையுடைமை)",
     theme: "Engineering Tenacity & Relentless Effort",
@@ -381,7 +392,7 @@ const TAMIL_KURALS: KuralItem[] = [
     transliteration: "Deivathaan aagaa theninum muyarchithan meyvaruththa kooli tharum.",
     meaning: "விதியால் கூட முடியாது என்று கைவிடப்பட்ட காரியமாயினும், உடலை வருத்திச் செய்யும் இடைவிடாத முயற்சி அதற்குரிய முழுப் பயனையும் தரும்.",
     english: "Even if destiny or the heavens deem a task impossible, persistent, body-straining human effort and craftsmanship will always yield its full reward.",
-    shortTag: "Kural 619 · Relentless Effort",
+    shortTag: "Kural 619 · Relentless Effort (முயற்சி)",
   },
   {
     number: 467,
@@ -392,18 +403,7 @@ const TAMIL_KURALS: KuralItem[] = [
     transliteration: "Ennith thuniga karumam thuninthapin ennuvam enpathu izhukku.",
     meaning: "நன்கு ஆராய்ந்து கட்டமைத்துத் திட்டமிட்ட பிறகே செயலில் இறங்க வேண்டும்; தொடங்கிய பின் யோசிப்பது பெரும் இழுக்காகும்.",
     english: "Deliberate and architect thoroughly before executing; to waver or hesitate after committing is a flaw.",
-    shortTag: "Kural 467 · Systems Architecture",
-  },
-  {
-    number: 391,
-    chapter: "Chapter 40: Learning & Mastery (கல்வி)",
-    theme: "Flawless Mastery & Living by Truth",
-    line1: "கற்க கசடறக் கற்பவை கற்றபின்",
-    line2: "நிற்க அதற்குத் தக.",
-    transliteration: "Karka kasadarak karpavai katrapin nirka atharkuth thaka.",
-    meaning: "கற்க வேண்டிய தொழில்நுட்பங்களை பிழையின்றி ஆழமாகக் கற்க வேண்டும்; கற்ற பிறகு அந்த அறிவுக்குத் தக நேர்மையாகச் செயல்பட வேண்டும்.",
-    english: "Learn with utmost depth and flawlessness that which is worth learning; once mastered, live strictly according to that truth.",
-    shortTag: "Kural 391 · Knowledge Mastery",
+    shortTag: "Kural 467 · Architecture (திட்டம்)",
   },
 ];
 
@@ -419,8 +419,8 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    setRotX((-y / rect.height) * 16);
-    setRotY((x / rect.width) * 16);
+    setRotX((-y / rect.height) * 14);
+    setRotY((x / rect.width) * 14);
   };
 
   const handleMouseLeave = () => {
@@ -429,13 +429,13 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-1 sm:p-2 select-none w-full max-w-2xl mx-auto">
+    <div className="flex flex-col items-center justify-center p-1 sm:p-3 select-none w-full max-w-3xl mx-auto">
       
-      {/* Top Auspicious Banner */}
+      {/* Top Banner */}
       <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
         <Scroll className="w-4 h-4 text-amber-400" />
         <p className="text-xs font-mono tracking-widest text-amber-300 uppercase text-center">
-          ANCIENT TAMIL OLAICHUVADI 3D · CLICK TO FLIP
+          ANCIENT PALM-LEAF MANUSCRIPT 3D · CLICK TO FLIP
         </p>
       </div>
 
@@ -463,9 +463,9 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
         })}
       </div>
 
-      {/* 3D Interactive Olaichuvadi Perspective Container */}
+      {/* 3D Interactive Behance-Inspired Palm Leaf Manuscript */}
       <div
-        className="olai-wrap w-full cursor-pointer relative py-2"
+        className="behance-olai-container w-full"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onClick={() => setFlipped(!flipped)}
@@ -476,121 +476,70 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
             rotateY: (flipped ? 180 : 0) + rotY,
           }}
           transition={{ type: 'spring', stiffness: 280, damping: 26 }}
-          className="olai-card"
+          className="behance-olai-card"
           style={{
-            transformStyle: 'preserve-3d',
-            ['--px' as any]: rotY / 16,
-            ['--py' as any]: -rotX / 16,
+            ['--px' as any]: rotY / 14,
+            ['--py' as any]: -rotX / 14,
           }}
         >
           {/* ========================================================= */}
-          {/* FRONT FACE: Sacred Kural Leaf */}
+          {/* FRONT FACE: Sacred Inscription Palm Leaf */}
           {/* ========================================================= */}
           <div
             className="w-full relative"
             style={{ backfaceVisibility: 'hidden' }}
           >
-            {/* Top Carved Rosewood Support Beam */}
-            <div className="olai-wood-beam olai-wood-beam--top">
-              <div className="olai-brass-accent" />
-              <div className="olai-wood-title">
-                <span>☀️</span>
-                <span>THIRUKKURAL · ANCIENT PALM-LEAF MANUSCRIPT</span>
-                <span>☽</span>
+            <div className="behance-olai-leaf">
+              {/* Dynamic light sheen */}
+              <div className="behance-olai-sheen" />
+
+              {/* Punched hole and dark iron binding ring */}
+              <div className="behance-olai-hole" />
+              <div className="behance-olai-ring" />
+
+              {/* Top Subtitle Metadata */}
+              <div className="flex items-center justify-between border-b border-[#7a2c14]/30 pb-2 mb-2 relative z-10">
+                <span className="text-[11px] font-mono font-bold tracking-wider text-[#4a1c14] uppercase">
+                  THIRUKKURAL · KURAL {activeKural.number}
+                </span>
+                <span className="text-[10px] font-mono font-bold text-[#5c1c0c] bg-[#68240f]/15 px-2 py-0.5 rounded">
+                  PALMYRA MANUSCRIPT
+                </span>
               </div>
-              <div className="olai-brass-accent" />
-            </div>
 
-            {/* The Palmyra Palm Leaf Body */}
-            <div className="olai-leaf relative">
-              {/* Specular sheen gliding across leaf on 3D tilt */}
-              <div className="olai-sheen" />
-
-              {/* Two Drilled Holes with Brass Grommets */}
-              <div className="olai-hole olai-hole--left" />
-              <div className="olai-hole olai-hole--right" />
-
-              {/* Sacred Red Cord and Tassels */}
-              <div className="olai-cord olai-cord--left" />
-              <div className="olai-cord olai-cord--right" />
-              <div className="olai-cord-tassel olai-cord-tassel--left" />
-              <div className="olai-cord-tassel olai-cord-tassel--right" />
-
-              {/* Traditional Dashed Inner Border & Corner Flourishes */}
-              <div className="olai-inner-border">
-                <div className="olai-corner-motif olai-corner-motif--tl" />
-                <div className="olai-corner-motif olai-corner-motif--tr" />
-                <div className="olai-corner-motif olai-corner-motif--bl" />
-                <div className="olai-corner-motif olai-corner-motif--br" />
-
-                {/* 1. Auspicious Invocation Header */}
-                <div className="flex items-center justify-between border-b border-[#783e11]/30 pb-2 mb-2 relative z-10">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xl font-bold text-[#3d1a04] olai-engraved">உ</span>
-                    <span className="text-[11px] sm:text-xs font-bold text-[#451f08] uppercase tracking-wider font-mono">
-                      INVOCATION · PILLAIYAR SUZHI
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#522507]/15 border border-[#6b330d]/30 text-[10px] sm:text-xs font-bold text-[#3b1704] font-mono">
-                    <span>KURAL {activeKural.number}</span>
-                  </div>
-                </div>
-
-                {/* 2. Chapter Title */}
-                <div className="text-center relative z-10 my-1">
-                  <span className="text-xs sm:text-sm font-extrabold tracking-wide text-[#3f1c07] olai-engraved uppercase">
-                    {activeKural.chapter}
-                  </span>
-                </div>
-
-                {/* 3. The Thirukkural Incised into the Palm Leaf */}
-                <div className="my-auto py-3 text-center relative z-10 px-2 sm:px-6">
-                  <p className="font-tamil font-extrabold text-lg sm:text-2xl md:text-3xl tracking-wide leading-relaxed text-[#200c02] olai-engraved">
-                    {activeKural.line1}
-                  </p>
-                  <p className="font-tamil font-extrabold text-lg sm:text-2xl md:text-3xl tracking-wide leading-relaxed text-[#200c02] olai-engraved mt-0.5">
-                    {activeKural.line2}
-                  </p>
-                  <p className="text-[11px] sm:text-xs font-serif italic text-[#4a240a] mt-2.5 tracking-wider opacity-90">
-                    "{activeKural.transliteration}"
-                  </p>
-                </div>
-
-                {/* 4. Commentary & Meaning */}
-                <div className="bg-[#592706]/10 border border-[#78370b]/25 rounded-lg p-2.5 sm:p-3 my-2 relative z-10">
-                  <p className="text-xs sm:text-sm text-[#291104] leading-relaxed">
-                    <b className="font-bold">Meaning:</b> "{activeKural.english}"
-                  </p>
-                  <p className="text-[11px] sm:text-xs font-tamil text-[#3d1904]/90 mt-1 leading-relaxed">
-                    <b>தெளிவுரை:</b> {activeKural.meaning}
-                  </p>
-                </div>
-
-                {/* 5. Inscription Craftsman Seal */}
-                <div className="flex flex-wrap items-center justify-between pt-2 border-t border-[#783e11]/30 relative z-10 text-[10px] sm:text-xs text-[#381603]">
-                  <span className="font-bold">
-                    Engineer M Kaushal Maran • Handcrafted Creation
-                  </span>
-                  <span className="inline-flex items-center gap-1 text-[#451f08] font-mono">
-                    <Feather className="w-3 h-3 text-[#78350f]" /> Iron Stylus Etched (எழுத்தாணி)
-                  </span>
-                </div>
-
+              {/* Incised Classical Calligraphy in Deep Crimson Ink */}
+              <div className="flex flex-col justify-center items-center text-center px-2 sm:px-6 py-2 my-auto relative z-10">
+                <p className="behance-olai-ink font-bold text-xl sm:text-2xl md:text-3xl tracking-wide">
+                  {activeKural.line1}
+                </p>
+                <p className="behance-olai-ink font-bold text-xl sm:text-2xl md:text-3xl tracking-wide mt-1">
+                  {activeKural.line2}
+                </p>
+                <p className="text-xs sm:text-sm font-serif italic text-[#4a1c14] mt-2.5 opacity-85">
+                  "{activeKural.transliteration}"
+                </p>
               </div>
-            </div>
 
-            {/* Bottom Carved Rosewood Support Beam */}
-            <div className="olai-wood-beam olai-wood-beam--bottom">
-              <div className="olai-brass-accent" />
-              <div className="olai-wood-title">
-                <span>யாதும் ஊரே யாவரும் கேளிர் • TAMIL NADU, INDIA</span>
+              {/* English Meaning & Commentary */}
+              <div className="pt-2 border-t border-[#7a2c14]/30 relative z-10 text-[11px] sm:text-xs text-[#3d150e]">
+                <p className="leading-relaxed">
+                  <b className="font-bold">Meaning:</b> "{activeKural.english}"
+                </p>
               </div>
-              <div className="olai-brass-accent" />
+
+              {/* Bottom Inscription Seal */}
+              <div className="flex items-center justify-between pt-2 border-t border-[#7a2c14]/20 mt-2 relative z-10 text-[10px] font-mono text-[#541c0e]">
+                <span>M KAUSHAL MARAN · TAMIL NADU</span>
+                <span className="flex items-center gap-1 italic">
+                  Click to flip leaf ↺
+                </span>
+              </div>
+
             </div>
           </div>
 
           {/* ========================================================= */}
-          {/* BACK FACE: Software Craftsman Edict Leaf */}
+          {/* BACK FACE: Software Architect Edict */}
           {/* ========================================================= */}
           <div
             className="w-full absolute inset-0"
@@ -599,137 +548,90 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
               transform: 'rotateY(180deg)',
             }}
           >
-            {/* Top Carved Rosewood Support Beam */}
-            <div className="olai-wood-beam olai-wood-beam--top">
-              <div className="olai-brass-accent" />
-              <div className="olai-wood-title">
-                <span>M KAUSHAL MARAN · SOFTWARE ARCHITECT EDICT</span>
+            <div className="behance-olai-leaf" style={{ paddingLeft: '2.5rem', paddingRight: '5rem' }}>
+              <div className="behance-olai-sheen" />
+
+              {/* Hole and ring shifted to the right on flip */}
+              <div className="behance-olai-hole" style={{ left: 'auto', right: '28px' }} />
+              <div className="behance-olai-ring" style={{ left: 'auto', right: '-20px' }} />
+
+              {/* Header */}
+              <div className="flex items-center justify-between border-b border-[#7a2c14]/30 pb-2 mb-2 relative z-10">
+                <span className="text-xs font-mono font-bold tracking-wider text-[#4a1c14] uppercase">
+                  M KAUSHAL MARAN · SOFTWARE ARCHITECT EDICT
+                </span>
+                <span className="text-[10px] font-mono font-bold text-[#5c1c0c] bg-[#68240f]/15 px-2 py-0.5 rounded">
+                  SIMATS '26 · VELLORE &amp; CHENNAI
+                </span>
               </div>
-              <div className="olai-brass-accent" />
-            </div>
 
-            {/* The Palmyra Palm Leaf Body (Reverse) */}
-            <div className="olai-leaf relative">
-              <div className="olai-sheen" />
+              {/* Sangam Motto */}
+              <div className="text-center my-1 relative z-10">
+                <p className="font-tamil font-bold text-sm sm:text-base text-[#381008] behance-olai-ink">
+                  "யாதும் ஊரே யாவரும் கேளிர் • கற்றது கைமண் அளவு"
+                </p>
+                <p className="text-[10px] font-mono text-[#541c0e] mt-0.5">
+                  BUILDING WHAT PEOPLE ACTUALLY USE · ZERO FRAME DROPS · 120 FPS
+                </p>
+              </div>
 
-              <div className="olai-hole olai-hole--left" />
-              <div className="olai-hole olai-hole--right" />
-              <div className="olai-cord olai-cord--left" />
-              <div className="olai-cord olai-cord--right" />
-              <div className="olai-cord-tassel olai-cord-tassel--left" />
-              <div className="olai-cord-tassel olai-cord-tassel--right" />
-
-              <div className="olai-inner-border">
-                <div className="olai-corner-motif olai-corner-motif--tl" />
-                <div className="olai-corner-motif olai-corner-motif--tr" />
-                <div className="olai-corner-motif olai-corner-motif--bl" />
-                <div className="olai-corner-motif olai-corner-motif--br" />
-
-                {/* 1. Edict Header */}
-                <div className="flex items-center justify-between border-b border-[#783e11]/30 pb-2 mb-2 relative z-10">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xl font-bold text-[#3d1a04] olai-engraved">உ</span>
-                    <span className="text-xs sm:text-sm font-extrabold text-[#3b1704]">
-                      M Kaushal Maran • Systems Architect
-                    </span>
-                  </div>
-                  <span className="text-[10px] sm:text-xs font-mono font-bold text-[#451f08] px-2 py-0.5 rounded bg-[#522507]/15">
-                    SIMATS '26 · VELLORE &amp; CHENNAI
-                  </span>
-                </div>
-
-                {/* 2. Sangam Creed */}
-                <div className="text-center my-1 relative z-10">
-                  <p className="font-tamil font-bold text-sm sm:text-base text-[#240c02] olai-engraved">
-                    "யாதும் ஊரே யாவரும் கேளிர் • கற்றது கைமண் அளவு"
-                  </p>
-                  <p className="text-[10px] sm:text-xs font-mono text-[#522507] mt-0.5">
-                    BUILDING WHAT PEOPLE ACTUALLY USE · ZERO FRAME DROPS · 120 FPS
+              {/* Inscribed Production Applications */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 my-2 relative z-10">
+                <div className="bg-[#68240f]/10 border border-[#7a2c14]/25 rounded-lg p-2">
+                  <b className="text-xs font-bold text-[#2a0c06]">🍏 ZenLife</b>
+                  <p className="text-[10px] text-[#42160c] mt-0.5 leading-tight">
+                    SwiftUI · 432 Hz Solfeggio Audio DSP · Native iOS App Store
                   </p>
                 </div>
-
-                {/* 3. Etched Software Apps Catalog */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 my-2 relative z-10">
-                  <div className="bg-[#592706]/12 border border-[#78370b]/25 rounded-lg p-2.5">
-                    <div className="flex items-center justify-between">
-                      <b className="text-xs sm:text-sm font-bold text-[#200c02]">🍏 ZenLife</b>
-                      <span className="text-[9px] font-mono font-bold uppercase text-[#542104] bg-[#542104]/10 px-1.5 py-0.2 rounded">App Store</span>
-                    </div>
-                    <p className="text-[11px] text-[#3b1905] mt-1 leading-tight">
-                      SwiftUI · 432 Hz Solfeggio Audio DSP · Native iOS
-                    </p>
-                  </div>
-
-                  <div className="bg-[#592706]/12 border border-[#78370b]/25 rounded-lg p-2.5">
-                    <div className="flex items-center justify-between">
-                      <b className="text-xs sm:text-sm font-bold text-[#200c02]">🤖 Vellore Ads</b>
-                      <span className="text-[9px] font-mono font-bold uppercase text-[#542104] bg-[#542104]/10 px-1.5 py-0.2 rounded">Play Store</span>
-                    </div>
-                    <p className="text-[11px] text-[#3b1905] mt-1 leading-tight">
-                      Kotlin · Jetpack Compose · Local Classifieds
-                    </p>
-                  </div>
-
-                  <div className="bg-[#592706]/12 border border-[#78370b]/25 rounded-lg p-2.5">
-                    <div className="flex items-center justify-between">
-                      <b className="text-xs sm:text-sm font-bold text-[#200c02]">🛡️ Viana 360 &amp; Buy</b>
-                      <span className="text-[9px] font-mono font-bold uppercase text-[#542104] bg-[#542104]/10 px-1.5 py-0.2 rounded">IoT &amp; Retail</span>
-                    </div>
-                    <p className="text-[11px] text-[#3b1905] mt-1 leading-tight">
-                      Smart AI Surveillance &amp; Enterprise Commerce
-                    </p>
-                  </div>
-
-                  <div className="bg-[#592706]/12 border border-[#78370b]/25 rounded-lg p-2.5">
-                    <div className="flex items-center justify-between">
-                      <b className="text-xs sm:text-sm font-bold text-[#200c02]">💻 CodeShift &amp; Mac</b>
-                      <span className="text-[9px] font-mono font-bold uppercase text-[#542104] bg-[#542104]/10 px-1.5 py-0.2 rounded">Web &amp; Mac</span>
-                    </div>
-                    <p className="text-[11px] text-[#3b1905] mt-1 leading-tight">
-                      Monaco IDE · CleanYourMac Utility · 120 FPS
-                    </p>
-                  </div>
+                <div className="bg-[#68240f]/10 border border-[#7a2c14]/25 rounded-lg p-2">
+                  <b className="text-xs font-bold text-[#2a0c06]">🤖 Vellore Ads</b>
+                  <p className="text-[10px] text-[#42160c] mt-0.5 leading-tight">
+                    Kotlin · Jetpack Compose · Local Classifieds · Play Store
+                  </p>
                 </div>
-
-                {/* 4. Direct Connect Inscriptions (LinkedIn, GitHub, Email) */}
-                <div className="pt-2 border-t border-[#783e11]/30 relative z-10 flex flex-wrap items-center justify-center gap-2">
-                  <a
-                    href="https://www.linkedin.com/in/kaushalboii"
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#0a66c2]/20 hover:bg-[#0a66c2]/35 border border-[#0a66c2]/50 rounded-lg text-xs font-bold text-[#1e293b] transition-colors"
-                  >
-                    <Linkedin className="w-3.5 h-3.5 text-[#0a66c2]" /> LinkedIn Profile
-                  </a>
-                  <a
-                    href="https://github.com/kaushalboii"
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#24292e]/15 hover:bg-[#24292e]/25 border border-[#24292e]/30 rounded-lg text-xs font-bold text-[#1f2937] font-mono transition-colors"
-                  >
-                    <Github className="w-3.5 h-3.5" /> GitHub
-                  </a>
-                  <a
-                    href="mailto:kaushalmaran24@gmail.com"
-                    onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#c2410c]/20 hover:bg-[#c2410c]/30 border border-[#c2410c]/40 rounded-lg text-xs font-bold text-[#431407] font-mono transition-colors"
-                  >
-                    <Mail className="w-3.5 h-3.5 text-[#c2410c]" /> Email
-                  </a>
+                <div className="bg-[#68240f]/10 border border-[#7a2c14]/25 rounded-lg p-2">
+                  <b className="text-xs font-bold text-[#2a0c06]">🛡️ Viana 360 &amp; Buy</b>
+                  <p className="text-[10px] text-[#42160c] mt-0.5 leading-tight">
+                    Smart AI Surveillance &amp; Enterprise Retail Platform
+                  </p>
                 </div>
-
+                <div className="bg-[#68240f]/10 border border-[#7a2c14]/25 rounded-lg p-2">
+                  <b className="text-xs font-bold text-[#2a0c06]">💻 CodeShift &amp; Mac</b>
+                  <p className="text-[10px] text-[#42160c] mt-0.5 leading-tight">
+                    Monaco Studio · CleanYourMac Utility · 120 FPS
+                  </p>
+                </div>
               </div>
-            </div>
 
-            {/* Bottom Carved Rosewood Support Beam */}
-            <div className="olai-wood-beam olai-wood-beam--bottom">
-              <div className="olai-brass-accent" />
-              <div className="olai-wood-title">
-                <span>M KAUSHAL MARAN · MOBILE &amp; SYSTEMS ARCHITECT</span>
+              {/* Direct Connect Inscriptions with Kaushal's Verified LinkedIn */}
+              <div className="pt-2 border-t border-[#7a2c14]/30 relative z-10 flex flex-wrap items-center justify-center gap-2">
+                <a
+                  href="https://www.linkedin.com/in/kaushal-maran-m-9572622b1/"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#0a66c2]/20 hover:bg-[#0a66c2]/35 border border-[#0a66c2]/50 rounded-lg text-xs font-bold text-[#1e293b] transition-colors"
+                >
+                  <Linkedin className="w-3.5 h-3.5 text-[#0a66c2]" /> LinkedIn Profile
+                </a>
+                <a
+                  href="https://github.com/kaushalboii"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#24292e]/15 hover:bg-[#24292e]/25 border border-[#24292e]/30 rounded-lg text-xs font-bold text-[#1f2937] font-mono transition-colors"
+                >
+                  <Github className="w-3.5 h-3.5" /> GitHub
+                </a>
+                <a
+                  href="mailto:kaushalmaran24@gmail.com"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#c2410c]/20 hover:bg-[#c2410c]/30 border border-[#c2410c]/40 rounded-lg text-xs font-bold text-[#431407] font-mono transition-colors"
+                >
+                  <Mail className="w-3.5 h-3.5 text-[#c2410c]" /> Email
+                </a>
               </div>
-              <div className="olai-brass-accent" />
+
             </div>
           </div>
         </motion.div>
@@ -742,7 +644,7 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
           className="px-5 py-2.5 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded-xl text-xs sm:text-sm font-bold text-amber-200 transition-all cursor-pointer flex items-center gap-2 shadow-[0_0_15px_rgba(245,158,11,0.2)]"
         >
           <RotateCcw className="w-4 h-4 text-amber-400" />
-          {flipped ? "Flip to Thirukkural Manuscript" : "Flip to Software Edict"}
+          {flipped ? "Flip to Thirukkural Inscription" : "Flip to Software Edict"}
         </button>
         <button
           onClick={onClose}
@@ -936,19 +838,10 @@ export default function App() {
             </div>
           </div>
           
-          <div className="relative z-10 mt-2 flex justify-between items-end">
-            <div>
-              <p className="text-lg md:text-xl font-medium leading-snug text-washi">
-                Building what people <span className="font-serif italic text-shu-400 text-xl md:text-2xl whitespace-nowrap">actually use.</span>
-              </p>
-            </div>
-            <button
-              onClick={(e) => { e.stopPropagation(); setActiveModal('holo'); }}
-              title="Open Ancient Tamil Palm Leaf 3D"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/35 rounded-full text-xs text-amber-300 transition-colors cursor-pointer font-mono"
-            >
-              <Scroll className="w-3 h-3 text-amber-400" /> 3D Palm Leaf
-            </button>
+          <div className="relative z-10 mt-2">
+            <p className="text-lg md:text-xl font-medium leading-snug text-washi">
+              Building what people <span className="font-serif italic text-shu-400 text-xl md:text-2xl whitespace-nowrap">actually use.</span>
+            </p>
           </div>
         </DraggableBox>
 
@@ -1157,35 +1050,39 @@ export default function App() {
           </div>
         </DraggableBox>
 
-        {/* Ancient Tamil Olaichuvadi 3D Box */}
+        {/* Story & Craft Box */}
         <DraggableBox
           variants={itemVariants}
           dragRef={constraintsRef}
           resetSignal={resetSignal}
-          onClick={() => setActiveModal('holo')}
-          className="md:col-span-1 md:row-span-1 bg-gradient-to-br from-[#2a1406]/95 via-sumi-900/95 to-sumi-950 rounded-3xl p-5 border border-amber-500/25 flex flex-col justify-between relative overflow-hidden shadow-2xl group cursor-pointer hover:border-amber-400/50 transition-colors duration-300 z-10 hover:z-50"
+          onClick={() => setActiveModal('story')}
+          className="md:col-span-1 md:row-span-1 bg-sumi-900/95 rounded-3xl p-5 border border-washi/10 flex flex-col justify-between relative overflow-hidden shadow-2xl group cursor-pointer hover:border-washi/25 transition-colors duration-300 z-10 hover:z-50"
         >
-          {/* Subtle palm-leaf procedural preview watermark */}
-          <div className="absolute inset-0 opacity-20 group-hover:opacity-35 transition-opacity duration-500 pointer-events-none overflow-hidden rounded-3xl flex flex-col justify-center items-center p-3 text-center">
-            <div className="w-full h-0.5 bg-amber-600/50 rounded mb-2"></div>
-            <p className="font-tamil font-extrabold text-xs text-amber-200 leading-snug">
-              தெய்வத்தான் ஆகா தெனினும் முயற்சிதன் மெய்வருத்தக் கூலி தரும்
-            </p>
-            <div className="w-full h-0.5 bg-amber-600/50 rounded mt-2"></div>
+          {/* Subtle minimal collage */}
+          <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-[2px] opacity-25 filter grayscale group-hover:grayscale-0 group-hover:opacity-45 transition-all duration-500 pointer-events-none overflow-hidden rounded-3xl">
+            <div className="overflow-hidden bg-sumi-850">
+              <img src={asset("assets/apps/zenlife-icon.webp")} alt="ZenLife" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
+            </div>
+            <div className="overflow-hidden bg-sumi-850">
+              <img src={asset("card/back.webp")} alt="Monogram" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
+            </div>
+            <div className="overflow-hidden bg-sumi-850">
+              <img src={asset("assets/apps/viana360-icon.webp")} alt="Viana 360" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
+            </div>
+            <div className="overflow-hidden bg-sumi-850">
+              <img src={asset("assets/apps/codeshift-preview.svg")} alt="CodeShift" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
+            </div>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-sumi-950/90 via-transparent to-sumi-950/40 pointer-events-none rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-sumi-950/90 via-transparent to-sumi-950/60 pointer-events-none rounded-3xl"></div>
 
           <div className="flex justify-between items-start relative z-10">
-            <div>
-              <span className="text-[10px] font-mono tracking-widest text-amber-400/90 uppercase block">CRAFT &amp; HERITAGE</span>
-              <h3 className="text-2xl font-black tracking-tight text-washi">STORY</h3>
-            </div>
-            <div className="w-8 h-8 rounded-full bg-amber-500/20 border border-amber-500/30 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-sumi-950 transition-colors shadow-xl text-amber-300">
-              <Scroll className="w-4 h-4" />
+            <h3 className="text-2xl font-black tracking-tight text-washi">STORY</h3>
+            <div className="w-8 h-8 rounded-full bg-sumi-950/60 border border-washi/10 flex items-center justify-center group-hover:bg-shu-500 transition-colors shadow-xl text-washi">
+              <ArrowUpRight className="w-4 h-4" />
             </div>
           </div>
           <div className="relative z-10 mt-auto pb-1">
-            <p className="text-xs text-amber-200/90 font-medium">3D Palm Leaf · Kural 619 ↗</p>
+            <p className="text-sm font-medium text-washi/85">SIMATS '26 · Sound DSP · 10+ Apps</p>
           </div>
         </DraggableBox>
 

@@ -663,286 +663,171 @@ body {
 }
 
 /* ==========================================================================
-   ANCIENT TAMIL OLAICHUVADI (ஓலைச்சுவடி - PALM LEAF MANUSCRIPT 3D)
-   Authentic Palmyra palm-leaf grain, scorched deckle edge, brass eyelets,
-   sacred red cord (செங்கயிறு), carved rosewood support beams, and incised
-   iron stylus (எழுத்தாணி) calligraphy.
+   BEHANCE-INSPIRED 3D PALM LEAF MANUSCRIPT (ஓலைச்சுவடி)
+   Based on authentic South Asian Palmyra manuscript design:
+   - Slender elongated dried palm leaf strip
+   - Stacked bundle physical 3D thickness with stepped leaf layers
+   - Left-edge circular iron/steel binding ring (இரும்பு வளையம்)
+   - Deep crimson/burnt-sienna calligraphy ink etched into leaf grain
    ========================================================================== */
 
-.olai-wrap {
+.behance-olai-container {
   width: 100%;
   position: relative;
-  container-type: inline-size;
   perspective: 1200px;
+  padding: 1.5rem 1rem;
 }
 
-.olai-card {
+.behance-olai-card {
   position: relative;
   width: 100%;
-  border-radius: 10px;
   transform-style: preserve-3d;
-  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.9));
+  cursor: pointer;
+  transition: transform 0.15s ease-out;
 }
 
-/* Polished Rosewood / Teak Support Beams (மேல் & கீழ் மரப்பட்டடை) */
-.olai-wood-beam {
-  height: 28px;
-  width: 100%;
-  background: linear-gradient(180deg, #451f08 0%, #240f03 35%, #351705 70%, #150802 100%);
-  border-radius: 6px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.8),
-    inset 0 1px 0 rgba(255, 210, 130, 0.35),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.9);
-  border: 1px solid rgba(140, 70, 25, 0.5);
-  z-index: 10;
-}
-
-.olai-wood-beam--top {
-  margin-bottom: 6px;
-}
-
-.olai-wood-beam--bottom {
-  margin-top: 6px;
-}
-
-/* Brass Corner Embellishments on Wooden Beams */
-.olai-brass-accent {
-  width: 14px;
-  height: 14px;
-  border-radius: 2px;
-  background: radial-gradient(circle at 35% 30%, #fffbeb 0%, #facc15 45%, #a16207 85%, #713f12 100%);
-  box-shadow: 0 0 6px rgba(250, 204, 21, 0.6), inset 0 0 2px #fff;
-  border: 1px solid #713f12;
-  position: relative;
-  display: grid;
-  place-items: center;
-}
-
-.olai-brass-accent::after {
-  content: '';
-  width: 4px;
-  height: 4px;
-  background: #3f1d0b;
-  border-radius: 50%;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.9);
-}
-
-.olai-wood-title {
-  font-family: var(--font-tamil);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  color: #fef08a;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* The Palmyra Palm Leaf Body (பனை ஓலை ஏடு) */
-.olai-leaf {
+/* Stacked Palmyra Palm Leaf Bundle */
+.behance-olai-leaf {
   position: relative;
   width: 100%;
-  background-color: #d1a55c;
-  background-image: 
-    /* Horizontal fibrous grain of natural dried palm leaves */
+  background-color: #c48932;
+  background-image:
+    /* Fine horizontal wood and palm fiber striations */
     repeating-linear-gradient(
       0deg,
-      rgba(74, 44, 15, 0.14) 0px,
-      rgba(74, 44, 15, 0.14) 1px,
-      rgba(245, 218, 163, 0.12) 1px,
-      rgba(245, 218, 163, 0.12) 2px,
-      transparent 2px,
-      transparent 5px
+      rgba(78, 38, 8, 0.18) 0px,
+      rgba(78, 38, 8, 0.18) 1px,
+      transparent 1px,
+      transparent 3px,
+      rgba(255, 230, 160, 0.14) 3px,
+      rgba(255, 230, 160, 0.14) 4px,
+      transparent 4px,
+      transparent 7px
     ),
-    /* Vertical organic fiber striations */
+    /* Subtle organic fiber cross-grain */
     repeating-linear-gradient(
       90deg,
-      rgba(50, 25, 5, 0.04) 0px,
-      rgba(50, 25, 5, 0.04) 1px,
+      rgba(60, 25, 4, 0.04) 0px,
+      rgba(60, 25, 4, 0.04) 1px,
       transparent 1px,
-      transparent 32px
+      transparent 45px
     ),
-    /* Warm golden cured palm leaf color gradient with aged patina */
+    /* Rich cured amber golden palm leaf gradient with scorched edges */
     linear-gradient(
       180deg,
-      #935b1d 0%,
-      #c4944b 3%,
-      #deb36a 10%,
-      #d4a65b 28%,
-      #e0ba72 50%,
-      #caa055 72%,
-      #c28f43 90%,
-      #965f21 97%,
-      #713e0e 100%
+      #8c5014 0%,
+      #b37525 5%,
+      #d49942 22%,
+      #c4862f 48%,
+      #dba24c 72%,
+      #b87a28 92%,
+      #7a400a 100%
     );
-  border-radius: 6px;
-  border: 1px solid rgba(85, 42, 10, 0.7);
-  box-shadow: 
-    /* Scorched burnt deckled edges */
-    inset 0 0 28px rgba(45, 18, 5, 0.75),
-    inset 0 2px 3px rgba(255, 240, 200, 0.45),
-    inset 0 -2px 3px rgba(30, 10, 0, 0.8),
-    0 18px 35px -5px rgba(0, 0, 0, 0.85);
-  overflow: hidden;
-  padding: 1.25rem 1.4rem;
+  border-radius: 12px;
+  border: 1px solid rgba(100, 48, 10, 0.65);
+  padding: 1.75rem 2.5rem 1.75rem 5rem;
+  min-height: 210px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  box-shadow:
+    /* Realistic 3D physical thickness of stacked leaves fanning underneath */
+    0 4px 0 #9d6521,
+    0 5px 0 #683808,
+    0 9px 0 #8c5719,
+    0 10px 0 #542b05,
+    0 14px 0 #7b4a14,
+    0 15px 0 #3d1c02,
+    0 24px 45px rgba(0, 0, 0, 0.9),
+    /* Scorched burnt deckled leaf edges */
+    inset 0 0 32px rgba(50, 20, 3, 0.72),
+    inset 0 2px 3px rgba(255, 235, 185, 0.45),
+    inset 0 -2px 3px rgba(35, 12, 1, 0.75);
+  overflow: visible;
 }
 
-/* Light Sheen layer tracking mouse reflection */
-.olai-sheen {
+/* Specular reflection gliding over varnished palm surface */
+.behance-olai-sheen {
   position: absolute;
   inset: 0;
+  border-radius: 12px;
   pointer-events: none;
   background: radial-gradient(
     circle at calc(50% + var(--px, 0) * 45%) calc(50% + var(--py, 0) * 45%),
     rgba(255, 252, 235, 0.45) 0%,
-    rgba(255, 235, 180, 0.15) 35%,
-    transparent 70%
+    rgba(255, 235, 180, 0.15) 30%,
+    transparent 65%
   );
   mix-blend-mode: overlay;
-  z-index: 8;
+  z-index: 6;
 }
 
-/* Two Perforated Holes (துளைகள்) for sacred thread binding */
-.olai-hole {
+/* Left Punched Eyelet Through Hole */
+.behance-olai-hole {
   position: absolute;
+  left: 28px;
   top: 50%;
   transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: radial-gradient(circle at 40% 40%, #080502 0%, #150c04 55%, #000 100%);
-  box-shadow: 
+  background: radial-gradient(circle at 40% 40%, #060402 0%, #150a04 55%, #000 100%);
+  box-shadow:
     inset 0 2px 5px rgba(0, 0, 0, 0.98),
-    0 0 0 2px #78350f,
-    0 0 0 3px #d97706,
+    0 0 0 2px #5a2808,
+    0 0 0 3px #b45309,
     0 1px 4px rgba(0, 0, 0, 0.85);
-  z-index: 12;
+  z-index: 10;
 }
 
-.olai-hole--left {
-  left: 14px;
-}
-
-.olai-hole--right {
-  right: 14px;
-}
-
-/* Sacred Red Cord (செங்கயிறு) looping through the holes */
-.olai-cord {
+/* Dark Steel / Iron Binding Ring (இரும்பு வளையம்) */
+.behance-olai-ring {
   position: absolute;
-  top: -18px;
-  bottom: -18px;
-  width: 6px;
-  background: repeating-linear-gradient(
-    180deg,
-    #dc2626 0px,
-    #b91c1c 3px,
-    #ea580c 4px,
-    #f97316 5px,
-    #dc2626 7px
-  );
-  box-shadow: 
-    0 0 6px rgba(220, 38, 38, 0.6),
-    2px 2px 6px rgba(0, 0, 0, 0.7);
-  border-radius: 3px;
-  z-index: 14;
-}
-
-.olai-cord--left {
-  left: 21px;
-}
-
-.olai-cord--right {
-  right: 21px;
-}
-
-/* Cord Tassels (குஞ்சம்) hanging at the bottom */
-.olai-cord-tassel {
-  position: absolute;
-  bottom: -32px;
-  width: 14px;
-  height: 18px;
-  background: linear-gradient(180deg, #b91c1c 0%, #7f1d1d 70%, #450a0a 100%);
-  border-radius: 2px 2px 7px 7px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-  border: 1px solid #dc2626;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 9px solid #1c1917;
+  background: transparent;
+  box-shadow:
+    -6px 8px 16px rgba(0, 0, 0, 0.8),
+    inset 0 2px 2px rgba(255, 255, 255, 0.35),
+    inset 0 -2px 2px rgba(0, 0, 0, 0.8),
+    0 2px 4px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
   z-index: 15;
 }
 
-.olai-cord-tassel--left {
-  left: 17px;
-}
-
-.olai-cord-tassel--right {
-  right: 17px;
-}
-
-/* Authentic Ezhuthani (Iron Stylus) Engraved Typography */
-.olai-engraved {
-  font-family: var(--font-tamil);
-  color: #2b1305;
-  text-shadow: 
-    0 1px 0 rgba(255, 245, 215, 0.6),
-    0 -1px 1px rgba(35, 12, 2, 0.8),
-    1px 0 0 rgba(20, 8, 2, 0.45);
-  letter-spacing: 0.015em;
-  position: relative;
-  z-index: 4;
-}
-
-.olai-engraved-glow {
-  color: #1a0801;
-  text-shadow: 
-    0 1px 1px rgba(255, 240, 190, 0.65),
-    0 -1px 1px rgba(0, 0, 0, 0.9);
-}
-
-/* Traditional Sacred Tamil Border Frame on Palm Leaf */
-.olai-inner-border {
-  border: 1px dashed rgba(80, 35, 8, 0.45);
-  border-radius: 5px;
-  padding: 0.85rem 1.4rem;
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.olai-corner-motif {
+/* Metallic Highlight Sheen on Ring */
+.behance-olai-ring::after {
+  content: '';
   position: absolute;
-  width: 10px;
-  height: 10px;
-  border-color: rgba(90, 40, 10, 0.65);
+  top: 2px;
+  left: 6px;
+  width: 20px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: rotate(-35deg);
+  filter: blur(1px);
 }
 
-.olai-corner-motif--tl { top: 3px; left: 3px; border-top: 2px solid; border-left: 2px solid; }
-.olai-corner-motif--tr { top: 3px; right: 3px; border-top: 2px solid; border-right: 2px solid; }
-.olai-corner-motif--bl { bottom: 3px; left: 3px; border-bottom: 2px solid; border-left: 2px solid; }
-.olai-corner-motif--br { bottom: 3px; right: 3px; border-bottom: 2px solid; border-right: 2px solid; }
-
-/* The Ezhuthani (Iron Stylus) Floating Tool */
-.olai-ezhuthani {
+/* Authentic Deep Crimson Calligraphy Ink (செந்நிற எழுத்துகள்) */
+.behance-olai-ink {
+  font-family: var(--font-tamil);
+  color: #58140b;
+  text-shadow:
+    0 1px 0 rgba(255, 245, 215, 0.65),
+    0 -1px 1px rgba(35, 8, 2, 0.85),
+    1px 0 0 rgba(25, 6, 2, 0.45);
+  letter-spacing: 0.02em;
   position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 12px;
-  background: linear-gradient(135deg, rgba(67, 33, 10, 0.8), rgba(28, 13, 3, 0.9));
-  border: 1px solid rgba(234, 179, 8, 0.35);
-  border-radius: 9999px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  z-index: 8;
+  line-height: 1.5;
 }
+
 
 
 
