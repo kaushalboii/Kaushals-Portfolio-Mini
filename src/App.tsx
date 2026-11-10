@@ -374,36 +374,36 @@ interface KuralItem {
 const TAMIL_KURALS: KuralItem[] = [
   {
     number: 619,
-    chapter: "அதிகாரம் 62: ஆள்வினையுடைமை (Relentless Effort & Mastery)",
+    chapter: "Chapter 62: Relentless Effort (ஆள்வினையுடைமை)",
     theme: "Engineering Tenacity & Relentless Effort",
     line1: "தெய்வத்தான் ஆகா தெனினும் முயற்சிதன்",
     line2: "மெய்வருத்தக் கூலி தரும்.",
     transliteration: "Deivathaan aagaa theninum muyarchithan meyvaruththa kooli tharum.",
-    meaning: "விதியால் அல்லது தெய்வத்தால் கூட முடியாது என்று கைவிடப்பட்ட காரியமாயினும், உடலை வருத்திச் செய்யும் இடைவிடாத தொழில்நுட்ப முயற்சி அதற்குரிய முழுப் பயனையும் தரும்.",
+    meaning: "விதியால் கூட முடியாது என்று கைவிடப்பட்ட காரியமாயினும், உடலை வருத்திச் செய்யும் இடைவிடாத முயற்சி அதற்குரிய முழுப் பயனையும் தரும்.",
     english: "Even if destiny or the heavens deem a task impossible, persistent, body-straining human effort and craftsmanship will always yield its full reward.",
-    shortTag: "குறள் 619: முயற்சி தன் கூலி தரும்",
+    shortTag: "Kural 619 · Relentless Effort",
   },
   {
     number: 467,
-    chapter: "அதிகாரம் 47: தெரிந்து செயல்வகை (Deliberate Systems Architecture)",
+    chapter: "Chapter 47: Deliberate Action (தெரிந்து செயல்வகை)",
     theme: "Deliberate System Architecture & Planning",
     line1: "எண்ணித் துணிக கருமம் துணிந்தபின்",
     line2: "எண்ணுவம் என்பது இழுக்கு.",
     transliteration: "Ennith thuniga karumam thuninthapin ennuvam enpathu izhukku.",
     meaning: "நன்கு ஆராய்ந்து கட்டமைத்துத் திட்டமிட்ட பிறகே செயலில் இறங்க வேண்டும்; தொடங்கிய பின் யோசிப்பது பெரும் இழுக்காகும்.",
     english: "Deliberate and architect thoroughly before executing; to waver or hesitate after committing is a flaw.",
-    shortTag: "குறள் 467: எண்ணித் துணிக கருமம்",
+    shortTag: "Kural 467 · Systems Architecture",
   },
   {
     number: 391,
-    chapter: "அதிகாரம் 40: கல்வி (Deep Knowledge & Flawless Mastery)",
+    chapter: "Chapter 40: Learning & Mastery (கல்வி)",
     theme: "Flawless Mastery & Living by Truth",
     line1: "கற்க கசடறக் கற்பவை கற்றபின்",
     line2: "நிற்க அதற்குத் தக.",
     transliteration: "Karka kasadarak karpavai katrapin nirka atharkuth thaka.",
     meaning: "கற்க வேண்டிய தொழில்நுட்பங்களை பிழையின்றி ஆழமாகக் கற்க வேண்டும்; கற்ற பிறகு அந்த அறிவுக்குத் தக நேர்மையாகச் செயல்பட வேண்டும்.",
     english: "Learn with utmost depth and flawlessness that which is worth learning; once mastered, live strictly according to that truth.",
-    shortTag: "குறள் 391: கற்க கசடறக் கற்பவை",
+    shortTag: "Kural 391 · Knowledge Mastery",
   },
 ];
 
@@ -434,8 +434,8 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
       {/* Top Auspicious Banner */}
       <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
         <Scroll className="w-4 h-4 text-amber-400" />
-        <p className="text-xs font-mono tracking-widest text-amber-300 uppercase text-center font-tamil">
-          பண்டைய தமிழ் ஓலைச்சுவடி · ANCIENT TAMIL OLAICHUVADI 3D · தட்டினால் திரும்பும்
+        <p className="text-xs font-mono tracking-widest text-amber-300 uppercase text-center">
+          ANCIENT TAMIL OLAICHUVADI 3D · CLICK TO FLIP
         </p>
       </div>
 
@@ -450,7 +450,7 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
                 e.stopPropagation();
                 setActiveKuralIdx(idx);
               }}
-              className={`px-3 py-1.5 rounded-full text-xs font-tamil transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
+              className={`px-3 py-1.5 rounded-full text-xs transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
                 isActive
                   ? 'bg-amber-500/25 border border-amber-400 text-amber-200 shadow-[0_0_12px_rgba(245,158,11,0.3)] font-bold'
                   : 'bg-washi/5 border border-washi/10 text-washi/70 hover:bg-washi/10 hover:text-washi'
@@ -484,7 +484,7 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
           }}
         >
           {/* ========================================================= */}
-          {/* FRONT FACE: முதல் ஏடு — திருக்குறள் அருளுரை (Sacred Kural Leaf) */}
+          {/* FRONT FACE: Sacred Kural Leaf */}
           {/* ========================================================= */}
           <div
             className="w-full relative"
@@ -495,7 +495,7 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
               <div className="olai-brass-accent" />
               <div className="olai-wood-title">
                 <span>☀️</span>
-                <span>திருவள்ளுவ நாயனார் அருளிய தமிழ் மறை</span>
+                <span>THIRUKKURAL · ANCIENT PALM-LEAF MANUSCRIPT</span>
                 <span>☽</span>
               </div>
               <div className="olai-brass-accent" />
@@ -510,7 +510,7 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
               <div className="olai-hole olai-hole--left" />
               <div className="olai-hole olai-hole--right" />
 
-              {/* Sacred Red Cord (செங்கயிறு) and Tassels */}
+              {/* Sacred Red Cord and Tassels */}
               <div className="olai-cord olai-cord--left" />
               <div className="olai-cord olai-cord--right" />
               <div className="olai-cord-tassel olai-cord-tassel--left" />
@@ -527,18 +527,18 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
                 <div className="flex items-center justify-between border-b border-[#783e11]/30 pb-2 mb-2 relative z-10">
                   <div className="flex items-center gap-2">
                     <span className="text-xl font-bold text-[#3d1a04] olai-engraved">உ</span>
-                    <span className="text-[11px] sm:text-xs font-tamil font-bold text-[#451f08] uppercase tracking-wider">
-                      பிள்ளையார் சுழி • வாழ்த்து
+                    <span className="text-[11px] sm:text-xs font-bold text-[#451f08] uppercase tracking-wider font-mono">
+                      INVOCATION · PILLAIYAR SUZHI
                     </span>
                   </div>
-                  <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#522507]/15 border border-[#6b330d]/30 text-[10px] sm:text-xs font-tamil font-bold text-[#3b1704]">
-                    <span>குறள் எண்: {activeKural.number}</span>
+                  <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#522507]/15 border border-[#6b330d]/30 text-[10px] sm:text-xs font-bold text-[#3b1704] font-mono">
+                    <span>KURAL {activeKural.number}</span>
                   </div>
                 </div>
 
                 {/* 2. Chapter Title */}
                 <div className="text-center relative z-10 my-1">
-                  <span className="text-xs sm:text-sm font-tamil font-extrabold tracking-wide text-[#3f1c07] olai-engraved uppercase">
+                  <span className="text-xs sm:text-sm font-extrabold tracking-wide text-[#3f1c07] olai-engraved uppercase">
                     {activeKural.chapter}
                   </span>
                 </div>
@@ -556,23 +556,23 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
                   </p>
                 </div>
 
-                {/* 4. Classical Commentary (தெளிவுரை & ஆங்கில உரை) */}
+                {/* 4. Commentary & Meaning */}
                 <div className="bg-[#592706]/10 border border-[#78370b]/25 rounded-lg p-2.5 sm:p-3 my-2 relative z-10">
-                  <p className="text-xs sm:text-sm font-tamil text-[#291104] leading-relaxed">
-                    <b className="font-bold">பொருள்:</b> {activeKural.meaning}
+                  <p className="text-xs sm:text-sm text-[#291104] leading-relaxed">
+                    <b className="font-bold">Meaning:</b> "{activeKural.english}"
                   </p>
-                  <p className="text-[11px] sm:text-xs text-[#3d1904]/90 mt-1 italic leading-relaxed">
-                    <b>Translation:</b> "{activeKural.english}"
+                  <p className="text-[11px] sm:text-xs font-tamil text-[#3d1904]/90 mt-1 leading-relaxed">
+                    <b>தெளிவுரை:</b> {activeKural.meaning}
                   </p>
                 </div>
 
                 {/* 5. Inscription Craftsman Seal */}
-                <div className="flex flex-wrap items-center justify-between pt-2 border-t border-[#783e11]/30 relative z-10 text-[10px] sm:text-xs font-tamil text-[#381603]">
+                <div className="flex flex-wrap items-center justify-between pt-2 border-t border-[#783e11]/30 relative z-10 text-[10px] sm:text-xs text-[#381603]">
                   <span className="font-bold">
-                    பொறியாளர் மு. கௌஷல் மாறன் • கைவினைப் படைப்பு
+                    Engineer M Kaushal Maran • Handcrafted Creation
                   </span>
                   <span className="inline-flex items-center gap-1 text-[#451f08] font-mono">
-                    <Feather className="w-3 h-3 text-[#78350f]" /> எழுத்தாணி வெட்டு (Iron Stylus Etched)
+                    <Feather className="w-3 h-3 text-[#78350f]" /> Iron Stylus Etched (எழுத்தாணி)
                   </span>
                 </div>
 
@@ -590,7 +590,7 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
           </div>
 
           {/* ========================================================= */}
-          {/* BACK FACE: இரண்டாம் ஏடு — கௌஷல் மாறனின் மென்பொருள் சாசனம் (Software Edict Leaf) */}
+          {/* BACK FACE: Software Craftsman Edict Leaf */}
           {/* ========================================================= */}
           <div
             className="w-full absolute inset-0"
@@ -603,7 +603,7 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
             <div className="olai-wood-beam olai-wood-beam--top">
               <div className="olai-brass-accent" />
               <div className="olai-wood-title">
-                <span>தமிழ்நாடு • மென்பொருள் சாசனம் (SOFTWARE CRAFTSMAN EDICT)</span>
+                <span>M KAUSHAL MARAN · SOFTWARE ARCHITECT EDICT</span>
               </div>
               <div className="olai-brass-accent" />
             </div>
@@ -629,8 +629,8 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
                 <div className="flex items-center justify-between border-b border-[#783e11]/30 pb-2 mb-2 relative z-10">
                   <div className="flex items-center gap-2">
                     <span className="text-xl font-bold text-[#3d1a04] olai-engraved">உ</span>
-                    <span className="text-xs sm:text-sm font-tamil font-extrabold text-[#3b1704]">
-                      மு. கௌஷல் மாறன் • மென்பொருள் சாசனம்
+                    <span className="text-xs sm:text-sm font-extrabold text-[#3b1704]">
+                      M Kaushal Maran • Systems Architect
                     </span>
                   </div>
                   <span className="text-[10px] sm:text-xs font-mono font-bold text-[#451f08] px-2 py-0.5 rounded bg-[#522507]/15">
@@ -652,41 +652,41 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 my-2 relative z-10">
                   <div className="bg-[#592706]/12 border border-[#78370b]/25 rounded-lg p-2.5">
                     <div className="flex items-center justify-between">
-                      <b className="font-tamil text-xs sm:text-sm font-bold text-[#200c02]">🍏 ZenLife</b>
+                      <b className="text-xs sm:text-sm font-bold text-[#200c02]">🍏 ZenLife</b>
                       <span className="text-[9px] font-mono font-bold uppercase text-[#542104] bg-[#542104]/10 px-1.5 py-0.2 rounded">App Store</span>
                     </div>
-                    <p className="text-[11px] font-tamil text-[#3b1905] mt-1 leading-tight">
-                      SwiftUI · 432 Hz Solfeggio Audio DSP · ஆப்பிள் ஆப் ஸ்டோர்
+                    <p className="text-[11px] text-[#3b1905] mt-1 leading-tight">
+                      SwiftUI · 432 Hz Solfeggio Audio DSP · Native iOS
                     </p>
                   </div>
 
                   <div className="bg-[#592706]/12 border border-[#78370b]/25 rounded-lg p-2.5">
                     <div className="flex items-center justify-between">
-                      <b className="font-tamil text-xs sm:text-sm font-bold text-[#200c02]">🤖 Vellore Ads</b>
+                      <b className="text-xs sm:text-sm font-bold text-[#200c02]">🤖 Vellore Ads</b>
                       <span className="text-[9px] font-mono font-bold uppercase text-[#542104] bg-[#542104]/10 px-1.5 py-0.2 rounded">Play Store</span>
                     </div>
-                    <p className="text-[11px] font-tamil text-[#3b1905] mt-1 leading-tight">
-                      Kotlin · Jetpack Compose · உள்ளூர் வர்த்தக தளம்
+                    <p className="text-[11px] text-[#3b1905] mt-1 leading-tight">
+                      Kotlin · Jetpack Compose · Local Classifieds
                     </p>
                   </div>
 
                   <div className="bg-[#592706]/12 border border-[#78370b]/25 rounded-lg p-2.5">
                     <div className="flex items-center justify-between">
-                      <b className="font-tamil text-xs sm:text-sm font-bold text-[#200c02]">🛡️ Viana 360 &amp; Buy</b>
+                      <b className="text-xs sm:text-sm font-bold text-[#200c02]">🛡️ Viana 360 &amp; Buy</b>
                       <span className="text-[9px] font-mono font-bold uppercase text-[#542104] bg-[#542104]/10 px-1.5 py-0.2 rounded">IoT &amp; Retail</span>
                     </div>
-                    <p className="text-[11px] font-tamil text-[#3b1905] mt-1 leading-tight">
-                      Smart AI Surveillance &amp; பல்பொருள் அங்காடி கட்டமைப்பு
+                    <p className="text-[11px] text-[#3b1905] mt-1 leading-tight">
+                      Smart AI Surveillance &amp; Enterprise Commerce
                     </p>
                   </div>
 
                   <div className="bg-[#592706]/12 border border-[#78370b]/25 rounded-lg p-2.5">
                     <div className="flex items-center justify-between">
-                      <b className="font-tamil text-xs sm:text-sm font-bold text-[#200c02]">💻 CodeShift &amp; Mac</b>
+                      <b className="text-xs sm:text-sm font-bold text-[#200c02]">💻 CodeShift &amp; Mac</b>
                       <span className="text-[9px] font-mono font-bold uppercase text-[#542104] bg-[#542104]/10 px-1.5 py-0.2 rounded">Web &amp; Mac</span>
                     </div>
-                    <p className="text-[11px] font-tamil text-[#3b1905] mt-1 leading-tight">
-                      Monaco IDE · CleanYourMac Keyboard · 120 FPS
+                    <p className="text-[11px] text-[#3b1905] mt-1 leading-tight">
+                      Monaco IDE · CleanYourMac Utility · 120 FPS
                     </p>
                   </div>
                 </div>
@@ -698,9 +698,9 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
                     target="_blank"
                     rel="noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#0a66c2]/20 hover:bg-[#0a66c2]/35 border border-[#0a66c2]/50 rounded-lg text-xs font-bold text-[#1e293b] font-tamil transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#0a66c2]/20 hover:bg-[#0a66c2]/35 border border-[#0a66c2]/50 rounded-lg text-xs font-bold text-[#1e293b] transition-colors"
                   >
-                    <Linkedin className="w-3.5 h-3.5 text-[#0a66c2]" /> LinkedIn இணைக
+                    <Linkedin className="w-3.5 h-3.5 text-[#0a66c2]" /> LinkedIn Profile
                   </a>
                   <a
                     href="https://github.com/kaushalboii"
@@ -716,7 +716,7 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
                     onClick={(e) => e.stopPropagation()}
                     className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#c2410c]/20 hover:bg-[#c2410c]/30 border border-[#c2410c]/40 rounded-lg text-xs font-bold text-[#431407] font-mono transition-colors"
                   >
-                    <Mail className="w-3.5 h-3.5 text-[#c2410c]" /> மின்னஞ்சல்
+                    <Mail className="w-3.5 h-3.5 text-[#c2410c]" /> Email
                   </a>
                 </div>
 
@@ -727,7 +727,7 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
             <div className="olai-wood-beam olai-wood-beam--bottom">
               <div className="olai-brass-accent" />
               <div className="olai-wood-title">
-                <span>மு. கௌஷல் மாறன் • கைவினை மென்பொருள் பொறியாளர்</span>
+                <span>M KAUSHAL MARAN · MOBILE &amp; SYSTEMS ARCHITECT</span>
               </div>
               <div className="olai-brass-accent" />
             </div>
@@ -739,16 +739,16 @@ function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
       <div className="mt-5 flex flex-wrap items-center justify-center gap-3 w-full">
         <button
           onClick={() => setFlipped(!flipped)}
-          className="px-5 py-2.5 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded-xl text-xs sm:text-sm font-bold text-amber-200 transition-all font-tamil cursor-pointer flex items-center gap-2 shadow-[0_0_15px_rgba(245,158,11,0.2)]"
+          className="px-5 py-2.5 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded-xl text-xs sm:text-sm font-bold text-amber-200 transition-all cursor-pointer flex items-center gap-2 shadow-[0_0_15px_rgba(245,158,11,0.2)]"
         >
           <RotateCcw className="w-4 h-4 text-amber-400" />
-          {flipped ? "முதல் ஏடு: திருக்குறள் காண்க (Front: Kural)" : "சுவடியைத் திருப்புக: மென்பொருள் சாசனம் (Flip: Software Edict)"}
+          {flipped ? "Flip to Thirukkural Manuscript" : "Flip to Software Edict"}
         </button>
         <button
           onClick={onClose}
-          className="px-5 py-2.5 bg-washi/5 hover:bg-washi/15 border border-washi/10 rounded-xl text-xs sm:text-sm font-bold text-washi transition-colors font-tamil cursor-pointer"
+          className="px-5 py-2.5 bg-washi/5 hover:bg-washi/15 border border-washi/10 rounded-xl text-xs sm:text-sm font-bold text-washi transition-colors cursor-pointer"
         >
-          சுவடியை மூடுக (Close)
+          Close
         </button>
       </div>
 
@@ -944,10 +944,10 @@ export default function App() {
             </div>
             <button
               onClick={(e) => { e.stopPropagation(); setActiveModal('holo'); }}
-              title="Open Ancient Tamil Olaichuvadi 3D"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/35 rounded-full text-xs font-tamil text-amber-300 transition-colors cursor-pointer"
+              title="Open Ancient Tamil Palm Leaf 3D"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/35 rounded-full text-xs text-amber-300 transition-colors cursor-pointer font-mono"
             >
-              <Scroll className="w-3 h-3 text-amber-400" /> ஓலைச்சுவடி 3D
+              <Scroll className="w-3 h-3 text-amber-400" /> 3D Palm Leaf
             </button>
           </div>
         </DraggableBox>
@@ -1177,15 +1177,15 @@ export default function App() {
 
           <div className="flex justify-between items-start relative z-10">
             <div>
-              <span className="text-[10px] font-mono tracking-widest text-amber-400/90 uppercase block">ANCIENT MANUSCRIPT</span>
-              <h3 className="text-xl font-black tracking-tight text-washi font-tamil">ஓலைச்சுவடி</h3>
+              <span className="text-[10px] font-mono tracking-widest text-amber-400/90 uppercase block">CRAFT &amp; HERITAGE</span>
+              <h3 className="text-2xl font-black tracking-tight text-washi">STORY</h3>
             </div>
             <div className="w-8 h-8 rounded-full bg-amber-500/20 border border-amber-500/30 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-sumi-950 transition-colors shadow-xl text-amber-300">
               <Scroll className="w-4 h-4" />
             </div>
           </div>
           <div className="relative z-10 mt-auto pb-1">
-            <p className="text-xs font-tamil text-amber-200/90 font-medium">குறள் 619 · 3D பனை ஓலைச்சுவடி ↗</p>
+            <p className="text-xs text-amber-200/90 font-medium">3D Palm Leaf · Kural 619 ↗</p>
           </div>
         </DraggableBox>
 
@@ -1280,9 +1280,9 @@ export default function App() {
               </a>
               <button
                 onClick={() => { setActiveModal('holo'); }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 rounded-xl text-xs font-bold uppercase tracking-wider text-amber-300 transition-colors cursor-pointer font-tamil"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 rounded-xl text-xs font-bold uppercase tracking-wider text-amber-300 transition-colors cursor-pointer"
               >
-                <Scroll className="w-4 h-4 text-amber-400" /> ஓலைச்சுவடி 3D (Ancient Palm Leaf)
+                <Scroll className="w-4 h-4 text-amber-400" /> 3D Palm Leaf (Olaichuvadi)
               </button>
               <a
                 href={portfolioData.profile.links.portfolio}
@@ -1696,15 +1696,15 @@ export default function App() {
           <div className="md:col-span-5 space-y-6">
             <div className="bg-gradient-to-br from-amber-500/15 via-sumi-950/70 to-sumi-950 p-6 rounded-3xl border border-amber-500/30 text-center">
               <Scroll className="w-8 h-8 text-amber-400 mx-auto mb-2" />
-              <h5 className="text-lg font-black text-washi font-tamil">பண்டைய தமிழ் ஓலைச்சுவடி</h5>
-              <p className="text-xs text-washi-dim mt-1 mb-4 leading-relaxed font-tamil">
-                திருக்குறள் ஆள்வினையுடைமை (குறள் 619: தெய்வத்தான் ஆகா தெனினும் முயற்சிதன் மெய்வருத்தக் கூலி தரும்) பொறிக்கப்பட்ட 3D பனை ஓலைச்சுவடி. எழுத்தாணி வெட்டு, செங்கயிறு, மரப்பட்டடை மற்றும் கௌஷல் மாறனின் மென்பொருள் சாசனம்.
+              <h5 className="text-lg font-black text-washi">Ancient Palm-Leaf Manuscript</h5>
+              <p className="text-xs text-washi-dim mt-1 mb-4 leading-relaxed">
+                Interactive 3D Palmyra palm-leaf manuscript inscribed with Thirukkural 619 ("Effort yields its full reward"), sacred red cord, and Kaushal's software architecture edict.
               </p>
               <button
                 onClick={() => setActiveModal('holo')}
-                className="w-full py-2.5 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded-xl text-xs font-bold uppercase tracking-wider text-amber-300 transition-colors cursor-pointer font-tamil flex items-center justify-center gap-2"
+                className="w-full py-2.5 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded-xl text-xs font-bold uppercase tracking-wider text-amber-300 transition-colors cursor-pointer flex items-center justify-center gap-2"
               >
-                <Scroll className="w-4 h-4" /> ஓலைச்சுவடியைத் திறக்கவும் 📜
+                <Scroll className="w-4 h-4" /> Open 3D Manuscript 📜
               </button>
             </div>
 
