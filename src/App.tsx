@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useMotionValue, animate } from 'motion/react';
 import {
   Github,
   Mail,
+  Linkedin,
   ExternalLink,
   Star,
   ArrowUpRight,
@@ -40,8 +41,8 @@ const portfolioData = {
     name: "M Kaushal Maran",
     handle: "@kaushalboii",
     title: "Mobile App Developer · Systems Architect",
-    bio: "Final-year B.Tech IT student at SIMATS Engineering College (CGPA 8.1) & Mobile App Developer. I architect native iOS (Swift, SwiftUI) and Android (Kotlin, Jetpack Compose) applications, low-level macOS utilities, and 120 FPS high-performance systems.",
-    location: "Vellore & Chennai, India",
+    bio: "Final-year B.Tech IT student at SIMATS Engineering College (CGPA 8.1) & Mobile App Developer from Tamil Nadu. I architect native iOS (Swift, SwiftUI) and Android (Kotlin, Jetpack Compose) applications, low-level macOS utilities, and 120 FPS high-performance systems.",
+    location: "Vellore & Chennai, Tamil Nadu, India",
     education: "B.Tech Information Technology (CGPA 8.1) · SIMATS Engineering College",
     roles: [
       "Mobile App Developer @ SIMATS Engineering College",
@@ -50,6 +51,7 @@ const portfolioData = {
     ],
     links: {
       github: "https://github.com/kaushalboii",
+      linkedin: "https://www.linkedin.com/in/kaushalboii",
       email: "kaushalmaranm@gmail.com",
       portfolio: "https://kaushalboii.github.io/Kaushal-s-Portfolio/",
       appStore: "https://apps.apple.com/in/app/zenlife-stress-sound-relief/id6753105286",
@@ -138,7 +140,7 @@ const portfolioData = {
     },
     {
       name: "Vellore Ads Platform",
-      desc: "Commercial listing and advertising directory application live on the Google Play Store. Features instant location filtering, high-density listing catalogues, verified merchant profiles, and localized classified ad management.",
+      desc: "Commercial listing and advertising directory application live on the Google Play Store. Features instant location filtering, high-density listing catalogues, verified merchant profiles, and localized classified ad management in Vellore, Tamil Nadu.",
       link: "https://play.google.com/store/apps/details?id=com.velloreads.app&hl=en",
       image: "/assets/apps/velloreads-screen-1.jpg",
       layout: "portrait",
@@ -213,7 +215,7 @@ const portfolioData = {
       year: "2026",
       period: "Feb 2026 — Present",
       role: "Mobile App Developer",
-      org: "SIMATS Engineering College · Chennai",
+      org: "SIMATS Engineering College · Chennai, Tamil Nadu",
       bullets: [
         "Leading architecture and production delivery of scalable mobile platforms for academic and research ecosystems.",
         "Engineering high-performance native iOS applications with SwiftUI and Android platforms with Jetpack Compose."
@@ -223,7 +225,7 @@ const portfolioData = {
       year: "2025",
       period: "Nov 2025 — Dec 2025",
       role: "Mobile App Development Intern",
-      org: "Redback IT Solutions Private Ltd · Vellore",
+      org: "Redback IT Solutions Private Ltd · Vellore, Tamil Nadu",
       bullets: [
         "Engineered native Android applications in Kotlin and iOS applications using Swift & WKWebView.",
         "Delivered client platforms end-to-end: UI implementation, secure WebView bridging, and APK/IPA signing."
@@ -277,7 +279,7 @@ const Modal = ({ isOpen, onClose, title, jp, children, maxWidth = "max-w-2xl" }:
           <div className="flex justify-between items-center shrink-0 bg-sumi-900 py-4 px-6 md:px-8 border-b border-washi/8">
             <div className="flex items-baseline gap-3">
               <h2 className="text-2xl md:text-3xl font-black tracking-tight text-washi">{title}</h2>
-              {jp && <span className="font-jp text-xs text-washi-dim tracking-[0.25em]">{jp}</span>}
+              {jp && <span className="font-tamil text-xs text-washi-dim tracking-[0.2em]">{jp}</span>}
             </div>
             <button onClick={onClose} aria-label="Close" className="p-2 bg-washi/5 hover:bg-washi/15 rounded-full transition-colors cursor-pointer">
               <X className="w-5 h-5 text-washi/80" />
@@ -349,7 +351,7 @@ function DraggableBox({
   );
 }
 
-// Interactive 3D Holographic Ability Pokémon Card
+// 24K Gold Ability Pokémon Card — Pure Custom Component for Kaushal Maran
 function HolographicAbilityCard({ onClose }: { onClose: () => void }) {
   const [flipped, setFlipped] = useState(false);
   const [rotX, setRotX] = useState(0);
@@ -359,8 +361,8 @@ function HolographicAbilityCard({ onClose }: { onClose: () => void }) {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    setRotX((-y / rect.height) * 25);
-    setRotY((x / rect.width) * 25);
+    setRotX((-y / rect.height) * 20);
+    setRotY((x / rect.width) * 20);
   };
 
   const handleMouseLeave = () => {
@@ -369,14 +371,17 @@ function HolographicAbilityCard({ onClose }: { onClose: () => void }) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-2 sm:p-4 select-none">
-      <p className="text-xs font-mono tracking-widest text-kin-400 uppercase mb-4 text-center">
-        ⚡ PSA 10 · 24K Gold Ability Card · Click card to flip
-      </p>
+    <div className="flex flex-col items-center justify-center p-1 sm:p-3 select-none">
+      <div className="flex items-center gap-2 mb-3">
+        <Sparkles className="w-4 h-4 text-kin-400" />
+        <p className="text-xs font-mono tracking-widest text-kin-400 uppercase text-center">
+          PSA 10 · 24K GOLD KAUSHAL MARAN VMAX · தட்டினால் திரும்பும்
+        </p>
+      </div>
 
       <div
-        className="relative w-full max-w-[340px] sm:max-w-[380px] aspect-[1040/1452] cursor-pointer"
-        style={{ perspective: '1100px' }}
+        className="relative w-full max-w-[340px] sm:max-w-[400px] aspect-[1040/1540] cursor-pointer"
+        style={{ perspective: '1100px', containerType: 'inline-size' } as any}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onClick={() => setFlipped(!flipped)}
@@ -390,36 +395,167 @@ function HolographicAbilityCard({ onClose }: { onClose: () => void }) {
           className="w-full h-full relative"
           style={{ transformStyle: 'preserve-3d' }}
         >
-          {/* FRONT FACE (Gold Plate) */}
+          {/* FRONT FACE: Kaushal Maran 24K Gold Pokemon Card */}
           <div
-            className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border border-kin-400/40"
+            className="pk-card"
             style={{
               backfaceVisibility: 'hidden',
-              background: 'radial-gradient(circle at 50% 30%, #30261a 0%, #17130e 100%)',
+              ['--px' as any]: rotY / 20,
+              ['--py' as any]: -rotX / 20,
             }}
           >
-            {/* Base plate */}
-            <img src={asset("card/plate.webp")} alt="Kaushal Maran Ability Card" className="w-full h-full object-cover" />
-            
-            {/* Dynamic specular sheen */}
-            <div
-              className="absolute inset-0 pointer-events-none mix-blend-color-dodge opacity-50"
-              style={{
-                background: `radial-gradient(circle at ${50 + rotY * 2}% ${50 - rotX * 2}%, rgba(255,230,160,0.7) 0%, transparent 60%)`,
-              }}
-            />
-            {/* Rainbow diffraction foil */}
-            <div
-              className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-30"
-              style={{
-                background: `linear-gradient(${115 + rotY * 3}deg, #ff0055 0%, #00ffff 35%, #ffff00 70%, #ff00aa 100%)`,
-              }}
-            />
+            <div className="pk-card__glare" />
+            <div className="pk-card__holo" />
+            <div className="pk-card__gold-texture" aria-hidden="true" />
+            <div className="pk-card__sparkles" aria-hidden="true" />
+
+            <div className="pk-card__border">
+              <div className="pk-card__inner">
+                
+                {/* 1. Header: Stage, Name, HP, Type */}
+                <div className="pk-card__header">
+                  <div className="pk-card__meta-left">
+                    <div className="pk-card__stage-row">
+                      <span className="pk-card__stage">STAGE 2</span>
+                      <span className="pk-card__substage">Evolves from Code Specialist</span>
+                      <span className="pk-card__psa">PSA 10 24K GOLD</span>
+                    </div>
+                    <h2 className="pk-card__name">
+                      KAUSHAL MARAN <span className="pk-card__vmax">24K GOLD VMAX</span>
+                    </h2>
+                  </div>
+                  <div className="pk-card__hp-wrap">
+                    <span className="pk-card__hp-label">HP</span>
+                    <span className="pk-card__hp">9999</span>
+                    <span className="pk-card__energy pk-card__energy--gold" title="24K Gold Master Type">👑</span>
+                  </div>
+                </div>
+
+                {/* 2. Illustration Window */}
+                <div className="pk-card__art-frame">
+                  <div className="pk-card__art-bg" />
+                  <img
+                    src={asset("assets/kaushal-opt.webp")}
+                    alt="Kaushal Maran 24K Gold Ability Pokémon Card Art"
+                    className="pk-card__art-img"
+                    loading="eager"
+                  />
+                  <div className="pk-card__art-fx" aria-hidden="true">
+                    <i className="pk-fx-sparkle s1">✦</i>
+                    <i className="pk-fx-sparkle s2">★</i>
+                    <i className="pk-fx-sparkle s3">✦</i>
+                  </div>
+                  <div className="pk-card__edition-badge">24K SOLID GOLD ★★★</div>
+                  <div className="pk-card__rarity-badge">MASTER ARCHITECT</div>
+                </div>
+
+                {/* 3. Species Ribbon */}
+                <div className="pk-card__ribbon">
+                  <span>NO. 001 · 24K GOLD ARCHITECT · 10+ LIVE STORE APPS · VELLORE &amp; CHENNAI · தமிழ்</span>
+                </div>
+
+                {/* 4. Special Ability */}
+                <div className="pk-card__ability">
+                  <div className="pk-card__ability-title">
+                    <span className="pk-card__ability-badge">ABILITY</span>
+                    <b className="pk-card__ability-name">Omni-UI Synthesis Engine</b>
+                  </div>
+                  <p className="pk-card__ability-desc">
+                    Passive: Master orchestrator of SwiftUI, Jetpack Compose, Monaco Editor, and Interactive 3D WebGL. All deployed applications (ZenLife, Vellore Ads, CodeShift, India News Radar) run with zero frame drops at 120 FPS.
+                  </p>
+                </div>
+
+                {/* 4b. Verified Projects & Ability Metrics */}
+                <div className="pk-card__skills-grid">
+                  <div className="pk-skill-bar">
+                    <div className="pk-skill-bar__head">
+                      <span className="pk-skill-bar__label">🍏 ZenLife &amp; iOS Suite</span>
+                      <span className="pk-skill-bar__pct">99%</span>
+                    </div>
+                    <div className="pk-skill-bar__sub">SwiftUI · CoreData · App Store</div>
+                    <div className="pk-skill-bar__track"><div className="pk-skill-bar__fill" style={{ width: '99%' }} /></div>
+                  </div>
+                  <div className="pk-skill-bar">
+                    <div className="pk-skill-bar__head">
+                      <span className="pk-skill-bar__label">🤖 Vellore Ads &amp; Legal</span>
+                      <span className="pk-skill-bar__pct">98%</span>
+                    </div>
+                    <div className="pk-skill-bar__sub">Kotlin · Compose · Play Store</div>
+                    <div className="pk-skill-bar__track"><div className="pk-skill-bar__fill" style={{ width: '98%' }} /></div>
+                  </div>
+                  <div className="pk-skill-bar">
+                    <div className="pk-skill-bar__head">
+                      <span className="pk-skill-bar__label">🌐 CodeShift &amp; Web</span>
+                      <span className="pk-skill-bar__pct">99%</span>
+                    </div>
+                    <div className="pk-skill-bar__sub">Monaco Editor · Encrypted Sync</div>
+                    <div className="pk-skill-bar__track"><div className="pk-skill-bar__fill" style={{ width: '99%' }} /></div>
+                  </div>
+                  <div className="pk-skill-bar">
+                    <div className="pk-skill-bar__head">
+                      <span className="pk-skill-bar__label">🧠 DCGAN &amp; CV Labs</span>
+                      <span className="pk-skill-bar__pct">96%</span>
+                    </div>
+                    <div className="pk-skill-bar__sub">PyTorch · 40+ Vision Pipelines</div>
+                    <div className="pk-skill-bar__track"><div className="pk-skill-bar__fill" style={{ width: '96%' }} /></div>
+                  </div>
+                </div>
+
+                {/* 5. Attacks */}
+                <div className="pk-card__attacks">
+                  <div className="pk-attack">
+                    <div className="pk-attack__cost">
+                      <span className="pk-card__energy pk-card__energy--gold" title="Gold">👑</span>
+                      <span className="pk-card__energy pk-card__energy--lightning" title="Lightning">⚡</span>
+                      <span className="pk-card__energy pk-card__energy--metal" title="Metal">⚙️</span>
+                    </div>
+                    <div className="pk-attack__info">
+                      <b className="pk-attack__name">Store Fleet Omni-Deploy</b>
+                      <p className="pk-attack__desc">Synchronously deploys production updates to App Store &amp; Play Store. Offline-first caching with sub-16ms latency.</p>
+                    </div>
+                    <span className="pk-attack__dmg">9999+</span>
+                  </div>
+
+                  <div className="pk-attack pk-attack--ult">
+                    <div className="pk-attack__cost">
+                      <span className="pk-card__energy pk-card__energy--gold" title="Gold">👑</span>
+                      <span className="pk-card__energy pk-card__energy--psychic" title="Psychic">🔮</span>
+                      <span className="pk-card__energy pk-card__energy--lightning" title="Lightning">⚡</span>
+                    </div>
+                    <div className="pk-attack__info">
+                      <b className="pk-attack__name">CodeShift &amp; Neural Overdrive</b>
+                      <p className="pk-attack__desc">Fuses encrypted Monaco collaboration with India News Radar &amp; PyTorch neural networks.</p>
+                    </div>
+                    <span className="pk-attack__dmg pk-attack__dmg--inf">∞</span>
+                  </div>
+                </div>
+
+                {/* 6. 24K Gold Rule Box */}
+                <div className="pk-card__rule-box">
+                  <b>24K GOLD ARCHITECT RULE:</b> Guarantees 100/100 Lighthouse performance, sub-50ms Time-to-Interactive, and 120 FPS UI ergonomics.
+                </div>
+
+                {/* 7. Bottom Stats */}
+                <div className="pk-card__bottom-stats">
+                  <div className="flex gap-1.5"><span className="text-kin-400">weakness</span><span>☕ ×0</span></div>
+                  <div className="flex gap-1.5"><span className="text-kin-400">resistance</span><span>🐛 -9999 · ⚡ 0ms</span></div>
+                  <div className="flex gap-1.5"><span className="text-kin-400">retreat</span><span>0 (Instant)</span></div>
+                </div>
+
+                {/* 8. Collector Footer */}
+                <div className="pk-card__footer">
+                  <span>Illus. Kaushal Maran</span>
+                  <span className="font-tamil text-kin-400">கைவினைத்திறன்</span>
+                  <span>001/001 24K GOLD PROOF</span>
+                </div>
+
+              </div>
+            </div>
           </div>
 
-          {/* BACK FACE (Embossed Monogram) */}
+          {/* BACK FACE: Embossed Monogram Reverse */}
           <div
-            className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border border-washi/20"
+            className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border border-kin-400/30"
             style={{
               backfaceVisibility: 'hidden',
               transform: 'rotateY(180deg)',
@@ -428,11 +564,16 @@ function HolographicAbilityCard({ onClose }: { onClose: () => void }) {
           >
             <img src={asset("card/back.webp")} alt="Card Back Monogram" className="w-full h-full object-cover" />
             <div
-              className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-35"
+              className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-40"
               style={{
-                background: `radial-gradient(circle at ${50 - rotY * 2}% ${50 - rotX * 2}%, rgba(255,255,255,0.6) 0%, transparent 65%)`,
+                background: `radial-gradient(circle at ${50 - rotY * 2}% ${50 - rotX * 2}%, rgba(254,240,138,0.7) 0%, transparent 65%)`,
               }}
             />
+            <div className="absolute inset-x-0 bottom-4 text-center pointer-events-none">
+              <span className="font-tamil text-xs tracking-widest text-kin-400/80 uppercase">
+                கற்றது கைமண் அளவு · M KAUSHAL MARAN
+              </span>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -442,26 +583,27 @@ function HolographicAbilityCard({ onClose }: { onClose: () => void }) {
           onClick={() => setFlipped(!flipped)}
           className="px-4 py-2 bg-kin-400/15 hover:bg-kin-400/25 border border-kin-400/30 rounded-xl text-xs font-bold text-kin-400 transition-colors cursor-pointer"
         >
-          {flipped ? "Show Front Face" : "Flip to Back Face"}
+          {flipped ? "அட்டையின் முன்பக்கம் (Front)" : "அட்டையின் பின்பக்கம் (Back Face)"}
         </button>
         <button
           onClick={onClose}
           className="px-4 py-2 bg-washi/5 hover:bg-washi/15 border border-washi/10 rounded-xl text-xs font-bold text-washi transition-colors cursor-pointer"
         >
-          Close
+          மூடு (Close)
         </button>
       </div>
     </div>
   );
 }
 
-// Footer one-liners — authentic & craft-focused
+// Footer one-liners — Tamil classical wisdom & modern craft
 const QUIPS = [
-  "UTC+5:30 — Vellore, India",
+  "தமிழ்நாடு · Vellore, India (UTC+5:30)",
   "crafting native iOS & Android at 120 FPS",
+  "யாதும் ஊரே யாவரும் கேளிர் — Purananuru 192",
   "the eyes follow your cursor. they judge, too.",
   "drag the cards. rearrange my architecture.",
-  "built with first-principles & craftsmanship",
+  "கற்றது கைமண் அளவு — Craftsmanship without limits",
 ];
 
 function FooterQuip() {
@@ -557,17 +699,17 @@ export default function App() {
     return () => { window.removeEventListener('resize', onResize); clearTimeout(t); };
   }, []);
 
-  // Tab-away easter egg
+  // Tab-away easter egg in Tamil
   useEffect(() => {
     const original = document.title;
-    const onVis = () => { document.title = document.hidden ? 'おーい — come back' : original; };
+    const onVis = () => { document.title = document.hidden ? 'வணக்கம் — come back' : original; };
     document.addEventListener('visibilitychange', onVis);
     return () => { document.removeEventListener('visibilitychange', onVis); document.title = original; };
   }, []);
 
   // Console easter egg
   useEffect(() => {
-    console.log('%c開 KAUSHAL MARAN', 'font-size:32px;color:#e1532e;font-weight:bold;font-family:serif;');
+    console.log('%cவணக்கம் · KAUSHAL MARAN', 'font-size:32px;color:#e1532e;font-weight:bold;font-family:sans-serif;');
     console.log('%cMobile App Developer · iOS & Android · kaushalmaranm@gmail.com', 'color:#8a8275;font-size:12px;');
   }, []);
 
@@ -575,10 +717,11 @@ export default function App() {
     <div ref={constraintsRef} className="min-h-screen p-4 md:p-8 flex flex-col items-center justify-center relative overflow-hidden font-sans text-washi">
       <InteractiveBackground />
 
-      {/* Vertical gutter signature — ものづくり (monozukuri, craftsmanship) */}
-      <div className="fixed left-6 top-1/2 -translate-y-1/2 z-10 hidden xl:flex flex-col items-center gap-5 pointer-events-none select-none" aria-hidden="true">
-        <span className="writing-vertical font-jp text-xs text-washi/30">ものづくり</span>
-        <span className="w-px h-20 bg-gradient-to-b from-washi/25 to-transparent"></span>
+      {/* Vertical gutter signature — Tamil classical craftsmanship */}
+      <div className="fixed left-6 top-1/2 -translate-y-1/2 z-10 hidden xl:flex flex-col items-center gap-4 pointer-events-none select-none" aria-hidden="true">
+        <span className="font-tamil text-xs text-washi/40 tracking-[0.25em] [writing-mode:vertical-rl]">கைவினை</span>
+        <span className="font-tamil text-[10px] text-washi/25 tracking-[0.2em] [writing-mode:vertical-rl]">யாதும் ஊரே</span>
+        <span className="w-px h-16 bg-gradient-to-b from-washi/25 to-transparent"></span>
       </div>
 
       {/* Editorial frame — top rule */}
@@ -589,7 +732,7 @@ export default function App() {
         className="relative z-10 mb-5 w-full max-w-5xl flex items-end justify-between border-b border-washi/10 pb-3"
       >
         <span className="font-mono text-[11px] tracking-[0.25em] text-washi-dim uppercase">PORTFOLIO · M KAUSHAL MARAN</span>
-        <span className="font-jp text-xs text-washi-dim tracking-[0.4em] pl-4">職人気質</span>
+        <span className="font-tamil text-xs text-washi-dim tracking-[0.3em] pl-4">கைவினைத்திறன்</span>
       </motion.div>
 
       <motion.div 
@@ -678,7 +821,7 @@ export default function App() {
           </div>
         </DraggableBox>
 
-        {/* Links Box */}
+        {/* Links Box — with LinkedIn integrated */}
         <DraggableBox
           variants={itemVariants}
           dragRef={constraintsRef}
@@ -695,9 +838,19 @@ export default function App() {
               target="_blank"
               rel="noreferrer"
               draggable={false}
-              className="w-1/2 h-full bg-sumi-900/95 rounded-2xl border border-washi/10 flex items-center justify-center hover:bg-sumi-850 hover:border-shu-500/50 transition-colors cursor-pointer shadow-lg group"
+              className="w-1/4 h-full bg-sumi-900/95 rounded-2xl border border-washi/10 flex items-center justify-center hover:bg-sumi-850 hover:border-shu-500/50 transition-colors cursor-pointer shadow-lg group"
             >
-              <Github className="w-7 h-7 text-washi/70 group-hover:text-shu-400 transition-colors" />
+              <Github className="w-5 h-5 text-washi/70 group-hover:text-shu-400 transition-colors" />
+            </a>
+            <a
+              href={portfolioData.profile.links.linkedin}
+              title="LinkedIn Profile"
+              target="_blank"
+              rel="noreferrer"
+              draggable={false}
+              className="w-1/4 h-full bg-sumi-900/95 rounded-2xl border border-washi/10 flex items-center justify-center hover:bg-sumi-850 hover:border-shu-500/50 transition-colors cursor-pointer shadow-lg group"
+            >
+              <Linkedin className="w-5 h-5 text-washi/70 group-hover:text-shu-400 transition-colors" />
             </a>
           </div>
           <div className="flex items-center justify-center h-1/2 gap-2">
@@ -707,7 +860,7 @@ export default function App() {
               draggable={false}
               className="w-1/3 h-full bg-sumi-900/95 rounded-2xl border border-washi/10 flex items-center justify-center hover:bg-sumi-850 hover:border-shu-500/50 transition-colors cursor-pointer shadow-lg group"
             >
-              <Mail className="w-6 h-6 text-washi/70 group-hover:text-shu-400 transition-colors" />
+              <Mail className="w-5 h-5 text-washi/70 group-hover:text-shu-400 transition-colors" />
             </a>
             <a
               href={portfolioData.profile.links.appStore}
@@ -717,17 +870,17 @@ export default function App() {
               draggable={false}
               className="w-1/3 h-full bg-sumi-900/95 rounded-2xl border border-washi/10 flex items-center justify-center hover:bg-sumi-850 hover:border-shu-500/50 transition-colors cursor-pointer shadow-lg group"
             >
-              <Smartphone className="w-6 h-6 text-washi/70 group-hover:text-shu-400 transition-colors" />
+              <Smartphone className="w-5 h-5 text-washi/70 group-hover:text-shu-400 transition-colors" />
             </a>
             <a
               href={portfolioData.profile.links.portfolio}
-              title="Interactive 3D Portfolio"
+              title="Primary 3D Portfolio"
               target="_blank"
               rel="noreferrer"
               draggable={false}
               className="w-1/3 h-full bg-sumi-900/95 rounded-2xl border border-washi/10 flex items-center justify-center hover:bg-sumi-850 hover:border-shu-500/50 transition-colors cursor-pointer shadow-lg group"
             >
-              <Globe className="w-6 h-6 text-washi/70 group-hover:text-shu-400 transition-colors" />
+              <Globe className="w-5 h-5 text-washi/70 group-hover:text-shu-400 transition-colors" />
             </a>
           </div>
         </DraggableBox>
@@ -740,7 +893,7 @@ export default function App() {
           onClick={() => setActiveModal('projects')}
           className="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sumi-850 to-sumi-900 rounded-3xl p-6 border border-washi/10 relative overflow-hidden group cursor-pointer flex flex-col justify-between shadow-[0_16px_50px_rgba(0,0,0,0.45)] hover:border-shu-500/35 transition-colors duration-300 z-10 hover:z-50"
         >
-          {/* Ensō — single brush circle */}
+          {/* Ensō brush circle */}
           <svg viewBox="0 0 200 200" className="absolute -right-12 -bottom-16 w-72 h-72 text-shu-500/15 group-hover:text-shu-500/25 transition-colors duration-700 pointer-events-none" fill="none" aria-hidden="true">
             <path d="M167.7 75.4 A72 72 0 1 0 146.3 155.2" stroke="currentColor" strokeWidth="9" strokeLinecap="round" />
           </svg>
@@ -858,7 +1011,7 @@ export default function App() {
               <img src={asset("assets/apps/zenlife-icon.webp")} alt="ZenLife" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
             </div>
             <div className="overflow-hidden bg-sumi-850">
-              <img src={asset("card/plate.webp")} alt="Ability Card" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
+              <img src={asset("card/back.webp")} alt="Ability Card" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
             </div>
             <div className="overflow-hidden bg-sumi-850">
               <img src={asset("assets/apps/viana360-icon.webp")} alt="Viana 360" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s]" loading="lazy" decoding="async" />
@@ -903,7 +1056,7 @@ export default function App() {
       {/* ================= MODALS ================= */}
 
       {/* Profile Modal */}
-      <Modal isOpen={activeModal === 'profile'} onClose={() => setActiveModal(null)} title="About Kaushal" jp="自己紹介">
+      <Modal isOpen={activeModal === 'profile'} onClose={() => setActiveModal(null)} title="About Kaushal" jp="சுயவிவரம்">
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <div className="flex flex-col items-center gap-2 shrink-0">
             <div className="w-28 h-28 rounded-2xl overflow-hidden border border-washi/15 bg-sumi-950 flex items-center justify-center shadow-xl">
@@ -961,11 +1114,19 @@ export default function App() {
               >
                 <Mail className="w-4 h-4" /> Send Email
               </a>
+              <a
+                href={portfolioData.profile.links.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#0077b5]/20 hover:bg-[#0077b5]/30 border border-[#0077b5]/40 rounded-xl text-xs font-bold uppercase tracking-wider text-[#38bdf8] transition-colors"
+              >
+                <Linkedin className="w-4 h-4" /> LinkedIn Profile
+              </a>
               <button
                 onClick={() => { setActiveModal('holo'); }}
                 className="inline-flex items-center gap-2 px-4 py-2 bg-kin-400/15 hover:bg-kin-400/25 border border-kin-400/30 rounded-xl text-xs font-bold uppercase tracking-wider text-kin-300 transition-colors cursor-pointer"
               >
-                <Sparkles className="w-4 h-4 text-kin-400" /> 24K Gold Ability Card
+                <Sparkles className="w-4 h-4 text-kin-400" /> 24K Gold Card
               </button>
               <a
                 href={portfolioData.profile.links.portfolio}
@@ -981,7 +1142,7 @@ export default function App() {
       </Modal>
 
       {/* Tech Stack Modal */}
-      <Modal isOpen={activeModal === 'stack'} onClose={() => setActiveModal(null)} title="Tech Stack" jp="技術" maxWidth="max-w-4xl">
+      <Modal isOpen={activeModal === 'stack'} onClose={() => setActiveModal(null)} title="Tech Stack" jp="தொழில்நுட்பம்" maxWidth="max-w-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           
           {/* Mobile Native Core (iOS & Android) */}
@@ -1093,7 +1254,7 @@ export default function App() {
       </Modal>
 
       {/* Open Source Modal */}
-      <Modal isOpen={activeModal === 'opensource'} onClose={() => setActiveModal(null)} title="Open Source & Repositories" jp="公開" maxWidth="max-w-3xl">
+      <Modal isOpen={activeModal === 'opensource'} onClose={() => setActiveModal(null)} title="Open Source & Repositories" jp="பொதுவெளி" maxWidth="max-w-3xl">
         <div className="space-y-5">
           <p className="text-washi/70 text-sm leading-relaxed">
             Public releases, utilities, and research platforms across macOS, iOS, Web, and Computer Vision. Live star counts are fetched directly from GitHub.
@@ -1154,7 +1315,7 @@ export default function App() {
       </Modal>
 
       {/* Projects Showcase Modal — Clean Accordion */}
-      <Modal isOpen={activeModal === 'projects'} onClose={() => setActiveModal(null)} title="Projects Craft" jp="作品" maxWidth="max-w-4xl">
+      <Modal isOpen={activeModal === 'projects'} onClose={() => setActiveModal(null)} title="Projects Craft" jp="படைப்புகள்" maxWidth="max-w-4xl">
         <div className="flex flex-col gap-2 pt-2 pb-6 w-full">
           {portfolioData.projects.map((project, i) => {
             const isPortrait = project.layout === 'portrait';
@@ -1273,7 +1434,7 @@ export default function App() {
       </Modal>
 
       {/* Systems Architecture Modal */}
-      <Modal isOpen={activeModal === 'architecture'} onClose={() => setActiveModal(null)} title="Systems Architecture" jp="仕組み" maxWidth="max-w-4xl">
+      <Modal isOpen={activeModal === 'architecture'} onClose={() => setActiveModal(null)} title="Systems Architecture" jp="கட்டமைப்பு" maxWidth="max-w-4xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           
           {/* Left Column (Philosophy & Platforms) */}
@@ -1345,7 +1506,7 @@ export default function App() {
       </Modal>
 
       {/* Story & Craft Modal */}
-      <Modal isOpen={activeModal === 'story'} onClose={() => setActiveModal(null)} title="Journey & Craft" jp="歩み" maxWidth="max-w-4xl">
+      <Modal isOpen={activeModal === 'story'} onClose={() => setActiveModal(null)} title="Journey & Milestones" jp="பயணம்" maxWidth="max-w-4xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           
           {/* Career Milestones */}
@@ -1382,7 +1543,7 @@ export default function App() {
               <Sparkles className="w-8 h-8 text-kin-400 mx-auto mb-2" />
               <h5 className="text-lg font-black text-washi">24K Gold Pokémon Card</h5>
               <p className="text-xs text-washi-dim mt-1 mb-4 leading-relaxed">
-                PSA 10 Holographic Ability Card with interactive 3D physics, rainbow specular reflection, and embossed reverse monogram.
+                PSA 10 24K Gold Ability Card engineered for Kaushal Maran with interactive 3D physics, gold foil sheen, and flip mechanics.
               </p>
               <button
                 onClick={() => setActiveModal('holo')}
@@ -1418,7 +1579,7 @@ export default function App() {
       </Modal>
 
       {/* 24K Gold Ability Pokemon Card Modal */}
-      <Modal isOpen={activeModal === 'holo'} onClose={() => setActiveModal(null)} title="24K Gold Ability Card" jp="黄金札" maxWidth="max-w-xl">
+      <Modal isOpen={activeModal === 'holo'} onClose={() => setActiveModal(null)} title="24K Gold Ability Card" jp="தங்க அட்டை" maxWidth="max-w-xl">
         <HolographicAbilityCard onClose={() => setActiveModal(null)} />
       </Modal>
 
