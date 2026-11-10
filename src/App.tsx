@@ -25,6 +25,8 @@ import {
   Terminal,
   Scroll,
   Feather,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import InteractiveBackground from './components/InteractiveBackground';
 import PortfolioEyes from './components/PortfolioEyes';
@@ -359,299 +361,648 @@ function DraggableBox({
 // Sacred Red Cord (செங்கயிறு), Carved Rosewood Beams, and Kaushal Maran's Software Edict.
 // ==========================================================================
 
-interface KuralItem {
-  number: number;
-  chapter: string;
-  theme: string;
+interface PalmLeafItem {
+  id: number;
+  isCover?: boolean;
+  kuralNumber?: number;
+  title: string;
+  chapterTamil: string;
+  chapterEnglish: string;
   line1: string;
   line2: string;
-  transliteration: string;
-  meaning: string;
-  english: string;
-  shortTag: string;
+  transliteration?: string;
+  meaningTamil: string;
+  meaningEnglish: string;
+  engineeringParallel: string;
+  keyWords?: { word: string; meaning: string }[];
 }
 
-const TAMIL_KURALS: KuralItem[] = [
+const PALM_LEAVES: PalmLeafItem[] = [
   {
-    number: 382,
-    chapter: "Chapter 39: The Greatness of Leadership (இறைமாட்சி)",
-    theme: "Leadership & Relentless Drive",
-    line1: "அஞ்சாமை ஈகை அறிவுஊக்கம் இந்நான்கும்",
-    line2: "எஞ்சாமை வேந்தர்க் கியல்பு.",
-    transliteration: "Anjaamai eegai arivu-ookkam innaangum enjaamai vendharkku iyalbu.",
-    meaning: "அச்சமின்மை, ஈகை குணம், நுண்ணிய அறிவு, தளராத ஊக்கம் ஆகிய இந்நான்கும் ஒரு தலைவனுக்கு ஒருபோதும் குறையாமல் இருக்க வேண்டிய பண்புகளாகும்.",
-    english: "Courage, generous giving, wisdom, and relentless inner drive — these four never lacking are the mark of true greatness.",
-    shortTag: "Kural 382 · Leadership (அஞ்சாமை)",
+    id: 0,
+    isCover: true,
+    title: "முகப்பு ஓலை • Title Leaf",
+    chapterTamil: "பொதுமறை • நீதி இலக்கியம்",
+    chapterEnglish: "Ancient Tamil Ethical & Architectural Treatise",
+    line1: "திருக்குறள் • THIRUKURAL",
+    line2: "M. KAUSHAL MARAN COLLECTION",
+    meaningTamil: "ஈராயிரம் ஆண்டுகளுக்கு முன்பு திருவள்ளுவரால் உலகப் பொதுமறையாக இயற்றப்பட்ட 1,330 அருள்நெறிச் செய்யுள்கள். பனை ஓலைகளில் எழுத்தாணியால் செதுக்கப்பட்ட சங்க காலத் தமிழ்ப் பொக்கிஷம்.",
+    meaningEnglish: "The immortal Tamil ethical treatise composed by sage-philosopher Thiruvalluvar over two millennia ago. Inscribed on dried palmyra leaves with an iron stylus, carrying 1,330 couplets of timeless human and architectural wisdom.",
+    engineeringParallel: "First-Principles Architecture: Bridging 2,000-year-old Tamil clarity with modern low-latency mobile and systems engineering.",
+    keyWords: [
+      { word: "ஓலைச்சுவடி", meaning: "Palmyra leaf manuscript" },
+      { word: "எழுத்தாணி", meaning: "Ancient iron stylus" },
+      { word: "பொதுமறை", meaning: "Universal human scripture" },
+      { word: "முதல் தத்துவம்", meaning: "First principles" },
+    ],
   },
   {
-    number: 619,
-    chapter: "Chapter 62: Relentless Effort (ஆள்வினையுடைமை)",
-    theme: "Engineering Tenacity & Relentless Effort",
+    id: 1,
+    kuralNumber: 1,
+    title: "குறள் ௧ • First Principles",
+    chapterTamil: "அதிகாரம் 1: கடவுள் வாழ்த்து",
+    chapterEnglish: "Foundations & First Principles",
+    line1: "அகர முதல எழுத்தெல்லாம் ஆதி",
+    line2: "பகவன் முதற்றே உலகு.",
+    transliteration: "Agara mudhala ezhuththellaam aadhi bagavan mudhatre ulagu.",
+    meaningTamil: "எழுத்துக்கள் எல்லாம் 'அ' என்ற எழுத்தை முதலாகக் கொண்டுள்ளன; அதுபோல இந்த உலகம் முதற்கடவுளை அடிப்படையாகக் கொண்டுள்ளது.",
+    meaningEnglish: "As the letter 'A' is the origin and foundation of all spoken and written language, so the Primordial Source is the foundation of the cosmos.",
+    engineeringParallel: "Atomic Foundations: Every massive distributed cluster, low-latency DSP engine, or compiler begins from elementary first-principles logic.",
+    keyWords: [
+      { word: "அகர முதல", meaning: "Beginning from letter 'A'" },
+      { word: "எழுத்தெல்லாம்", meaning: "All written speech" },
+      { word: "ஆதி பகவன்", meaning: "Primordial foundation" },
+      { word: "முதற்றே உலகு", meaning: "Base of all existence" },
+    ],
+  },
+  {
+    id: 2,
+    kuralNumber: 619,
+    title: "குறள் ௬௧௯ • Relentless Effort",
+    chapterTamil: "அதிகாரம் 62: ஆள்வினையுடைமை",
+    chapterEnglish: "Relentless Effort & Tenacity in Craft",
     line1: "தெய்வத்தான் ஆகா தெனினும் முயற்சிதன்",
     line2: "மெய்வருத்தக் கூலி தரும்.",
     transliteration: "Deivathaan aagaa theninum muyarchithan meyvaruththa kooli tharum.",
-    meaning: "விதியால் கூட முடியாது என்று கைவிடப்பட்ட காரியமாயினும், உடலை வருத்திச் செய்யும் இடைவிடாத முயற்சி அதற்குரிய முழுப் பயனையும் தரும்.",
-    english: "Even if destiny or the heavens deem a task impossible, persistent, body-straining human effort and craftsmanship will always yield its full reward.",
-    shortTag: "Kural 619 · Relentless Effort (முயற்சி)",
+    meaningTamil: "விதியால் கூட முடியாது என்று கைவிடப்பட்ட காரியமாயினும், உடலை வருத்திச் செய்யும் இடைவிடாத விடாமுயற்சி அதற்குரிய முழுப் பயனையும் தரும்.",
+    meaningEnglish: "Even if fate or deities declare a task impossible, persistent, body-straining human effort and craftsmanship will always yield its full reward.",
+    engineeringParallel: "Tenacity in Code: When complex algorithms, race conditions, or memory leaks seem unsolvable, relentless debugging and iteration will prevail.",
+    keyWords: [
+      { word: "தெய்வத்தான் ஆகாது", meaning: "Even if fate denies" },
+      { word: "எனினும்", meaning: "Yet, nonetheless" },
+      { word: "முயற்சிதன்", meaning: "One's relentless craft" },
+      { word: "மெய்வருத்தக் கூலி", meaning: "Full bodily reward" },
+    ],
   },
   {
-    number: 467,
-    chapter: "Chapter 47: Deliberate Action (தெரிந்து செயல்வகை)",
-    theme: "Deliberate System Architecture & Planning",
+    id: 3,
+    kuralNumber: 382,
+    title: "குறள் ௩௮௨ • Systems Leadership",
+    chapterTamil: "அதிகாரம் 39: இறைமாட்சி",
+    chapterEnglish: "Systems Leadership & Intellectual Drive",
+    line1: "அஞ்சாமை ஈகை அறிவுஊக்கம் இந்நான்கும்",
+    line2: "எஞ்சாமை வேந்தர்க் கியல்பு.",
+    transliteration: "Anjaamai eegai arivu-ookkam innaangum enjaamai vendharkku iyalbu.",
+    meaningTamil: "அச்சமின்மை, ஈகை குணம், நுண்ணிய அறிவு, தளராத ஊக்கம் ஆகிய இந்நான்கும் ஒரு தலைவனுக்கு ஒருபோதும் குறையாமல் இருக்க வேண்டிய பண்புகளாகும்.",
+    meaningEnglish: "Courage in adversity, open generosity, deep wisdom, and tireless drive — these four virtues never diminishing define a true leader.",
+    engineeringParallel: "Engineering Leadership: Fearless pursuit of difficult problems, open-source sharing, deep domain knowledge, and relentless momentum.",
+    keyWords: [
+      { word: "அஞ்சாமை", meaning: "Fearless courage" },
+      { word: "ஈகை", meaning: "Generosity & sharing" },
+      { word: "அறிவு", meaning: "Deep wisdom & discernment" },
+      { word: "ஊக்கம்", meaning: "Ceaseless inner drive" },
+    ],
+  },
+  {
+    id: 4,
+    kuralNumber: 467,
+    title: "குறள் ௪௬௭ • Architecture & Planning",
+    chapterTamil: "அதிகாரம் 47: தெரிந்து செயல்வகை",
+    chapterEnglish: "Architectural Planning & Specification",
     line1: "எண்ணித் துணிக கருமம் துணிந்தபின்",
     line2: "எண்ணுவம் என்பது இழுக்கு.",
     transliteration: "Ennith thuniga karumam thuninthapin ennuvam enpathu izhukku.",
-    meaning: "நன்கு ஆராய்ந்து கட்டமைத்துத் திட்டமிட்ட பிறகே செயலில் இறங்க வேண்டும்; தொடங்கிய பின் யோசிப்பது பெரும் இழுக்காகும்.",
-    english: "Deliberate and architect thoroughly before executing; to waver or hesitate after committing is a flaw.",
-    shortTag: "Kural 467 · Architecture (திட்டம்)",
+    meaningTamil: "நன்கு ஆராய்ந்து திட்டமிட்ட பிறகே செயலில் இறங்க வேண்டும்; காரியத்தைத் தொடங்கிய பின் ஆராய்ந்து யோசிப்பது பெரும் இழுக்காகும்.",
+    meaningEnglish: "Deliberate and architect thoroughly before executing; to begin planning or waver after committing is a fundamental flaw.",
+    engineeringParallel: "Rigorous Specifications: Deep upfront system modeling and edge-case testing prevent costly architectural rewrites and regressions.",
+    keyWords: [
+      { word: "எண்ணித் துணிக", meaning: "Deliberate before embarking" },
+      { word: "கருமம்", meaning: "The architecture / deed" },
+      { word: "துணிந்தபின்", meaning: "Once committed to action" },
+      { word: "இழுக்கு", meaning: "A fatal flaw / debt" },
+    ],
+  },
+  {
+    id: 5,
+    kuralNumber: 391,
+    title: "குறள் ௩௯௧ • Flawless Mastery",
+    chapterTamil: "அதிகாரம் 40: கல்வி",
+    chapterEnglish: "Flawless Mastery in Continuous Learning",
+    line1: "கற்க கசடறக் கற்பவை கற்றபின்",
+    line2: "நிற்க அதற்குத் தக.",
+    transliteration: "Karka kasadarak karpavai katrapin nirka adharkuth thaga.",
+    meaningTamil: "கற்கத் தகுந்த நூல்களைக் குற்றமறக் கற்க வேண்டும்; கற்ற பிறகு அந்த அறிவு நெறியின் வழியில் வழுவாது நிற்க வேண்டும்.",
+    meaningEnglish: "Learn without flaw whatever is worth learning; once learned, stand steadfast and act in uncompromising accordance with that truth.",
+    engineeringParallel: "Engineering Discipline: Truly master foundational compute primitives (memory, concurrency, OS kernel), and write code that honors them.",
+    keyWords: [
+      { word: "கசடறக் கற்க", meaning: "Learn without flaws" },
+      { word: "கற்பவை", meaning: "Worthy disciplines" },
+      { word: "கற்றபின்", meaning: "Having mastered" },
+      { word: "நிற்க அதற்குத் தக", meaning: "Stand true to that craft" },
+    ],
+  },
+  {
+    id: 6,
+    kuralNumber: 71,
+    title: "குறள் ௭௧ • Empathy & Love",
+    chapterTamil: "அதிகாரம் 8: அன்புடைமை",
+    chapterEnglish: "Human-Centered Design & Empathy",
+    line1: "அன்பிற்கும் உண்டோ அடைக்குந்தாழ் ஆர்வலர்",
+    line2: "புன்கணீர் பூசல் தரும்.",
+    transliteration: "Anbirkum undo adaikkundhaazh aarvalar punganeer poosal tharum.",
+    meaningTamil: "அன்பை அடைத்து வைக்கக்கூடிய தாழ்ப்பாள் ஏதேனும் உண்டோ? அன்புடையவரின் சிறு கண்ணீரே அதை வெளிப்படுத்திவிடும்.",
+    meaningEnglish: "Can any bolt or latch confine true love? The tender tears of the devoted will immediately break through and proclaim it.",
+    engineeringParallel: "User-Centered Empathy: Empathy for real people using software is the soul that elevates utilitarian code into beloved experiences.",
+    keyWords: [
+      { word: "அடைக்குந்தாழ்", meaning: "A locking bolt or latch" },
+      { word: "ஆர்வலர்", meaning: "Those filled with care" },
+      { word: "புன்கணீர்", meaning: "Tender, caring tears" },
+      { word: "பூசல் தரும்", meaning: "Openly proclaims" },
+    ],
+  },
+  {
+    id: 7,
+    kuralNumber: 393,
+    title: "குறள் ௩௯௩ • Architectural Vision",
+    chapterTamil: "அதிகாரம் 40: கல்வி",
+    chapterEnglish: "Deep Insight & Architectural Vision",
+    line1: "கண்ணுடையர் என்பவர் கற்றோர் முகத்திரண்டு",
+    line2: "புண்ணுடையர் கல்லா தவர்.",
+    transliteration: "Kannudaiyar enbavar katror mugathirandu punnudaiyar kallaa thavar.",
+    meaningTamil: "மெய்யறிவு பெற்றவரே உண்மையான கண்களை உடையவர்; கல்லாதவரின் முகத்தில் உள்ளவை கண்களல்ல, வெறும் புண்கள் மட்டுமே.",
+    meaningEnglish: "Those who possess genuine wisdom are said to truly have eyes; the unlearned possess only two wounds upon their face.",
+    engineeringParallel: "Deep Systems Vision: Looking beneath surface-level UI into cache locality, thread concurrency, memory layout, and network bandwidth.",
+    keyWords: [
+      { word: "கண்ணுடையர்", meaning: "Those with true perception" },
+      { word: "கற்றோர்", meaning: "Those of deep wisdom" },
+      { word: "முகத்திரண்டு", meaning: "Two upon their visage" },
+      { word: "புண்ணுடையர்", meaning: "Mere wounds without sight" },
+    ],
   },
 ];
 
 function TamilOlaichuvadi3D({ onClose }: { onClose: () => void }) {
-  const [activeKuralIdx, setActiveKuralIdx] = useState(0);
-  const [flipped, setFlipped] = useState(false);
-  const [rotX, setRotX] = useState(0);
-  const [rotY, setRotY] = useState(0);
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [isFanned, setIsFanned] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  const [rotTilt, setRotTilt] = useState({ x: 0, y: 0 });
 
-  const activeKural = TAMIL_KURALS[activeKuralIdx];
+  const activeLeaf = PALM_LEAVES[activeIdx];
+
+  const handleNext = () => {
+    setActiveIdx((prev) => (prev + 1) % PALM_LEAVES.length);
+  };
+
+  const handlePrev = () => {
+    setActiveIdx((prev) => (prev - 1 + PALM_LEAVES.length) % PALM_LEAVES.length);
+  };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isDragging) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    setRotX((-y / rect.height) * 14);
-    setRotY((x / rect.width) * 14);
+    setRotTilt({
+      x: (-y / rect.height) * 8,
+      y: (x / rect.width) * 8,
+    });
   };
 
   const handleMouseLeave = () => {
-    setRotX(0);
-    setRotY(0);
+    setRotTilt({ x: 0, y: 0 });
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-1 sm:p-3 select-none w-full max-w-3xl mx-auto">
+    <div className="flex flex-col items-center justify-center p-1 sm:p-2 select-none w-full max-w-3xl mx-auto">
       
-      {/* Top Banner */}
-      <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
+      {/* Top Heritage Badge */}
+      <div className="flex flex-wrap items-center justify-center gap-2 mb-2">
         <Scroll className="w-4 h-4 text-amber-400" />
-        <p className="text-xs font-mono tracking-widest text-amber-300 uppercase text-center">
-          ANCIENT PALM-LEAF MANUSCRIPT 3D · CLICK TO FLIP
+        <p className="text-xs font-mono tracking-widest text-amber-300 uppercase text-center font-bold">
+          ANCIENT PALM-LEAF MANUSCRIPT · பனை ஓலைச்சுவடி
         </p>
       </div>
 
-      {/* Kural Selector Pill Tabs */}
-      <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-4 w-full">
-        {TAMIL_KURALS.map((k, idx) => {
-          const isActive = idx === activeKuralIdx;
-          return (
-            <button
-              key={k.number}
-              onClick={(e) => {
-                e.stopPropagation();
-                setActiveKuralIdx(idx);
-              }}
-              className={`px-3 py-1.5 rounded-full text-xs transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
-                isActive
-                  ? 'bg-amber-500/25 border border-amber-400 text-amber-200 shadow-[0_0_12px_rgba(245,158,11,0.3)] font-bold'
-                  : 'bg-washi/5 border border-washi/10 text-washi/70 hover:bg-washi/10 hover:text-washi'
-              }`}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-              {k.shortTag}
-            </button>
-          );
-        })}
+      {/* Interactive Helper Banner */}
+      <div className="flex items-center justify-center gap-2 mb-3 text-[11px] font-mono text-amber-200/80 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-full">
+        <span>👆 Swipe or Drag leaf to animate to next leaf</span>
+        <span className="opacity-40">•</span>
+        <span>Click leaf to turn</span>
       </div>
 
-      {/* 3D Interactive Behance-Inspired Palm Leaf Manuscript */}
+      {/* Mode Switches & Leaf Selector Strip */}
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-4 w-full px-1">
+        {/* Leaf selector buttons */}
+        <div className="flex items-center gap-1 overflow-x-auto py-1 max-w-full">
+          {PALM_LEAVES.map((leaf, idx) => {
+            const isSelected = idx === activeIdx;
+            return (
+              <button
+                key={leaf.id}
+                onClick={() => setActiveIdx(idx)}
+                className={`px-2.5 py-1 rounded-full text-[11px] font-mono transition-all duration-200 cursor-pointer flex items-center gap-1 shrink-0 ${
+                  isSelected
+                    ? 'bg-amber-500/30 border border-amber-400 text-amber-200 font-bold shadow-[0_0_10px_rgba(245,158,11,0.3)]'
+                    : 'bg-washi/5 border border-washi/10 text-washi/60 hover:bg-washi/10 hover:text-washi'
+                }`}
+              >
+                <span className={`w-1.5 h-1.5 rounded-full ${isSelected ? 'bg-amber-400' : 'bg-washi/30'}`} />
+                {leaf.isCover ? 'Cover' : `Kural ${leaf.kuralNumber}`}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Fan Arc Toggle */}
+        <button
+          onClick={() => setIsFanned(!isFanned)}
+          className={`px-3 py-1 rounded-full text-[11px] font-mono font-bold transition-all duration-200 cursor-pointer flex items-center gap-1.5 shrink-0 ${
+            isFanned
+              ? 'bg-amber-400 text-sumi-950 shadow-[0_0_12px_rgba(245,158,11,0.4)]'
+              : 'bg-amber-500/15 border border-amber-500/30 text-amber-300 hover:bg-amber-500/25'
+          }`}
+        >
+          {isFanned ? '📚 Stack Bundle (அடுக்கு)' : '🪭 Fan Arc (விரித்துப் பார்)'}
+        </button>
+      </div>
+
+      {/* ================================================================= */}
+      {/* MANUSCRIPT DESK MAT & INTERACTIVE PALM LEAF BUNDLE */}
+      {/* ================================================================= */}
       <div
-        className="behance-olai-container w-full"
+        className="manuscript-desk-mat w-full rounded-3xl p-4 sm:p-8 border border-amber-500/25 relative overflow-hidden shadow-2xl flex flex-col items-center justify-center min-h-[220px] sm:min-h-[250px]"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        onClick={() => setFlipped(!flipped)}
       >
-        <motion.div
-          animate={{
-            rotateX: rotX,
-            rotateY: (flipped ? 180 : 0) + rotY,
-          }}
-          transition={{ type: 'spring', stiffness: 280, damping: 26 }}
-          className="behance-olai-card"
-          style={{
-            ['--px' as any]: rotY / 14,
-            ['--py' as any]: -rotX / 14,
-          }}
-        >
-          {/* ========================================================= */}
-          {/* FRONT FACE: Sacred Inscription Palm Leaf */}
-          {/* ========================================================= */}
-          <div
-            className="w-full relative"
-            style={{ backfaceVisibility: 'hidden' }}
-          >
-            <div className="behance-olai-leaf">
-              {/* Dynamic light sheen */}
-              <div className="behance-olai-sheen" />
+        {/* Soft atmospheric candlelight glow */}
+        <div className="absolute top-0 right-1/4 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
-              {/* Punched hole and dark iron binding ring */}
-              <div className="behance-olai-hole" />
-              <div className="behance-olai-ring" />
+        {/* Traditional Left Jute Twine (சணல் கயிறு) passing through all stacked leaves */}
+        <div className="absolute left-4 sm:left-12 top-1/2 -translate-y-1/2 z-30 pointer-events-none">
+          <svg className="w-16 sm:w-20 h-16" viewBox="0 0 80 64" fill="none">
+            {/* Trailing braided cords */}
+            <path d="M 0,18 Q 20,26 42,32" stroke="#b08c58" strokeWidth="4" strokeLinecap="round" />
+            <path d="M 0,18 Q 20,26 42,32" stroke="#5d3c16" strokeWidth="1.2" strokeDasharray="3 2" />
+            <path d="M 2,42 Q 22,34 42,33" stroke="#9a7442" strokeWidth="3.2" strokeLinecap="round" />
+            <path d="M 2,42 Q 22,34 42,33" stroke="#4a2e10" strokeWidth="1" strokeDasharray="2 2" />
+            {/* Knot tied over hole */}
+            <ellipse cx="44" cy="32" rx="6" ry="5" fill="#a4804c" stroke="#4e3113" strokeWidth="1.5" />
+            <path d="M 40,28 Q 44,35 48,30" stroke="#38210b" strokeWidth="1.8" strokeLinecap="round" />
+          </svg>
+        </div>
 
-              {/* Top Subtitle Metadata */}
-              <div className="flex items-center justify-between border-b border-[#7a2c14]/30 pb-2 mb-2 relative z-10">
-                <span className="text-[11px] font-mono font-bold tracking-wider text-[#4a1c14] uppercase">
-                  THIRUKKURAL · KURAL {activeKural.number}
-                </span>
-                <span className="text-[10px] font-mono font-bold text-[#5c1c0c] bg-[#68240f]/15 px-2 py-0.5 rounded">
-                  PALMYRA MANUSCRIPT
-                </span>
-              </div>
+        {/* Palm Leaf Container */}
+        <div className="relative w-full max-w-[500px] sm:max-w-[530px] h-[90px] sm:h-[95px] flex items-center justify-center">
 
-              {/* Incised Classical Calligraphy in Deep Crimson Ink */}
-              <div className="flex flex-col justify-center items-center text-center px-2 sm:px-6 py-2 my-auto relative z-10">
-                <p className="behance-olai-ink font-bold text-xl sm:text-2xl md:text-3xl tracking-wide">
-                  {activeKural.line1}
-                </p>
-                <p className="behance-olai-ink font-bold text-xl sm:text-2xl md:text-3xl tracking-wide mt-1">
-                  {activeKural.line2}
-                </p>
-                <p className="text-xs sm:text-sm font-serif italic text-[#4a1c14] mt-2.5 opacity-85">
-                  "{activeKural.transliteration}"
-                </p>
-              </div>
+          {/* ============================================================= */}
+          {/* UNDERLYING LEAVES IN THE BUNDLE */}
+          {/* ============================================================= */}
+          {PALM_LEAVES.map((leaf, idx) => {
+            if (idx === activeIdx && !isFanned) return null;
 
-              {/* English Meaning & Commentary */}
-              <div className="pt-2 border-t border-[#7a2c14]/30 relative z-10 text-[11px] sm:text-xs text-[#3d150e]">
-                <p className="leading-relaxed">
-                  <b className="font-bold">Meaning:</b> "{activeKural.english}"
-                </p>
-              </div>
+            // In fanned mode: fan all leaves in an arc
+            if (isFanned) {
+              const fanAngle = -16 + idx * 5.2;
+              const isSelected = idx === activeIdx;
 
-              {/* Bottom Inscription Seal */}
-              <div className="flex items-center justify-between pt-2 border-t border-[#7a2c14]/20 mt-2 relative z-10 text-[10px] font-mono text-[#541c0e]">
-                <span>M KAUSHAL MARAN · TAMIL NADU</span>
-                <span className="flex items-center gap-1 italic">
-                  Click to flip leaf ↺
-                </span>
-              </div>
-
-            </div>
-          </div>
-
-          {/* ========================================================= */}
-          {/* BACK FACE: Software Architect Edict */}
-          {/* ========================================================= */}
-          <div
-            className="w-full absolute inset-0"
-            style={{
-              backfaceVisibility: 'hidden',
-              transform: 'rotateY(180deg)',
-            }}
-          >
-            <div className="behance-olai-leaf" style={{ paddingLeft: '2.5rem', paddingRight: '5rem' }}>
-              <div className="behance-olai-sheen" />
-
-              {/* Hole and ring shifted to the right on flip */}
-              <div className="behance-olai-hole" style={{ left: 'auto', right: '28px' }} />
-              <div className="behance-olai-ring" style={{ left: 'auto', right: '-20px' }} />
-
-              {/* Header */}
-              <div className="flex items-center justify-between border-b border-[#7a2c14]/30 pb-2 mb-2 relative z-10">
-                <span className="text-xs font-mono font-bold tracking-wider text-[#4a1c14] uppercase">
-                  M KAUSHAL MARAN · SOFTWARE ARCHITECT EDICT
-                </span>
-                <span className="text-[10px] font-mono font-bold text-[#5c1c0c] bg-[#68240f]/15 px-2 py-0.5 rounded">
-                  SIMATS '26 · VELLORE &amp; CHENNAI
-                </span>
-              </div>
-
-              {/* Sangam Motto */}
-              <div className="text-center my-1 relative z-10">
-                <p className="font-tamil font-bold text-sm sm:text-base text-[#381008] behance-olai-ink">
-                  "யாதும் ஊரே யாவரும் கேளிர் • கற்றது கைமண் அளவு"
-                </p>
-                <p className="text-[10px] font-mono text-[#541c0e] mt-0.5">
-                  BUILDING WHAT PEOPLE ACTUALLY USE · ZERO FRAME DROPS · 120 FPS
-                </p>
-              </div>
-
-              {/* Inscribed Production Applications */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 my-2 relative z-10">
-                <div className="bg-[#68240f]/10 border border-[#7a2c14]/25 rounded-lg p-2">
-                  <b className="text-xs font-bold text-[#2a0c06]">🍏 ZenLife</b>
-                  <p className="text-[10px] text-[#42160c] mt-0.5 leading-tight">
-                    SwiftUI · 432 Hz Solfeggio Audio DSP · Native iOS App Store
-                  </p>
-                </div>
-                <div className="bg-[#68240f]/10 border border-[#7a2c14]/25 rounded-lg p-2">
-                  <b className="text-xs font-bold text-[#2a0c06]">🤖 Vellore Ads</b>
-                  <p className="text-[10px] text-[#42160c] mt-0.5 leading-tight">
-                    Kotlin · Jetpack Compose · Local Classifieds · Play Store
-                  </p>
-                </div>
-                <div className="bg-[#68240f]/10 border border-[#7a2c14]/25 rounded-lg p-2">
-                  <b className="text-xs font-bold text-[#2a0c06]">🛡️ Viana 360 &amp; Buy</b>
-                  <p className="text-[10px] text-[#42160c] mt-0.5 leading-tight">
-                    Smart AI Surveillance &amp; Enterprise Retail Platform
-                  </p>
-                </div>
-                <div className="bg-[#68240f]/10 border border-[#7a2c14]/25 rounded-lg p-2">
-                  <b className="text-xs font-bold text-[#2a0c06]">💻 CodeShift &amp; Mac</b>
-                  <p className="text-[10px] text-[#42160c] mt-0.5 leading-tight">
-                    Monaco Studio · CleanYourMac Utility · 120 FPS
-                  </p>
-                </div>
-              </div>
-
-              {/* Direct Connect Inscriptions with Kaushal's Verified LinkedIn */}
-              <div className="pt-2 border-t border-[#7a2c14]/30 relative z-10 flex flex-wrap items-center justify-center gap-2">
-                <a
-                  href="https://www.linkedin.com/in/kaushal-maran-m-9572622b1/"
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#0a66c2]/20 hover:bg-[#0a66c2]/35 border border-[#0a66c2]/50 rounded-lg text-xs font-bold text-[#1e293b] transition-colors"
+              return (
+                <motion.div
+                  key={`fanned-${leaf.id}`}
+                  onClick={() => setActiveIdx(idx)}
+                  animate={{
+                    rotate: fanAngle,
+                    scale: isSelected ? 1.05 : 1,
+                    y: isSelected ? -8 : 0,
+                  }}
+                  whileHover={{ scale: 1.04, y: -5 }}
+                  transition={{ type: 'spring', stiffness: 280, damping: 24 }}
+                  style={{
+                    transformOrigin: '28px 50%',
+                    zIndex: isSelected ? 35 : 10 + idx,
+                    filter: isSelected
+                      ? 'drop-shadow(0 10px 20px rgba(0,0,0,0.7)) drop-shadow(0 0 10px rgba(245,158,11,0.3))'
+                      : 'drop-shadow(0 4px 8px rgba(0,0,0,0.5))',
+                  }}
+                  className="absolute inset-0 cursor-pointer"
                 >
-                  <Linkedin className="w-3.5 h-3.5 text-[#0a66c2]" /> LinkedIn Profile
-                </a>
-                <a
-                  href="https://github.com/kaushalboii"
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#24292e]/15 hover:bg-[#24292e]/25 border border-[#24292e]/30 rounded-lg text-xs font-bold text-[#1f2937] font-mono transition-colors"
-                >
-                  <Github className="w-3.5 h-3.5" /> GitHub
-                </a>
-                <a
-                  href="mailto:kaushalmaran24@gmail.com"
-                  onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#c2410c]/20 hover:bg-[#c2410c]/30 border border-[#c2410c]/40 rounded-lg text-xs font-bold text-[#431407] font-mono transition-colors"
-                >
-                  <Mail className="w-3.5 h-3.5 text-[#c2410c]" /> Email
-                </a>
-              </div>
+                  <div className="natural-palm-leaf w-full h-[76px] sm:h-[82px] flex items-center justify-between px-10 sm:px-12 relative overflow-hidden">
+                    {/* Punched hole on left */}
+                    <div
+                      className="absolute left-[24px] top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full z-20 pointer-events-none"
+                      style={{
+                        background: '#120c08',
+                        boxShadow: 'inset 0 2px 3px rgba(0,0,0,0.95), 0 0 0 1px rgba(70,35,10,0.6)',
+                      }}
+                    />
 
-            </div>
-          </div>
-        </motion.div>
+                    {/* Engraved Tamil Couplet */}
+                    <div className="flex flex-col justify-center items-center text-center w-full px-2">
+                      <p className="natural-palm-ink font-bold text-xs sm:text-sm tracking-wide leading-tight truncate max-w-[340px]">
+                        {leaf.line1}
+                      </p>
+                      <p className="natural-palm-ink font-bold text-xs sm:text-sm tracking-wide leading-tight truncate max-w-[340px] mt-0.5">
+                        {leaf.line2}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            }
+
+            // In stacked mode: render 3-4 leaves peeking underneath with physical depth
+            const offset = (idx - activeIdx + PALM_LEAVES.length) % PALM_LEAVES.length;
+            if (offset < 1 || offset > 4) return null;
+
+            return (
+              <div
+                key={`stacked-${leaf.id}`}
+                style={{
+                  transformOrigin: '28px 50%',
+                  transform: `rotate(${offset * 2.2}deg) translate(${offset * 4}px, ${offset * 2.5}px)`,
+                  zIndex: 20 - offset,
+                  filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.45))',
+                }}
+                className="absolute inset-0 pointer-events-none transition-transform duration-300"
+              >
+                <div className="natural-palm-leaf w-full h-[78px] sm:h-[84px] opacity-95">
+                  {/* Left hole */}
+                  <div
+                    className="absolute left-[24px] top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full z-20"
+                    style={{
+                      background: '#120c08',
+                      boxShadow: 'inset 0 2px 3px rgba(0,0,0,0.95), 0 0 0 1px rgba(70,35,10,0.6)',
+                    }}
+                  />
+                </div>
+              </div>
+            );
+          })}
+
+          {/* ============================================================= */}
+          {/* TOP ACTIVE PALM LEAF (DRAGGABLE & ANIMATED PAGE-TURN) */}
+          {/* ============================================================= */}
+          {!isFanned && (
+            <AnimatePresence mode="popLayout">
+              <motion.div
+                key={`active-${activeLeaf.id}-${isFlipped ? 'flipped' : 'front'}`}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.45}
+                onDragStart={() => setIsDragging(true)}
+                onDrag={(e, info) => {
+                  setDragOffset({ x: info.offset.x, y: info.offset.y });
+                }}
+                onDragEnd={(e, info) => {
+                  setIsDragging(false);
+                  setDragOffset({ x: 0, y: 0 });
+                  if (info.offset.x > 35 || info.velocity.x > 250) {
+                    handleNext();
+                  } else if (info.offset.x < -35 || info.velocity.x < -250) {
+                    handlePrev();
+                  }
+                }}
+                onClick={() => {
+                  if (!isDragging) {
+                    handleNext();
+                  }
+                }}
+                style={{
+                  transformOrigin: '28px 50%',
+                  zIndex: 30,
+                  filter: 'drop-shadow(0 12px 22px rgba(0,0,0,0.65)) drop-shadow(0 2px 6px rgba(0,0,0,0.4))',
+                }}
+                initial={{
+                  rotate: -28,
+                  opacity: 0,
+                  x: -30,
+                  scale: 0.98,
+                }}
+                animate={{
+                  rotate: isDragging ? dragOffset.x * 0.15 : rotTilt.y * 0.5,
+                  x: isDragging ? dragOffset.x : 0,
+                  y: isDragging ? dragOffset.y * 0.2 : rotTilt.x * 0.3,
+                  opacity: 1,
+                  scale: isDragging ? 1.02 : 1,
+                }}
+                exit={{
+                  rotate: -45,
+                  x: 100,
+                  opacity: 0,
+                  scale: 0.94,
+                }}
+                transition={{ type: 'spring', stiffness: 340, damping: 26 }}
+                className="absolute inset-0 cursor-grab active:cursor-grabbing w-full"
+              >
+                {/* Palm Leaf Slat Surface */}
+                <div className="natural-palm-leaf w-full h-[78px] sm:h-[84px] flex items-center justify-between px-10 sm:px-12 relative overflow-hidden">
+                  
+                  {/* Left Punched Binding Hole */}
+                  <div
+                    className="absolute left-[24px] top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full z-20 pointer-events-none"
+                    style={{
+                      background: '#120c08',
+                      boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.95), 0 0 0 1px rgba(70,35,10,0.65)',
+                    }}
+                  />
+
+                  {/* FRONT FACE (Default): Authentic Inscription */}
+                  {!isFlipped && (
+                    <>
+                      {activeLeaf.isCover ? (
+                        /* Cover Leaf layout matching Image 2 */
+                        <div className="flex flex-col items-center justify-center text-center w-full px-2">
+                          <div className="flex items-center gap-3">
+                            <span className="natural-palm-ink font-bold text-lg sm:text-xl tracking-wider">
+                              திருக்குறள்
+                            </span>
+                            <span className="text-[10px] font-mono font-bold tracking-widest text-[#442312] uppercase opacity-80">
+                              THIRUKURAL
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2 my-0.5 opacity-65">
+                            <span className="h-[1px] w-8 bg-[#522b13]/50"></span>
+                            <span className="text-[10px] natural-palm-ink">௲</span>
+                            <span className="h-[1px] w-8 bg-[#522b13]/50"></span>
+                          </div>
+                          <span className="text-[9px] sm:text-[10px] font-mono tracking-wider text-[#432010] uppercase font-bold opacity-85">
+                            M. KAUSHAL MARAN COLLECTION
+                          </span>
+                        </div>
+                      ) : (
+                        /* Verse Leaf with classical 2-line Tamil couplet */
+                        <div className="flex flex-col justify-center items-center text-center w-full px-1">
+                          <p className="natural-palm-ink font-bold text-sm sm:text-base tracking-wide leading-tight">
+                            {activeLeaf.line1}
+                          </p>
+                          <p className="natural-palm-ink font-bold text-sm sm:text-base tracking-wide leading-tight mt-0.5 sm:mt-1">
+                            {activeLeaf.line2}
+                          </p>
+                          <div className="flex items-center justify-center gap-3 mt-1 opacity-70">
+                            <span className="text-[9px] font-mono font-bold text-[#4a2410] uppercase">
+                              குறள் {activeLeaf.kuralNumber}
+                            </span>
+                            <span className="text-[9px] font-serif italic text-[#4a2410]/80">
+                              Leaf #{activeLeaf.id} of 7
+                            </span>
+                          </div>
+                        </div>
+                      )}
+                    </>
+                  )}
+
+                  {/* BACK FACE (Software Edict) */}
+                  {isFlipped && (
+                    <div className="flex flex-col items-center justify-center text-center w-full px-2">
+                      <span className="text-[10px] font-mono font-bold tracking-wider text-[#4a2410] uppercase">
+                        M KAUSHAL MARAN • ARCHITECT EDICT
+                      </span>
+                      <p className="natural-palm-ink font-bold text-xs sm:text-sm mt-0.5 text-[#301206]">
+                        "யாதும் ஊரே யாவரும் கேளிர் • கற்றது கைமண் அளவு"
+                      </p>
+                      <span className="text-[9px] font-mono text-[#541c0e] opacity-80 mt-0.5">
+                        10+ PRODUCTION APPS • SIMATS '26 • ZERO FRAME DROPS
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Right chevron pointed tip watermark */}
+                  <div className="absolute right-2 top-1/2 -translate-y-1/2 opacity-30 pointer-events-none">
+                    <Feather className="w-3.5 h-3.5 text-[#3e1d0a]" />
+                  </div>
+
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          )}
+
+        </div>
+
+        {/* Tactile Motion Hint */}
+        <p className="text-[10px] font-mono text-amber-300/60 mt-4 tracking-wider flex items-center gap-1.5">
+          <RotateCcw className="w-3 h-3 text-amber-400 animate-spin-slow" />
+          <span>Move or flick leaf to swivel to next leaf</span>
+        </p>
+
       </div>
 
-      {/* Interactive Controls below 3D Olaichuvadi */}
-      <div className="mt-5 flex flex-wrap items-center justify-center gap-3 w-full">
-        <button
-          onClick={() => setFlipped(!flipped)}
-          className="px-5 py-2.5 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded-xl text-xs sm:text-sm font-bold text-amber-200 transition-all cursor-pointer flex items-center gap-2 shadow-[0_0_15px_rgba(245,158,11,0.2)]"
-        >
-          <RotateCcw className="w-4 h-4 text-amber-400" />
-          {flipped ? "Flip to Thirukkural Inscription" : "Flip to Software Edict"}
-        </button>
-        <button
-          onClick={onClose}
-          className="px-5 py-2.5 bg-washi/5 hover:bg-washi/15 border border-washi/10 rounded-xl text-xs sm:text-sm font-bold text-washi transition-colors cursor-pointer"
-        >
-          Close
-        </button>
+      {/* Navigation Controls Bar */}
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-3 w-full px-2">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={handlePrev}
+            className="px-3 py-1.5 bg-washi/5 hover:bg-washi/15 border border-washi/10 rounded-xl text-xs font-mono font-bold text-washi transition-all cursor-pointer flex items-center gap-1"
+          >
+            <ChevronLeft className="w-4 h-4 text-amber-400" />
+            <span>முந்தைய (Prev)</span>
+          </button>
+          <span className="text-xs font-mono text-amber-300/80 px-2">
+            {activeIdx + 1} / {PALM_LEAVES.length}
+          </span>
+          <button
+            onClick={handleNext}
+            className="px-3 py-1.5 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded-xl text-xs font-mono font-bold text-amber-200 transition-all cursor-pointer flex items-center gap-1 shadow-[0_0_10px_rgba(245,158,11,0.2)]"
+          >
+            <span>அடுத்த (Next)</span>
+            <ChevronRight className="w-4 h-4 text-amber-400" />
+          </button>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setIsFlipped(!isFlipped)}
+            className="px-3 py-1.5 bg-washi/5 hover:bg-washi/15 border border-washi/10 rounded-xl text-xs font-mono font-bold text-washi/85 transition-colors cursor-pointer flex items-center gap-1.5"
+          >
+            <RotateCcw className="w-3.5 h-3.5 text-amber-400" />
+            {isFlipped ? "Show Tamil Verse" : "Flip Edict ↺"}
+          </button>
+          <button
+            onClick={onClose}
+            className="px-4 py-1.5 bg-washi/5 hover:bg-washi/15 border border-washi/10 rounded-xl text-xs font-bold text-washi/70 hover:text-washi transition-colors cursor-pointer"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+
+      {/* ================================================================= */}
+      {/* DETAILED SCHOLARLY COMMENTARY & ENGINEERING PARALLEL */}
+      {/* ================================================================= */}
+      <div className="mt-4 w-full bg-sumi-950/80 rounded-2xl p-4 sm:p-5 border border-amber-500/20 shadow-xl space-y-3">
+        {/* Chapter Header */}
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-washi/10 pb-2">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-amber-400" />
+            <h5 className="text-xs sm:text-sm font-bold font-mono text-amber-300 uppercase tracking-wide">
+              {activeLeaf.chapterTamil}
+            </h5>
+          </div>
+          <span className="text-[11px] font-mono text-washi/60">
+            {activeLeaf.chapterEnglish}
+          </span>
+        </div>
+
+        {/* Classical Tamil Calligraphy */}
+        <div className="text-center py-2 px-2 bg-sumi-900/60 rounded-xl border border-washi/5">
+          <p className="font-tamil font-bold text-lg sm:text-xl text-amber-200/95 leading-relaxed">
+            {activeLeaf.line1}
+          </p>
+          <p className="font-tamil font-bold text-lg sm:text-xl text-amber-200/95 leading-relaxed mt-1">
+            {activeLeaf.line2}
+          </p>
+          {activeLeaf.transliteration && (
+            <p className="text-xs font-serif italic text-washi/70 mt-2">
+              "{activeLeaf.transliteration}"
+            </p>
+          )}
+        </div>
+
+        {/* Tamil Meaning & English Translation */}
+        <div className="space-y-1.5 text-xs text-washi/85 leading-relaxed">
+          <p>
+            <b className="text-amber-300 font-tamil font-bold">விளக்கம்:</b> {activeLeaf.meaningTamil}
+          </p>
+          <p className="text-washi/75">
+            <b className="text-amber-200/90 font-mono font-bold">English:</b> "{activeLeaf.meaningEnglish}"
+          </p>
+        </div>
+
+        {/* Software Architecture Connection */}
+        <div className="p-3 bg-amber-500/10 border border-amber-500/25 rounded-xl">
+          <div className="flex items-center gap-2 mb-1">
+            <Cpu className="w-4 h-4 text-amber-400" />
+            <b className="text-xs font-mono font-bold text-amber-300 uppercase">
+              Software Architecture Parallel
+            </b>
+          </div>
+          <p className="text-xs text-washi/90 leading-relaxed font-sans">
+            {activeLeaf.engineeringParallel}
+          </p>
+        </div>
+
+        {/* Word-by-Word Tamil Dictionary Chips */}
+        {activeLeaf.keyWords && (
+          <div className="pt-2 border-t border-washi/10">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-washi/50 block mb-1.5">
+              Etymology & Vocabulary:
+            </span>
+            <div className="flex flex-wrap gap-1.5">
+              {activeLeaf.keyWords.map((item, kwIdx) => (
+                <span
+                  key={kwIdx}
+                  className="px-2 py-0.5 rounded-md bg-washi/5 border border-washi/10 text-[11px] font-mono text-amber-200/90"
+                >
+                  <b className="text-amber-300 font-tamil font-bold">{item.word}</b>: {item.meaning}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Author Verification Link */}
+        <div className="pt-2 border-t border-washi/10 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-washi/60">
+          <span>Curated by M Kaushal Maran (SIMATS '26)</span>
+          <a
+            href="https://www.linkedin.com/in/kaushal-maran-m-9572622b1/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 text-amber-300 hover:text-amber-200 transition-colors"
+          >
+            <Linkedin className="w-3.5 h-3.5 text-[#0077b5]" /> Verified Profile ↗
+          </a>
+        </div>
+
       </div>
 
     </div>
@@ -1593,15 +1944,15 @@ export default function App() {
           <div className="md:col-span-5 space-y-6">
             <div className="bg-gradient-to-br from-amber-500/15 via-sumi-950/70 to-sumi-950 p-6 rounded-3xl border border-amber-500/30 text-center">
               <Scroll className="w-8 h-8 text-amber-400 mx-auto mb-2" />
-              <h5 className="text-lg font-black text-washi">Ancient Palm-Leaf Manuscript</h5>
+              <h5 className="text-lg font-black text-washi">Authentic Palm-Leaf Manuscript (ஓலைச்சுவடி)</h5>
               <p className="text-xs text-washi-dim mt-1 mb-4 leading-relaxed">
-                Interactive 3D Palmyra palm-leaf manuscript inscribed with Thirukkural 619 ("Effort yields its full reward"), sacred red cord, and Kaushal's software architecture edict.
+                Slender Palmyra palm-leaf bookmark bundle tied with natural jute twine. Features swipe/drag leaf animation, fanned arc view, and classical Thirukkural couplets.
               </p>
               <button
                 onClick={() => setActiveModal('holo')}
                 className="w-full py-2.5 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded-xl text-xs font-bold uppercase tracking-wider text-amber-300 transition-colors cursor-pointer flex items-center justify-center gap-2"
               >
-                <Scroll className="w-4 h-4" /> Open 3D Manuscript 📜
+                <Scroll className="w-4 h-4" /> Open Palm-Leaf Manuscript 📜
               </button>
             </div>
 
@@ -1631,7 +1982,7 @@ export default function App() {
       </Modal>
 
       {/* Ancient Tamil Olaichuvadi 3D Modal */}
-      <Modal isOpen={activeModal === 'holo'} onClose={() => setActiveModal(null)} title="Ancient Tamil Olaichuvadi 3D" jp="ஓலைச்சுவடி" maxWidth="max-w-2xl">
+      <Modal isOpen={activeModal === 'holo'} onClose={() => setActiveModal(null)} title="Palmyra Palm-Leaf Manuscript (ஓலைச்சுவடி)" jp="திருக்குறள்" maxWidth="max-w-3xl">
         <TamilOlaichuvadi3D onClose={() => setActiveModal(null)} />
       </Modal>
 

@@ -24,9 +24,11 @@ An editorial bento portfolio for **M Kaushal Maran**, Mobile App Developer and f
 - **和紙 (Washi) & 墨 (Sumi) Palette**: Deep warm ink neutrals (`#131110`, `#1a1715`) paired with washi paper tones (`#f0eade`), cinnabar vermilion (`#e1532e` 朱), and antique gold accents (`#d9b35c` 金).
 - **Interactive Draggable Bento Grid**: Responsive grid powered by Motion v12 featuring spring physics, smart drag-vs-click thresholds, boundary collision detection, and an instant "Tidy Up" alignment reset.
 - **Eye-Tracking Mascot (`PortfolioEyes`)**: Real-time vector gaze tracking following the cursor/touch coordinates across the screen.
-- **3D Palmyra Palm-Leaf Manuscript (பனை ஓலைச்சுவடி)**:
-  - Modeled on traditional heritage Tamil palm-leaf manuscripts with authentic horizontal palm grain, bound cord steel grommet, stacked layered leaves depth, and inscribed Thirukkural calligraphy (குறள் 382 & 619).
-  - Gyroscopic mouse/touch tilt, dynamic specular sheen, and 180° flip interaction with Kaushal's software engineering edict.
+- **Authentic Palmyra Palm-Leaf Manuscript Bundle (பனை ஓலைச்சுவடி)**:
+  - Slender, authentic bookmark-style palm leaf bundle modeled directly on historical manuscripts with natural wheat/bamboo dried leaf grain, pointed chevron tip, punched hole, and rustic jute twine knot (சணல் கயிறு).
+  - **Dynamic Swipe & Drag Motion**: Move or drag the active leaf to watch it rotate smoothly around the jute cord pivot with spring physics, swiveling away to reveal the next leaf in the bundle.
+  - **Fanned Arc Display (விரித்துப் பார்)**: Interactive toggle to fan out all 8 leaves in a radial arc just like a traditional manuscript hand-fan, with instant leaf selection.
+  - **Classical Thirukkural Inscriptions**: Laser-etched sepia-charcoal calligraphy featuring the archival Title Cover, Kural 1 (First Principles), Kural 619 (Relentless Effort), Kural 382 (Leadership), Kural 467 (Planning), Kural 391 (Mastery), Kural 71 (Empathy), and Kural 393 (Vision), paired with Software Architecture parallels.
 - **Production Mobile & Web Suite**:
   - 🍏 **ZenLife: Stress & Sound Relief** (Apple App Store) — 432 Hz Solfeggio acoustic synthesizer with CoreData persistence.
   - 📡 **Viana 360** (Apple App Store) — Real-time telemetry & IoT multi-sensor dashboard.

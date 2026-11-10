@@ -671,6 +671,100 @@ body {
    - Deep crimson/burnt-sienna calligraphy ink etched into leaf grain
    ========================================================================== */
 
+/* ==========================================================================
+   Authentic Palmyra Palm Leaf Manuscript (இயற்கை பனை ஓலைச்சுவடி)
+   Modeled on authentic slender palm-leaf bookmarks (Image 2 reference):
+   - Slender bookmark aspect ratio (~500px wide, ~82px high)
+   - Left-edge rounded boundary with punched hole and rustic jute twine (சணல் கயிறு)
+   - Right-edge authentic pointed arrow / chevron tip
+   - Natural wheat/bamboo dried palm leaf fibers (non-AI, matte, organic)
+   - Laser-etched sepia-charcoal Tamil calligraphy
+   ========================================================================== */
+
+.natural-palm-leaf {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  height: 82px;
+  background-color: #cbb07f;
+  background-image:
+    /* Fine parallel natural palm fiber striations */
+    repeating-linear-gradient(
+      0deg,
+      rgba(75, 42, 14, 0.07) 0px,
+      rgba(75, 42, 14, 0.07) 1px,
+      transparent 1px,
+      transparent 3px,
+      rgba(255, 250, 230, 0.14) 3px,
+      rgba(255, 250, 230, 0.14) 4px,
+      transparent 4px,
+      transparent 6px
+    ),
+    /* Faint cross-fiber organic grain */
+    repeating-linear-gradient(
+      90deg,
+      rgba(50, 25, 5, 0.02) 0px,
+      rgba(50, 25, 5, 0.02) 1px,
+      transparent 1px,
+      transparent 32px
+    ),
+    /* Natural dried palmyra leaf tone */
+    linear-gradient(
+      180deg,
+      #d7be92 0%,
+      #ccad7b 15%,
+      #be9c66 50%,
+      #c7a670 85%,
+      #b89257 100%
+    );
+  /* Slender palm leaf bookmark cut: rounded left, pointed chevron right */
+  clip-path: polygon(
+    0 14px,
+    14px 0,
+    calc(100% - 34px) 0,
+    100% 50%,
+    calc(100% - 34px) 100%,
+    14px 100%,
+    0 calc(100% - 14px)
+  );
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 250, 230, 0.45),
+    inset 0 -1.5px 2px rgba(55, 25, 6, 0.38);
+  border: 1px solid rgba(110, 65, 20, 0.35);
+  user-select: none;
+}
+
+/* Natural etched calligraphy ink */
+.natural-palm-ink {
+  font-family: var(--font-tamil), 'Noto Serif Tamil', 'Tiro Tamil', Georgia, serif;
+  color: #2b170c;
+  text-shadow:
+    0 0.5px 0.5px rgba(255, 250, 230, 0.55),
+    0 -0.5px 0.5px rgba(20, 8, 2, 0.65);
+  letter-spacing: 0.02em;
+}
+
+/* Desk Mat texture backdrop for modal */
+.manuscript-desk-mat {
+  background-color: #171310;
+  background-image:
+    radial-gradient(ellipse at 50% 50%, rgba(190, 156, 102, 0.06) 0%, transparent 75%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.015) 0px,
+      rgba(255, 255, 255, 0.015) 1px,
+      transparent 1px,
+      transparent 8px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0, 0, 0, 0.25) 0px,
+      rgba(0, 0, 0, 0.25) 1px,
+      transparent 1px,
+      transparent 8px
+    );
+}
+
 .behance-olai-container {
   width: 100%;
   position: relative;
