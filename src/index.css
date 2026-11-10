@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-jp: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+
+  /* 墨 sumi — warm ink neutrals, never blue-black */
+  --color-sumi-950: #131110;
+  --color-sumi-900: #1a1715;
+  --color-sumi-850: #201c19;
+  --color-sumi-800: #282320;
+  --color-sumi-700: #3a332e;
+
+  /* 和紙 washi — warm paper whites */
+  --color-washi: #f0eade;
+  --color-washi-dim: #b8b0a2;
+  --color-washi-faint: #847d70;
+
+  /* 朱 shu — hanko vermilion, the single accent */
+  --color-shu-300: #f2977d;
+  --color-shu-400: #ec6f4c;
+  --color-shu-500: #e1532e;
+  --color-shu-600: #c2401f;
+
+  /* 金 kin — muted gold, whisper-level secondary */
+  --color-kin-400: #d9b35c;
+  --color-kin-500: #c8a24b;
+
+  /* 苔 koke — moss green for live/status */
+  --color-koke-400: #a4c47e;
+  --color-koke-500: #87a861;
+}
+
+:root {
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/*
+  Type system — one voice per role:
+  - Display:        font-black tracking-tight (PROJECTS hero, card titles, modal titles)
+  - Section head:   text-xl font-bold tracking-tight (inside modals)
+  - Sub-card head:  text-base font-bold tracking-tight
+  - Body:           text-sm leading-relaxed
+  - Chip:           text-xs font-medium
+  - CTA:            text-xs font-bold tracking-wider uppercase
+  - Eyebrow:        the utility below (tiny caps labels)
+  - Mono:           handles, numbers, footer meta
+  - Serif italic:   pull-quotes & the signature accent only
+*/
+@utility eyebrow {
+  font-size: 0.625rem;
+  line-height: 1.4;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+html {
+  background-color: #131110;
+}
+
+body {
+  background-color: #131110;
+  color: #f0eade;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: #e1532e;
+  color: #f0eade;
+}
+
+:focus-visible {
+  outline: 2px solid #e1532e;
+  outline-offset: 2px;
+}
+
+/* Accessibility: disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(240, 234, 222, 0.12);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(240, 234, 222, 0.22);
+}
+
+/* Vertical Japanese gutter text */
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 0.5em;
+}
+
+/* Mobile: keep shadows cheap */
+@media (max-width: 767px) {
+  .shadow-2xl {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+  }
+}
+
