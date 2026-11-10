@@ -68,8 +68,8 @@ Engineered with **React 19**, **Vite 6**, **TypeScript**, **Tailwind CSS v4**, a
 ### 1. 3D Palmyra Palm-Leaf Manuscript (பனை ஓலைச்சுவடி)
 A physically modeled, interactive ancient Tamil manuscript bundle tied with traditional braided jute twine (சணல் கயிறு). Click the top header's **`அன்புடன் 📜`** or the button in the profile/story modals to open it.
 
-* **Rotational Drag & Swipe**: Drag or flick the active palm leaf to swivel around its cord pivot with spring physics and flip between leaves.
-* **Fanned Arc View (விரித்துப் பார்)**: Interactive toggle that spreads the bundle out radially in an arc like a traditional manuscript hand-fan.
+* **Rotational Drag & Swipe**: Drag, flick, or tap the active palm leaf to swivel around its cord pivot with spring physics and flip between leaves.
+* **Minimalist Architecture**: Pure, distraction-free frame with zero visual clutter, minimal dot pagination, and dedicated attribution.
 * **Laser-Etched Couplets (3 Focused Leaves)**:
   1. **Leaf 1 — விடாமுயற்சி (Relentless Effort & Craft)**:  
      *குறள் ௬௧௯ (அதிகாரம் 62: ஆள்வினையுடைமை)*  
