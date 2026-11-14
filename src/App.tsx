@@ -71,6 +71,13 @@ const portfolioData = {
   },
   openSource: [
     {
+      name: "MyDiary: 3D Memory Library",
+      repo: "kaushalboii/MyDiary",
+      stars: 18,
+      license: "MIT",
+      desc: "Editorial 3D physical memory library & interactive flipbook diary with procedural walnut shelf, Three.js page flips, AES-256-GCM vault, and Book Studio."
+    },
+    {
       name: "CleanYourMac Keyboard",
       repo: "kaushalboii/CleanYourMacKeyboard",
       stars: 12,
@@ -171,6 +178,15 @@ const portfolioData = {
       tags: ["Kotlin", "Room DB", "IPC Cross-Matrix", "Material 3", "Google Play"]
     },
     {
+      name: "MyDiary — 3D Memory Library & FlipBook",
+      desc: "Editorial 3D physical memory library and interactive flipbook diary built with Next.js 16, React 19, Three.js, and Tailwind CSS v4. Features clothbound hardcovers resting on a continuous walnut shelf, synchronized 3D flipbook page turning, real-time Book Studio customizer, client-side AES-256-GCM vault security, offline IndexedDB sync, and a Verlet rope theme toggle.",
+      link: "https://kaushalboii.github.io/MyDiary/",
+      image: "/assets/apps/mydiary-preview.png",
+      layout: "horizontal",
+      platform: "Web Platform · Open Source",
+      tags: ["Next.js 16", "React 19", "Three.js", "Tailwind CSS v4", "AES-256-GCM Vault", "WebGL"]
+    },
+    {
       name: "CodeShift Collaborative Editor",
       desc: "High-performance open-source real-time collaborative code editor powered by Microsoft Monaco engine. Features zero-login instant room sharing, client-side AES-GCM encryption with LZW compression, and live peer cursor presence.",
       link: "https://kaushalboii.github.io/codeshift/",
@@ -192,7 +208,7 @@ const portfolioData = {
   skills: {
     "iOS Native": ["Swift", "SwiftUI", "Combine", "AVAudioEngine", "CoreData", "AppKit"],
     "Android Native": ["Kotlin", "Jetpack Compose", "Coroutines", "Room SQLite", "Material 3"],
-    "Web & Full Stack": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Monaco Editor", "WebSockets"],
+    "Web & Full Stack": ["React 19", "Next.js 16", "Three.js / WebGL", "TypeScript", "Tailwind CSS v4", "Monaco Editor", "WebSockets"],
     "AI & DSP": ["PyTorch", "DCGAN", "OpenCV", "Audio DSP (432 Hz)", "NumPy / SciPy", "FFT"],
     "Persistence & Cloud": ["SQLite FTS5", "Firebase Realtime", "CoreData", "Docker", "Vercel"],
     "Engineering Tooling": ["Xcode", "Android Studio", "Git & GitHub", "Instruments", "Postman"]
@@ -201,6 +217,7 @@ const portfolioData = {
     philosophy: "Software is an architectural craft. Clean design, offline reliability, and deterministic 120 FPS performance compound into products people love using.",
     platforms: ["Apple App Store", "Google Play Store", "macOS Universal", "Vercel", "Firebase", "GitHub Pages"],
     engines: [
+      { name: "Three.js & WebGL", desc: "Procedural 3D physical walnut bookshelf, synchronized flipbook physics & clothbound generative textures" },
       { name: "AVAudioEngine", desc: "432 Hz Solfeggio acoustic frequency synthesizer & psychoacoustic filter bank" },
       { name: "CGEventTap", desc: "macOS low-level kernel event tapping for instantaneous keyboard input lockout" },
       { name: "SQLite FTS5", desc: "Sub-16ms tokenized offline full-text statutory search for constitutional bare acts" },
@@ -1388,7 +1405,7 @@ export default function App() {
                 >
                   <div className="flex items-center gap-4 md:gap-6 min-w-0">
                     <div className="hidden sm:flex items-center justify-center w-8 h-8 rounded-full bg-washi/5 text-washi-faint text-xs font-bold font-mono group-hover:text-shu-400 group-hover:bg-shu-500/10 transition-colors shrink-0">
-                      0{i + 1}
+                      {String(i + 1).padStart(2, '0')}
                     </div>
                     <div className="min-w-0">
                       <div className="flex items-center gap-2">

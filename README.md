@@ -31,6 +31,8 @@ Interactive, physics-driven Bento portfolio engineered with React 19, TypeScript
 | **ZenLife** | iOS 17+ | [App Store ↗](https://apps.apple.com/in/app/zenlife-stress-sound-relief/id6753105286) · 432 Hz Solfeggio soundscape audio engine |
 | **Viana 360** | iOS 17+ | [App Store ↗](https://apps.apple.com/in/app/viana-360/id6760163659) · Real-time IoT telemetry & sensor dashboard |
 | **Viana Buy** | iOS 17+ | [App Store ↗](https://apps.apple.com/in/app/viana-buy/id6772468488) · E-commerce application |
+| **MyDiary** | Web / 3D | [Live Demo ↗](https://kaushalboii.github.io/MyDiary/) · [GitHub ↗](https://github.com/kaushalboii/MyDiary) · 3D Walnut Shelf & FlipBook Vault |
+| **CodeShift** | Web | [Live Demo ↗](https://kaushalboii.github.io/codeshift/) · [GitHub ↗](https://github.com/kaushalboii/codeshift) · Monaco collaborative code editor |
 | **CleanYourMac Keyboard** | macOS | [GitHub ↗](https://kaushalboii.github.io/CleanYourMacKeyboard/) · Menu-bar utility to lock inputs during cleaning |
 | **Vellore Ads Platform** | Android | [Play Store ↗](https://play.google.com/store/apps/details?id=com.velloreads.app&hl=en) · Commercial directory platform |
 | **Constitution of India (REF)** | Android | [Play Store ↗](https://play.google.com/store/apps/details?id=com.constitution.bareact&hl=en) · Bilingual Bare Act with offline search |
