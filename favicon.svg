@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#131110"/>
+  <rect x="1" y="1" width="30" height="30" rx="6" fill="none" stroke="#282320" stroke-width="1"/>
+  <!-- Bold 'K' lettermark for Kaushal -->
+  <path d="M9 7 L13 7 L13 14.5 L19.5 7 L24.5 7 L16.8 15.2 L25 25 L19.8 25 L13 16.5 L13 25 L9 25 Z" fill="#f0eade"/>
+  <!-- Accent dot — vermilion 朱 -->
+  <circle cx="25" cy="7" r="3" fill="#e1532e"/>
+</svg>
