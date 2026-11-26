@@ -46,7 +46,7 @@ const portfolioData = {
     name: "M Kaushal Maran",
     handle: "@kaushalboii",
     title: "Mobile App Developer · Systems Architect",
-    bio: "Final-year B.Tech IT student at SIMATS Engineering College (CGPA 8.1) & Mobile App Developer from Tamil Nadu. I architect native iOS (Swift, SwiftUI) and Android (Kotlin, Jetpack Compose) applications, low-level macOS utilities, and 120 FPS high-performance systems.",
+    bio: "B.Tech IT graduate from SIMATS Engineering College (CGPA 8.1) & Mobile App Developer from Tamil Nadu. I architect native iOS (Swift, SwiftUI) and Android (Kotlin, Jetpack Compose) applications, low-level macOS utilities, and 120 FPS high-performance systems.",
     location: "Vellore & Chennai, Tamil Nadu, India",
     education: "B.Tech Information Technology (CGPA 8.1) · SIMATS Engineering College",
     roles: [
@@ -58,7 +58,7 @@ const portfolioData = {
       github: "https://github.com/kaushalboii",
       linkedin: "https://www.linkedin.com/in/kaushal-maran-m-9572622b1/",
       email: "kaushalmaranm@gmail.com",
-      portfolio: "https://kaushalboii.github.io/Kaushal-s-Portfolio/",
+      portfolio: "https://kaushalboii.github.io/Kaushals-Portfolio/",
       appStore: "https://apps.apple.com/in/app/zenlife-stress-sound-relief/id6753105286",
       playStore: "https://play.google.com/store/apps/details?id=com.velloreads.app&hl=en"
     }
